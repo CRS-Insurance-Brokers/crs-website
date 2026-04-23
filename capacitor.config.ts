@@ -12,9 +12,11 @@ const config: CapacitorConfig = {
     androidScheme: "https",
     iosScheme: "https",
   },
-  // webDir is unused when server.url is set but Capacitor still
-  // requires the field to be present and to point somewhere real.
-  webDir: ".next",
+  // Minimal bounce page — the native shell copies this into the .app
+  // bundle but as soon as it loads, server.url takes over. Using .next
+  // (the Next build output) fails App Store review because it contains
+  // sharp's .dylib/.node binaries.
+  webDir: "capacitor-shell",
   ios: {
     // Splash/launch screen is a solid CRS cream; content renders over.
     backgroundColor: "#F3EEE1",
