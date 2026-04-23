@@ -1,7 +1,10 @@
 "use server";
 
-import { OUTCOMES } from "@/lib/decision-tree";
+import { after } from "next/server";
 import type { LogEntry } from "@/components/panels/LogPanel";
+import type { Answers, OutcomeKey } from "@/lib/decision-tree";
+import { OUTCOMES } from "@/lib/decision-tree";
+import { sendSubmissionEmail } from "@/lib/email";
 import { submitReportInputSchema, type SubmitReportInput } from "@/lib/schemas";
 import {
   getIpHash,
@@ -14,13 +17,37 @@ export type SubmitResult =
   | { ok: true; id: string | null; persisted: boolean }
   | { ok: false; error: string };
 
+function scheduleEmail(
+  sessionId: string,
+  reportId: string | null,
+  outcomeKey: OutcomeKey,
+  answers: Answers,
+  submittedAt: Date,
+): void {
+  after(async () => {
+    const result = await sendSubmissionEmail({
+      sessionId,
+      reportId,
+      outcomeKey,
+      answers,
+      submittedAt,
+    });
+    if (!result.ok) {
+      // `no-config` is expected before Resend keys land; `send-failed` is
+      // the one we actually want to see in logs.
+      if (result.reason === "send-failed") {
+        console.warn("[submitReport] email send failed", result.detail);
+      }
+    }
+  });
+}
+
 /**
  * Record a completed incident report and flag it as sent to the CRS
- * handler. Email delivery lands at the Resend milestone.
- *
- * Persistence failures never block the user: if Supabase isn't configured
- * or rejects the write, we log and return ok: true with persisted: false so
- * the outcome screen still shows the success state.
+ * handler. Email is scheduled via after() so it doesn't extend the
+ * response time — and because the brief is explicit that neither
+ * persistence nor email failures may block the user, the return value is
+ * always ok with flags describing what actually landed.
  */
 export async function submitReport(
   input: SubmitReportInput,
@@ -33,11 +60,19 @@ export async function submitReport(
   const sessionId = await getOrCreateSessionId();
   const outcome = OUTCOMES[parsed.data.outcomeKey];
   const supabase = getSupabaseAdmin();
+  const submittedAt = new Date();
 
   if (!supabase) {
     console.info(
       "[submitReport] no database configured; accepting submission in no-op mode",
       { sessionId, outcomeKey: parsed.data.outcomeKey },
+    );
+    scheduleEmail(
+      sessionId,
+      null,
+      parsed.data.outcomeKey,
+      parsed.data.answers as Answers,
+      submittedAt,
     );
     return { ok: true, id: null, persisted: false };
   }
@@ -58,7 +93,7 @@ export async function submitReport(
       dangerous_checks: parsed.data.answers.dangerousChecks ?? [],
       disease_checks: parsed.data.answers.diseaseChecks ?? [],
       submitted_to_handler: true,
-      handler_notified_at: new Date().toISOString(),
+      handler_notified_at: submittedAt.toISOString(),
       user_agent: userAgent,
       ip_hash: ipHash,
     })
@@ -67,10 +102,24 @@ export async function submitReport(
 
   if (error || !data) {
     console.error("[submitReport] insert failed", error);
+    scheduleEmail(
+      sessionId,
+      null,
+      parsed.data.outcomeKey,
+      parsed.data.answers as Answers,
+      submittedAt,
+    );
     return { ok: true, id: null, persisted: false };
   }
 
-  return { ok: true, id: data.id, persisted: true };
+  scheduleEmail(
+    sessionId,
+    data.id as string,
+    parsed.data.outcomeKey,
+    parsed.data.answers as Answers,
+    submittedAt,
+  );
+  return { ok: true, id: data.id as string, persisted: true };
 }
 
 /**
