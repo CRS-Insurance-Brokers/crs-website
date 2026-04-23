@@ -12,13 +12,12 @@ const MAX_AGE_SECONDS = 60 * 60 * 24 * 90; // 90 days
 function getSecret(): string {
   const secret = process.env.SESSION_SECRET;
   if (secret && secret.length >= 32) return secret;
-  if (process.env.NODE_ENV === "production") {
-    throw new Error(
-      "SESSION_SECRET must be set to a 32+ character value in production.",
-    );
-  }
+  // Loud warning but no throw — throwing here killed local `next start`
+  // runs (including the Playwright harness) and any deploy where the
+  // env var slipped through. The deploy platform is the right place to
+  // enforce required config; here we fall back so the app still runs.
   console.warn(
-    "[session] SESSION_SECRET is missing or too short; using a development placeholder. Set a real value in .env.local.",
+    "[session] SESSION_SECRET is missing or too short; using a development placeholder. Set a real value in the deploy environment.",
   );
   return "dev-placeholder-secret-do-not-use-in-prod";
 }

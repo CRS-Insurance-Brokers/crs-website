@@ -172,6 +172,3 @@ export async function fetchLog(): Promise<LogEntry[]> {
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
-
-// Kept for the offline queue replay which stores RIDDOR-shaped payloads.
-export type { Answers, OutcomeKey };
