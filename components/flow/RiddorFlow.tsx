@@ -42,7 +42,7 @@ export function RiddorFlow() {
 
   return (
     <>
-      <TopBar currentStep={step} logEntries={[]} />
+      <TopBar currentStep={step} />
       <main className="mx-auto max-w-[560px] px-5 pt-8 pb-[100px]">
         <div aria-live="polite" aria-atomic="false" key={step}>
           {renderStep(step, draft.outcomeKey)}

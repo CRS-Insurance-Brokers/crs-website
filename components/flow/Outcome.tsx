@@ -2,13 +2,14 @@
 
 import { CheckCircle2, FileText } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useTransition } from "react";
+import { submitReport } from "@/app/actions";
 import { ActionStep } from "@/components/ui/ActionStep";
 import { Body } from "@/components/ui/Body";
 import { Button } from "@/components/ui/Button";
 import { OutcomeBanner } from "@/components/ui/OutcomeBanner";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { HANDLER, OUTCOMES, type OutcomeKey } from "@/lib/decision-tree";
+import { HANDLER, OUTCOMES, type Answers, type OutcomeKey } from "@/lib/decision-tree";
 import { OUTCOME_ICONS } from "@/lib/outcome-icons";
 import { useDraft } from "@/lib/use-draft";
 
@@ -18,19 +19,25 @@ type OutcomeProps = {
 
 export function Outcome({ outcomeKey }: OutcomeProps) {
   const router = useRouter();
-  const { clearDraft } = useDraft();
+  const { draft, clearDraft } = useDraft();
   const [submitted, setSubmitted] = useState(false);
-  const [pending, setPending] = useState(false);
+  const [pending, startTransition] = useTransition();
 
   const outcome = OUTCOMES[outcomeKey];
   const Icon = OUTCOME_ICONS[outcomeKey];
 
-  const onSubmit = async () => {
-    // Wired to the Supabase-backed server action at the next milestone.
-    setPending(true);
-    await new Promise((r) => setTimeout(r, 150));
-    setPending(false);
-    setSubmitted(true);
+  const onSubmit = () => {
+    // The action handles its own degraded-mode fallback: missing Supabase
+    // config logs a warning but still returns ok, so the success card shows
+    // either way — the brief is explicit that persistence failures must not
+    // block the user.
+    startTransition(async () => {
+      await submitReport({
+        answers: draft.answers as Answers,
+        outcomeKey,
+      });
+      setSubmitted(true);
+    });
   };
 
   const onReset = () => {

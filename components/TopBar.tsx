@@ -2,7 +2,8 @@
 
 import { ArrowLeft, History, Phone } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import { fetchLog } from "@/app/actions";
 import { HANDLER } from "@/lib/decision-tree";
 import { HIDE_BACK_ON, type StepId } from "@/lib/steps";
 import { HandlerPanel } from "./panels/HandlerPanel";
@@ -10,13 +11,22 @@ import { LogPanel, type LogEntry } from "./panels/LogPanel";
 
 type TopBarProps = {
   currentStep: StepId;
-  logEntries: readonly LogEntry[];
 };
 
-export function TopBar({ currentStep, logEntries }: TopBarProps) {
+export function TopBar({ currentStep }: TopBarProps) {
   const router = useRouter();
   const [showLog, setShowLog] = useState(false);
   const [showHandler, setShowHandler] = useState(false);
+  const [logEntries, setLogEntries] = useState<readonly LogEntry[]>([]);
+  const [logLoading, setLogLoading] = useState(false);
+
+  const openLog = useCallback(() => {
+    setShowLog(true);
+    setLogLoading(true);
+    void fetchLog()
+      .then(setLogEntries)
+      .finally(() => setLogLoading(false));
+  }, []);
 
   const showBack = !HIDE_BACK_ON.has(currentStep);
 
@@ -47,7 +57,7 @@ export function TopBar({ currentStep, logEntries }: TopBarProps) {
           <div className="flex gap-1">
             <button
               type="button"
-              onClick={() => setShowLog(true)}
+              onClick={openLog}
               aria-label="Open incident history"
               className="bg-transparent border-0 cursor-pointer text-ink-muted hover:text-ink min-h-[44px] min-w-[44px] flex items-center justify-center"
             >
@@ -70,6 +80,7 @@ export function TopBar({ currentStep, logEntries }: TopBarProps) {
         open={showLog}
         onClose={() => setShowLog(false)}
         entries={logEntries}
+        loading={logLoading}
       />
     </>
   );

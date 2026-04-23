@@ -18,6 +18,7 @@ type LogPanelProps = {
   open: boolean;
   onClose: () => void;
   entries: readonly LogEntry[];
+  loading?: boolean;
 };
 
 /**
@@ -25,7 +26,7 @@ type LogPanelProps = {
  * orchestrator; this component just renders. At the Supabase milestone the
  * entries prop is populated from a server action filtered by session_id.
  */
-export function LogPanel({ open, onClose, entries }: LogPanelProps) {
+export function LogPanel({ open, onClose, entries, loading }: LogPanelProps) {
   return (
     <BottomSheet open={open} onClose={onClose} label="Your incident history">
       <div className="mb-[18px] pr-12">
@@ -36,7 +37,11 @@ export function LogPanel({ open, onClose, entries }: LogPanelProps) {
         </Heading>
       </div>
 
-      {entries.length === 0 ? (
+      {loading ? (
+        <Body muted size="sm">
+          Loading your history&hellip;
+        </Body>
+      ) : entries.length === 0 ? (
         <Body muted size="sm">
           No incidents recorded yet. Every completed flow is saved here with
           timestamp and outcome &mdash; usable as Consumer Duty / Fair Value
