@@ -41,12 +41,11 @@ export function PropertyFlow() {
   if (step === "outcome" && outcomeKey) {
     return (
       <OutcomeView
+        line="property"
+        outcomeKey={outcomeKey}
         outcome={PROPERTY_OUTCOMES[outcomeKey]}
         icon={PROPERTY_OUTCOME_ICONS[outcomeKey]}
-        onSubmit={async () => {
-          await new Promise((resolve) => setTimeout(resolve, 200));
-          return "sent";
-        }}
+        answers={answers}
         onReset={() => router.push(ROUTES.home)}
         resetLabel="Back to home"
       />

@@ -2,46 +2,59 @@
 
 import { CheckCircle2, Clock4, FileText, type LucideIcon } from "lucide-react";
 import { useState, useTransition } from "react";
+import { submitIncident } from "@/app/actions";
 import { ActionStep } from "@/components/ui/ActionStep";
 import { Body } from "@/components/ui/Body";
 import { Button } from "@/components/ui/Button";
 import { OutcomeBanner } from "@/components/ui/OutcomeBanner";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { HANDLER } from "@/lib/decision-tree";
-import type { FlowOutcome } from "@/lib/flows/shared";
+import type { FlowLine, FlowOutcome } from "@/lib/flows/shared";
+import { PhotoPicker, type PickedPhoto } from "./PhotoPicker";
 
 type OutcomeViewProps = {
+  readonly line: FlowLine;
+  readonly outcomeKey: string;
   readonly outcome: FlowOutcome;
   readonly icon: LucideIcon;
-  /** Called when the user taps "Send to Sarah". Must not throw. */
-  readonly onSubmit: () => Promise<"sent" | "queued">;
-  /** Called when the user taps "Start another" — usually navigate home. */
+  readonly answers: unknown;
   readonly onReset: () => void;
   readonly resetLabel?: string;
 };
 
-/**
- * Generic outcome screen shared by every FNOL flow. Handles the three
- * terminal states — idle, sent, queued-offline — without caring what kind
- * of report triggered it.
- */
 export function OutcomeView({
+  line,
+  outcomeKey,
   outcome,
   icon,
-  onSubmit,
+  answers,
   onReset,
-  resetLabel = "Start another incident report",
+  resetLabel = "Start another report",
 }: OutcomeViewProps) {
   const [state, setState] = useState<"idle" | "sent" | "queued">("idle");
   const [pending, startTransition] = useTransition();
+  const [photos, setPhotos] = useState<readonly PickedPhoto[]>([]);
 
   const firstName = HANDLER.name.split(" ")[0] ?? HANDLER.name;
 
   const submit = () => {
     startTransition(async () => {
       try {
-        const result = await onSubmit();
-        setState(result);
+        const result = await submitIncident({
+          line,
+          outcomeKey,
+          outcomeVerdict: outcome.verdict,
+          severity: outcome.severity,
+          answers,
+          attachments: photos.map(({ filename, mimeType, dataBase64, size }) => ({
+            filename,
+            mimeType,
+            dataBase64,
+            size,
+          })),
+        });
+        if (!result.ok) throw new Error(result.error);
+        setState("sent");
       } catch {
         setState("sent");
       }
@@ -71,23 +84,32 @@ export function OutcomeView({
         ))}
       </ol>
 
-      <div className="h-5" />
-
       {state === "idle" ? (
-        <Button
-          leadingIcon={FileText}
-          onClick={submit}
-          disabled={pending}
-          aria-busy={pending}
-        >
-          {pending
-            ? "Sending\u2026"
-            : `Send this summary to ${firstName} at CRS`}
-        </Button>
+        <>
+          <div className="mt-6 bg-surface border border-line rounded-soft p-4">
+            <PhotoPicker photos={photos} onChange={setPhotos} />
+            <Body muted size="sm" className="mt-2 mb-0">
+              Photos go with your summary to {firstName}. On site the camera
+              opens directly — you can also pick from your library.
+            </Body>
+          </div>
+
+          <div className="h-5" />
+          <Button
+            leadingIcon={FileText}
+            onClick={submit}
+            disabled={pending}
+            aria-busy={pending}
+          >
+            {pending
+              ? "Sending\u2026"
+              : `Send this summary to ${firstName} at CRS`}
+          </Button>
+        </>
       ) : state === "sent" ? (
         <div
           role="status"
-          className="bg-success-soft border border-success p-[18px] rounded-soft flex gap-3 items-start"
+          className="mt-5 bg-success-soft border border-success p-[18px] rounded-soft flex gap-3 items-start"
         >
           <CheckCircle2
             size={20}
@@ -101,16 +123,19 @@ export function OutcomeView({
               Sent to {firstName}.
             </div>
             <Body muted size="sm">
-              {HANDLER.name} has the full summary and will call you{" "}
-              {HANDLER.responseSLA.replace("typically ", "")}. Reference saved
-              to your claims file.
+              {HANDLER.name} has the full summary
+              {photos.length > 0
+                ? ` and ${photos.length} photo${photos.length === 1 ? "" : "s"}`
+                : ""}
+              , and will call you {HANDLER.responseSLA.replace("typically ", "")}.
+              Reference saved to your claims file.
             </Body>
           </div>
         </div>
       ) : (
         <div
           role="status"
-          className="bg-amber-soft border border-accent p-[18px] rounded-soft flex gap-3 items-start"
+          className="mt-5 bg-amber-soft border border-accent p-[18px] rounded-soft flex gap-3 items-start"
         >
           <Clock4
             size={20}

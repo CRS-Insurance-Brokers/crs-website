@@ -51,14 +51,11 @@ export function MotorFlow() {
   if (step === "outcome" && outcomeKey) {
     return (
       <OutcomeView
+        line="motor"
+        outcomeKey={outcomeKey}
         outcome={MOTOR_OUTCOMES[outcomeKey]}
         icon={MOTOR_OUTCOME_ICONS[outcomeKey]}
-        onSubmit={async () => {
-          // Concept-demo stub — real persistence + email lands when the
-          // schema is extended to the motor line. For now, simulate.
-          await new Promise((resolve) => setTimeout(resolve, 200));
-          return "sent";
-        }}
+        answers={answers}
         onReset={() => router.push(ROUTES.home)}
         resetLabel="Back to home"
       />

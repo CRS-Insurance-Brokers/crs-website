@@ -50,12 +50,11 @@ export function PublicLiabilityFlow() {
   if (step === "outcome" && outcomeKey) {
     return (
       <OutcomeView
+        line="public-liability"
+        outcomeKey={outcomeKey}
         outcome={PL_OUTCOMES[outcomeKey]}
         icon={PL_OUTCOME_ICONS[outcomeKey]}
-        onSubmit={async () => {
-          await new Promise((resolve) => setTimeout(resolve, 200));
-          return "sent";
-        }}
+        answers={answers}
         onReset={() => router.push(ROUTES.home)}
         resetLabel="Back to home"
       />
