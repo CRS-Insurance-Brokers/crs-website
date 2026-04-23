@@ -14,6 +14,10 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Source-of-truth artifact — not part of the app bundle.
     "RiddorHelper.jsx",
+    // Deploy artefacts (Netlify CLI + Capacitor/Xcode build outputs).
+    ".netlify/**",
+    "ios/App/build/**",
+    "ios/App/Pods/**",
   ]),
 ]);
 

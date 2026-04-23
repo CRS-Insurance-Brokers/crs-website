@@ -2,7 +2,6 @@
 
 import { after } from "next/server";
 import type { LogEntry } from "@/components/panels/LogPanel";
-import type { Answers, OutcomeKey } from "@/lib/decision-tree";
 import { OUTCOMES } from "@/lib/decision-tree";
 import { sendSubmissionEmail } from "@/lib/email";
 import {
