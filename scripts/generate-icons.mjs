@@ -57,4 +57,20 @@ await render(standardSvg(192), join(OUT, "icon-192.png"));
 await render(standardSvg(512), join(OUT, "icon-512.png"));
 await render(maskableSvg(512), join(OUT, "icon-maskable-512.png"));
 await render(standardSvg(180), join(OUT, "apple-touch-icon.png"));
+
+// iOS app icon: Xcode 15+ accepts a single 1024 and auto-generates the
+// per-device sizes at build time. Capacitor scaffolds that single slot.
+const IOS_ICON = join(
+  __dirname,
+  "..",
+  "ios",
+  "App",
+  "App",
+  "Assets.xcassets",
+  "AppIcon.appiconset",
+  "AppIcon-512@2x.png",
+);
+await render(maskableSvg(1024), IOS_ICON);
+console.log("iOS icon -> " + IOS_ICON);
+
 console.log("Done.");
