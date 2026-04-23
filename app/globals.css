@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* ---- Canonical design tokens -----------------------------------------
+ * Values are the single source of truth (see RiddorHelper.jsx §theme).
+ * Tailwind utilities are generated from the @theme block below, which
+ * references these variables via var() so runtime overrides stay live.
+ * ---------------------------------------------------------------------- */
+:root {
+  --bg: #F3EEE1;
+  --surface: #FFFFFF;
+  --surface-soft: #FAF6EA;
+  --ink: #1A1F1A;
+  --ink-muted: #6A6D66;
+  --line: #E4DDC8;
+  --primary: #1F3A2E;
+  --primary-ink: #F3EEE1;
+  --accent: #B8691C;
+  --danger: #8B1F1F;
+  --success: #2D5016;
+  --amber-soft: #F5E8D6;
+  --danger-soft: #F3DEDE;
+  --success-soft: #DDE6D2;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-accent: var(--accent);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-amber-soft: var(--amber-soft);
+  --color-danger-soft: var(--danger-soft);
+  --color-success-soft: var(--success-soft);
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-plex-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --radius-sharp: 2px;
+  --radius-soft: 3px;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
