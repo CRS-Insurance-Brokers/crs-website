@@ -4,6 +4,7 @@ import { Activity, Info, Users, Zap } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Heading";
+import { stepHref } from "@/lib/steps";
 import { useDraft } from "@/lib/use-draft";
 
 export function IncidentType() {
@@ -12,20 +13,20 @@ export function IncidentType() {
 
   const pickInjury = () => {
     updateAnswers({ incidentType: "injury" });
-    router.push("/?step=injury-who");
+    router.push(stepHref("injury-who"));
   };
   const pickDangerous = () => {
     updateAnswers({ incidentType: "dangerous", dangerousChecks: [] });
-    router.push("/?step=dangerous-check");
+    router.push(stepHref("dangerous-check"));
   };
   const pickDisease = () => {
     updateAnswers({ incidentType: "disease", diseaseChecks: [] });
-    router.push("/?step=disease-check");
+    router.push(stepHref("disease-check"));
   };
   const pickUnsure = () => {
     updateAnswers({ incidentType: "unsure" });
     setOutcomeKey("call-handler");
-    router.push("/?step=outcome");
+    router.push(stepHref("outcome"));
   };
 
   return (

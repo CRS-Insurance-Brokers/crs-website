@@ -1,20 +1,26 @@
 "use client";
 
 import { ArrowLeft, History, Phone } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import { fetchLog } from "@/app/actions";
 import { HANDLER } from "@/lib/decision-tree";
-import { HIDE_BACK_ON, type StepId } from "@/lib/steps";
+import { ROUTES } from "@/lib/routes";
 import { HandlerPanel } from "./panels/HandlerPanel";
 import { LogPanel, type LogEntry } from "./panels/LogPanel";
 
 type TopBarProps = {
-  currentStep: StepId;
+  /**
+   * Override for flows that have their own internal back semantics (e.g.
+   * the RIDDOR orchestrator hides Back on welcome and outcome steps).
+   * Default: Back is shown everywhere except the home dashboard.
+   */
+  readonly hideBack?: boolean;
 };
 
-export function TopBar({ currentStep }: TopBarProps) {
+export function TopBar({ hideBack }: TopBarProps = {}) {
   const router = useRouter();
+  const pathname = usePathname();
   const [showLog, setShowLog] = useState(false);
   const [showHandler, setShowHandler] = useState(false);
   const [logEntries, setLogEntries] = useState<readonly LogEntry[]>([]);
@@ -28,13 +34,13 @@ export function TopBar({ currentStep }: TopBarProps) {
       .finally(() => setLogLoading(false));
   }, []);
 
-  const showBack = !HIDE_BACK_ON.has(currentStep);
+  const showBack = hideBack !== undefined ? !hideBack : pathname !== ROUTES.home;
 
   return (
     <>
       <div className="sticky top-0 z-10 border-b border-line bg-bg">
         <div className="max-w-[560px] mx-auto px-5 py-[14px] flex justify-between items-center">
-          <div className="flex items-center gap-[10px]">
+          <div className="flex items-center gap-[10px] min-w-0">
             {showBack ? (
               <button
                 type="button"

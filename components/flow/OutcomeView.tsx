@@ -1,72 +1,58 @@
 "use client";
 
-import { CheckCircle2, Clock4, FileText } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { CheckCircle2, Clock4, FileText, type LucideIcon } from "lucide-react";
 import { useState, useTransition } from "react";
-import { submitReport } from "@/app/actions";
 import { ActionStep } from "@/components/ui/ActionStep";
 import { Body } from "@/components/ui/Body";
 import { Button } from "@/components/ui/Button";
 import { OutcomeBanner } from "@/components/ui/OutcomeBanner";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { HANDLER, OUTCOMES, type Answers, type OutcomeKey } from "@/lib/decision-tree";
-import { enqueueSubmission } from "@/lib/offline-queue";
-import { OUTCOME_ICONS } from "@/lib/outcome-icons";
-import { useDraft } from "@/lib/use-draft";
+import { HANDLER } from "@/lib/decision-tree";
+import type { FlowOutcome } from "@/lib/flows/shared";
 
-type OutcomeProps = {
-  outcomeKey: OutcomeKey;
+type OutcomeViewProps = {
+  readonly outcome: FlowOutcome;
+  readonly icon: LucideIcon;
+  /** Called when the user taps "Send to Sarah". Must not throw. */
+  readonly onSubmit: () => Promise<"sent" | "queued">;
+  /** Called when the user taps "Start another" — usually navigate home. */
+  readonly onReset: () => void;
+  readonly resetLabel?: string;
 };
 
-type SubmitState = "idle" | "sent" | "queued";
-
-export function Outcome({ outcomeKey }: OutcomeProps) {
-  const router = useRouter();
-  const { draft, clearDraft } = useDraft();
-  const [state, setState] = useState<SubmitState>("idle");
+/**
+ * Generic outcome screen shared by every FNOL flow. Handles the three
+ * terminal states — idle, sent, queued-offline — without caring what kind
+ * of report triggered it.
+ */
+export function OutcomeView({
+  outcome,
+  icon,
+  onSubmit,
+  onReset,
+  resetLabel = "Start another incident report",
+}: OutcomeViewProps) {
+  const [state, setState] = useState<"idle" | "sent" | "queued">("idle");
   const [pending, startTransition] = useTransition();
 
-  const outcome = OUTCOMES[outcomeKey];
-  const Icon = OUTCOME_ICONS[outcomeKey];
   const firstName = HANDLER.name.split(" ")[0] ?? HANDLER.name;
 
-  const onSubmit = () => {
-    const payload = {
-      answers: draft.answers as Answers,
-      outcomeKey,
-    };
+  const submit = () => {
     startTransition(async () => {
       try {
-        const result = await submitReport(payload);
-        if (!result.ok) throw new Error(result.error);
-        setState("sent");
+        const result = await onSubmit();
+        setState(result);
       } catch {
-        // Offline or network error — server actions throw a generic
-        // TypeError when the fetch can't reach the origin. Persist the
-        // payload so the background retry can flush it on `online`.
-        try {
-          await enqueueSubmission(payload);
-          setState("queued");
-        } catch (queueErr) {
-          console.error("[outcome] queue write failed", queueErr);
-          // Last resort: pretend it sent. The brief is firm that a
-          // technical failure must not leave the user staring at an error.
-          setState("sent");
-        }
+        setState("sent");
       }
     });
-  };
-
-  const onReset = () => {
-    clearDraft();
-    router.push("/report/riddor");
   };
 
   return (
     <div>
       <OutcomeBanner
         severity={outcome.severity}
-        icon={Icon}
+        icon={icon}
         verdict={outcome.verdict}
         summary={outcome.summary}
         deadline={outcome.deadline}
@@ -90,7 +76,7 @@ export function Outcome({ outcomeKey }: OutcomeProps) {
       {state === "idle" ? (
         <Button
           leadingIcon={FileText}
-          onClick={onSubmit}
+          onClick={submit}
           disabled={pending}
           aria-busy={pending}
         >
@@ -115,7 +101,7 @@ export function Outcome({ outcomeKey }: OutcomeProps) {
               Sent to {firstName}.
             </div>
             <Body muted size="sm">
-              Your CRS claims handler has the full summary and will call you{" "}
+              {HANDLER.name} has the full summary and will call you{" "}
               {HANDLER.responseSLA.replace("typically ", "")}. Reference saved
               to your claims file.
             </Body>
@@ -147,7 +133,7 @@ export function Outcome({ outcomeKey }: OutcomeProps) {
 
       <div className="h-[10px]" />
       <Button variant="secondary" onClick={onReset}>
-        Start another incident report
+        {resetLabel}
       </Button>
     </div>
   );

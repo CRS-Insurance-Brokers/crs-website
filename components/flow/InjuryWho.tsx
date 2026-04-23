@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { Body } from "@/components/ui/Body";
 import { Button } from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Heading";
+import { stepHref } from "@/lib/steps";
 import { useDraft } from "@/lib/use-draft";
 
 export function InjuryWho() {
@@ -14,8 +15,8 @@ export function InjuryWho() {
     updateAnswers({ who });
     router.push(
       who === "worker"
-        ? "/?step=injury-worker-severity"
-        : "/?step=injury-public-severity",
+        ? stepHref("injury-worker-severity")
+        : stepHref("injury-public-severity"),
     );
   };
 

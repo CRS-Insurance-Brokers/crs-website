@@ -5,6 +5,7 @@ import { Body } from "@/components/ui/Body";
 import { Button } from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Heading";
 import { deriveOutcome, type WorkerSeverity } from "@/lib/decision-tree";
+import { stepHref } from "@/lib/steps";
 import { useDraft } from "@/lib/use-draft";
 
 export function InjuryWorkerSeverity() {
@@ -20,7 +21,7 @@ export function InjuryWorkerSeverity() {
       workerSeverity,
     };
     setOutcomeKey(deriveOutcome(nextAnswers));
-    router.push("/?step=outcome");
+    router.push(stepHref("outcome"));
   };
 
   return (

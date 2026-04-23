@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { Heading } from "@/components/ui/Heading";
 import { DISEASE_ITEMS, deriveOutcome } from "@/lib/decision-tree";
+import { stepHref } from "@/lib/steps";
 import { useDraft } from "@/lib/use-draft";
 
 export function DiseaseCheck() {
@@ -27,7 +28,7 @@ export function DiseaseCheck() {
       diseaseChecks: draft.answers.diseaseChecks ?? [],
     };
     setOutcomeKey(deriveOutcome(nextAnswers));
-    router.push("/?step=outcome");
+    router.push(stepHref("outcome"));
   };
 
   return (

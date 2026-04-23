@@ -1,10 +1,13 @@
-import { Suspense } from "react";
-import { RiddorFlow } from "@/components/flow/RiddorFlow";
+import { Dashboard } from "@/components/dashboard/Dashboard";
+import { FooterMark } from "@/components/FooterMark";
+import { TopBar } from "@/components/TopBar";
 
 export default function Home() {
   return (
-    <Suspense fallback={null}>
-      <RiddorFlow />
-    </Suspense>
+    <>
+      <TopBar />
+      <Dashboard />
+      <FooterMark />
+    </>
   );
 }

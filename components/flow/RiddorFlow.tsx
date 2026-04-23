@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { FooterMark } from "@/components/FooterMark";
 import { TopBar } from "@/components/TopBar";
-import { STEP_TITLES, isStepId, type StepId } from "@/lib/steps";
+import { HIDE_BACK_ON, STEP_TITLES, isStepId, type StepId } from "@/lib/steps";
 import { useDraft } from "@/lib/use-draft";
 import { DangerousCheck } from "./DangerousCheck";
 import { DiseaseCheck } from "./DiseaseCheck";
@@ -36,13 +36,13 @@ export function RiddorFlow() {
   // Guard: outcome screen requires an outcomeKey; otherwise rewind.
   useEffect(() => {
     if (step === "outcome" && draft.outcomeKey === null) {
-      router.replace("/");
+      router.replace("/report/riddor");
     }
   }, [step, draft.outcomeKey, router]);
 
   return (
     <>
-      <TopBar currentStep={step} />
+      <TopBar hideBack={HIDE_BACK_ON.has(step)} />
       <main className="mx-auto max-w-[560px] px-5 pt-8 pb-[100px]">
         <div aria-live="polite" aria-atomic="false" key={step}>
           {renderStep(step, draft.outcomeKey)}

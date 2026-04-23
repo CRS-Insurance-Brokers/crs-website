@@ -5,6 +5,7 @@ import { Body } from "@/components/ui/Body";
 import { Button } from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Heading";
 import { deriveOutcome, type PublicSeverity } from "@/lib/decision-tree";
+import { stepHref } from "@/lib/steps";
 import { useDraft } from "@/lib/use-draft";
 
 export function InjuryPublicSeverity() {
@@ -20,7 +21,7 @@ export function InjuryPublicSeverity() {
       publicSeverity,
     };
     setOutcomeKey(deriveOutcome(nextAnswers));
-    router.push("/?step=outcome");
+    router.push(stepHref("outcome"));
   };
 
   return (

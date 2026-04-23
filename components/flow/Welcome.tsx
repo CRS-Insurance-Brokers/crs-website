@@ -6,13 +6,14 @@ import { Body } from "@/components/ui/Body";
 import { Button } from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Heading";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { stepHref } from "@/lib/steps";
 
 export function Welcome() {
   const router = useRouter();
   return (
     <div>
       <div className="mb-7">
-        <SectionLabel>Workplace incident &middot; RIDDOR helper</SectionLabel>
+        <SectionLabel>RIDDOR helper</SectionLabel>
         <Heading size="xl">
           Let&rsquo;s work out what needs to happen next.
         </Heading>
@@ -29,7 +30,7 @@ export function Welcome() {
       <div className="mt-5">
         <Button
           leadingIcon={HardHat}
-          onClick={() => router.push("/?step=incident-type")}
+          onClick={() => router.push(stepHref("incident-type"))}
         >
           Start &mdash; tell me what happened
         </Button>
