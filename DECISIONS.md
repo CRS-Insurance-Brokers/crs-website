@@ -28,5 +28,12 @@ All database reads and writes go through Next.js server actions using a Supabase
 ## Q8 — Analytics
 **Decision:** Omitted from v0.1. Not in scope, not plumbed. If added later, via Plausible behind an env flag.
 
+## Brand colour correction (2026-04-23, post-preview)
+**Change:** `--primary` updated from `#1F3A2E` (forest green, per original brief) to `#262262` (CRS navy, per the actual CRS brand as seen on crs-ins.co.uk and the official logo SVG).
+
+The brief's palette was decorative rather than brand-accurate. After the first live preview the user confirmed the real CRS brand is navy, and supplied `CRS-logo-long-version-1.svg` which uses `#262262` throughout. All other tokens (cream bg, warm supporting palette, danger/success/accent semantics) retained — they still fit the "warm, British, understated" tone of voice and now pair navy+cream, which reads more authentically brokers-traditional than the original green.
+
+Downstream: PWA icon background regenerated, TopBar wordmark replaced with the real SVG logo.
+
 ## Tailwind v4 note
 Tailwind v4 uses CSS-first config (`@theme` in `globals.css`) rather than `tailwind.config.ts`. The brief mentions `tailwind.config.ts` but the stated intent — "CSS-variable-based design tokens" — maps cleanly to v4's `@theme`. Going with v4's native pattern; no `tailwind.config.ts` will exist. CSS custom properties in `:root` remain authoritative.

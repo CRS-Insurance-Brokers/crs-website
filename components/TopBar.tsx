@@ -46,12 +46,14 @@ export function TopBar({ currentStep }: TopBarProps) {
                 Back
               </button>
             ) : (
-              <div className="font-display text-[17px] text-ink tracking-[-0.01em]">
-                CRS{" "}
-                <span className="font-sans text-[13px] text-ink-muted ml-1 tracking-normal">
-                  Insurance
-                </span>
-              </div>
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src="/crs-logo.svg"
+                alt="CRS Insurance Brokers"
+                width={130}
+                height={30}
+                className="block h-[30px] w-auto"
+              />
             )}
           </div>
           <div className="flex gap-1">

@@ -15,7 +15,7 @@ const OUT = join(__dirname, "..", "public", "icons");
 
 // Token values mirror globals.css — the icon stays on-brand without runtime
 // theming concerns.
-const BG = "#1F3A2E";     // --primary
+const BG = "#262262";     // --primary (CRS navy)
 const INK = "#F3EEE1";    // --primary-ink
 
 // Full-bleed icon: letterspaced "CRS" in a serif that reads like Fraunces.
