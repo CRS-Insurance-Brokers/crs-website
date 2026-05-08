@@ -1,95 +1,62 @@
 @import "tailwindcss";
 
-/* ---- Canonical design tokens -----------------------------------------
- * Values are the single source of truth (see RiddorHelper.jsx §theme).
- * Tailwind utilities are generated from the @theme block below, which
- * references these variables via var() so runtime overrides stay live.
- * ---------------------------------------------------------------------- */
-:root {
-  --bg: #F3EEE1;
-  --surface: #FFFFFF;
-  --surface-soft: #FAF6EA;
-  --ink: #1A1F1A;
-  --ink-muted: #5C5F56;
-  --line: #E4DDC8;
-  --primary: #262262;
-  --primary-ink: #F3EEE1;
-  --accent: #B8691C;
-  --danger: #8B1F1F;
-  --success: #2D5016;
-  --amber-soft: #F5E8D6;
-  --danger-soft: #F3DEDE;
-  --success-soft: #DDE6D2;
-}
-
-@theme inline {
-  --color-bg: var(--bg);
-  --color-surface: var(--surface);
-  --color-surface-soft: var(--surface-soft);
-  --color-ink: var(--ink);
-  --color-ink-muted: var(--ink-muted);
-  --color-line: var(--line);
-  --color-primary: var(--primary);
-  --color-primary-ink: var(--primary-ink);
-  --color-accent: var(--accent);
-  --color-danger: var(--danger);
-  --color-success: var(--success);
-  --color-amber-soft: var(--amber-soft);
-  --color-danger-soft: var(--danger-soft);
-  --color-success-soft: var(--success-soft);
-
-  --font-display: var(--font-fraunces), Georgia, serif;
-  --font-sans: var(--font-plex-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-  --radius-sharp: 2px;
-  --radius-soft: 3px;
-
-  /* ---- Marketing site (m-*) tokens -----------------------------------
-   * Tokens for /site/* — namespaced m- so they don't collide with the
-   * RIDDOR Helper's --color-ink, --color-cream etc. above. Tailwind v4
-   * only scans the entry CSS for @theme, so these must live here (not
-   * in a separate marketing.css) to generate bg-m-ink / text-m-ink
-   * utilities. Style scoping stays in app/site/marketing.css via
-   * [data-marketing] selectors.
-   * --------------------------------------------------------------- */
+/*
+ * Marketing-site design tokens.
+ *
+ * All tokens are m-* namespaced so they're easy to spot in components and so
+ * any future tokens added here don't collide with Tailwind defaults. The
+ * @theme block must live in this file (the entry CSS imported via
+ * `@import "tailwindcss"`) — Tailwind v4 only scans the entry file for theme
+ * directives. Tokens placed in a separate CSS imported via JS are silently
+ * ignored.
+ *
+ * Body-level scoping (font-family, colour, grain overlay, reveal animation)
+ * lives in app/site/marketing.css under [data-marketing] selectors.
+ */
+@theme {
   --color-m-ink: #14102E;
   --color-m-ink-2: #1C173C;
   --color-m-ink-3: #221B48;
   --color-m-ink-4: #2A2354;
+
   --color-m-primary: #262262;
   --color-m-primary-2: #322D7B;
   --color-m-base: #1D3658;
+
   --color-m-cream: #F7F7F7;
   --color-m-cream-2: #ECE9E2;
   --color-m-bone: #FFFFFF;
   --color-m-bone-2: #D6D3E2;
+
   --color-m-coral: #E56C70;
   --color-m-coral-2: #D85A5E;
   --color-m-coral-3: #F08C90;
+
   --color-m-steel: #707070;
   --color-m-steel-2: #4A475A;
 }
 
-html, body {
-  background: var(--bg);
-  color: var(--ink);
+html,
+body {
+  background: var(--color-m-ink);
+  color: var(--color-m-bone);
 }
 
 body {
   margin: 0;
-  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 :focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--color-m-coral);
   outline-offset: 2px;
-  border-radius: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

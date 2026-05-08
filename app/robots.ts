@@ -16,7 +16,7 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       // Standard crawlers
-      { userAgent: "*", allow: "/", disallow: ["/dashboard", "/report/", "/cover/", "/api/"] },
+      { userAgent: "*", allow: "/", disallow: ["/api/"] },
 
       // OpenAI
       { userAgent: "GPTBot", allow: "/" },

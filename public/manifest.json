@@ -1,33 +1,20 @@
 {
-  "name": "CRS RIDDOR Helper",
-  "short_name": "RIDDOR",
-  "description": "Work out what to do after a workplace incident. A CRS concept build.",
+  "name": "CRS Insurance Brokers",
+  "short_name": "CRS",
+  "description": "Specialist commercial insurance for high-risk trades. Demolition, construction, contractors, manufacturing.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#F3EEE1",
-  "theme_color": "#F3EEE1",
+  "background_color": "#14102E",
+  "theme_color": "#14102E",
   "lang": "en-GB",
-  "categories": ["business", "productivity"],
+  "categories": ["business", "finance"],
   "icons": [
     {
-      "src": "/icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
+      "src": "/crs-logo-dark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
       "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-maskable-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
     }
   ]
 }

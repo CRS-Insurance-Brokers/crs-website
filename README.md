@@ -1,244 +1,166 @@
-# CRS RIDDOR Helper
+# CRS Insurance Brokers — Website
 
-Concept build — PMBRTN &times; CRS Insurance Brokers. A client-pocket app
-for a commercial broker serving high-hazard construction trades: report
-an incident across any line (RIDDOR, Motor, Property, Public Liability),
-see policies and claims at a glance, message Sarah, pull a certificate
-of insurance on demand. Ships as a Next.js 16 PWA with a Capacitor iOS
-wrapper for TestFlight.
+The new public-facing website for **CRS Insurance Brokers** (a trading name
+of CIB Group UK Ltd, FCA FRN 960073). Specialist commercial insurance broker
+for demolition, construction, contractors and engineers, and manufacturing
+trades. Lutterworth, UK.
 
-- **Web**: [crs-riddor.netlify.app](https://crs-riddor.netlify.app)
-- **Source**: [github.com/jpembo83-source/crs-riddor](https://github.com/jpembo83-source/crs-riddor)
-- **iOS**: TestFlight (bundle `com.crsriddor.app`, ASC app id 6763401002)
-
-See [PLAN.md](./PLAN.md) for the original migration plan from the
-`RiddorHelper.jsx` artifact, [DECISIONS.md](./DECISIONS.md) for the
-locked-in calls that shaped the v0.1 wedge, and [TODO.md](./TODO.md) for
-known gaps worth addressing in v0.3.
+- **Live preview**: [crs-riddor.netlify.app](https://crs-riddor.netlify.app)
+  (gated — basic auth, see Netlify env vars)
+- **Repo**: [github.com/jpembo83-source/crs-riddor](https://github.com/jpembo83-source/crs-riddor)
+- **Deploy**: Netlify, auto-deploy on push to `main`
+- **Stack**: Next.js 16 (App Router) + Tailwind CSS v4 + TypeScript
 
 ## Quick start
 
 ```bash
 npm install
-npm run dev           # http://localhost:3000
+npm run dev      # http://localhost:3000  →  redirects to /site
 ```
 
-Everything renders with mocked data by default. To demo the component
-library, set `NEXT_PUBLIC_SHOW_KITCHEN_SINK=1` and visit
-[/kitchen-sink](http://localhost:3000/kitchen-sink).
+Useful scripts:
 
-## Scripts
+```bash
+npm run build       # production build
+npm run typecheck   # tsc --noEmit
+npm run lint        # eslint
+```
 
-| Command | What it does |
+## Routes
+
+| Path | What |
 | --- | --- |
-| `npm run dev` | Turbopack dev server on :3000 |
-| `npm run build` | Production build |
-| `npm run start` | Run the production build |
-| `npm run lint` | ESLint (flat config) |
-| `npm run typecheck` | `tsc --noEmit` under strict + `noUncheckedIndexedAccess` |
-| `npm run test` | Vitest — 26 unit tests (decision-tree truth table + structural checks) |
-| `npm run test:e2e` | Playwright — happy-path from dashboard through outcome submit |
+| `/` | 307 redirects to `/site` |
+| `/site` | Marketing homepage (editorial broadsheet design) |
+| `/site/specialisms/high-risk` | High Risk specialism page |
+| `/robots.txt` | Auto-generated; explicit AI crawler directives |
+| `/sitemap.xml` | Auto-generated |
+| `/llms.txt` | Static AI-finder index |
 
-## Tech stack
+## Project structure
 
-- **Next.js 16** App Router, React 19.2, TypeScript strict, Turbopack
-  for both dev and prod builds
-- **Tailwind v4** with CSS-variable design tokens in `app/globals.css`
-- **Fonts**: Fraunces (display) + IBM Plex Sans (body) via
-  `next/font/google`, self-hosted
-- **Persistence**: Supabase (Postgres) accessed via server actions with
-  service-role auth; anonymous per-tab session via signed HTTP-only
-  cookie
-- **Email**: Resend, scheduled through `next/server`'s `after()` so the
-  submit action returns before the mail goes out
-- **PWA**: hand-rolled service worker (Capacitor 7 / Next 16 /
-  Turbopack rule out Serwist's webpack plugin), `idb` for the offline
-  submission queue
-- **Native wrapper**: Capacitor 7 iOS, `com.crsriddor.app`, Swift
-  Package Manager (no CocoaPods)
+```
+app/
+├── globals.css            Tailwind entry + design tokens (m-* namespace)
+├── layout.tsx             Bare root (html/body); per-segment metadata lives below
+├── robots.ts              robots.txt — Next 16 metadata convention
+├── sitemap.ts             sitemap.xml — Next 16 metadata convention
+└── site/                  Marketing site (everything is here)
+    ├── layout.tsx         Loads Instrument Serif + Poppins + Geist Mono;
+    │                      adds [data-marketing] wrapper for scoped styles;
+    │                      embeds Organization JSON-LD on every page
+    ├── marketing.css      Body styles + animations scoped to [data-marketing]
+    ├── page.tsx           Homepage (composes 11 sections)
+    ├── components/        16 components: Nav, Hero, SpecialismsBento,
+    │                      WhyCRS, Claims, Team, Insights, LinkedInFeed,
+    │                      Testimonial, FooterCTA, Footer, plus primitives
+    │                      (Reveal, Counter, HoldToCall, Marginalia, icons)
+    ├── data/
+    │   ├── content.ts     All placeholder copy with @status flags
+    │   └── linkedin-posts.ts   LinkedIn feed source (placeholder)
+    └── specialisms/
+        ├── _components/FAQ.tsx        Accordion (client component)
+        └── high-risk/page.tsx         High Risk specialism (8 sections)
+
+proxy.ts                   HTTP Basic Auth gate for the pre-launch preview
+public/
+├── crs-logo-light.svg     Indigo wordmark (use on light surfaces)
+├── crs-logo-dark.svg      White wordmark (use on dark surfaces)
+├── llms.txt               Manual AI-finder index
+└── manifest.json          PWA manifest
+```
+
+## Design system
+
+The marketing site uses an **editorial broadsheet** design language:
+
+- **Palette**: `#262262` indigo (primary) + `#E56C70` coral (action) + `#F7F7F7`
+  off-white. All tokens are namespaced `--color-m-*` in `app/globals.css` and
+  generate Tailwind utilities (`bg-m-ink`, `text-m-coral`, etc.).
+- **Type**: Instrument Serif (display, italic emphasis) + Poppins (body, sans)
+  + Geist Mono (eyebrows, tabular figures).
+- **Motion**: custom cubic-bezier easings (Emil Kowalski's stronger curves);
+  IntersectionObserver-driven reveals (no Framer Motion); spring parallax on
+  the hero photo.
+- **Hard-edged cards**: no border-radius on cards; hairline borders;
+  corner-crosshair markers on featured images; coral 1-px wipe at the bottom
+  edge on hover.
+- **Print-survey aesthetic**: plate captions (`Plate 02 — Specialisms`),
+  drop caps, footnoted asides, marginalia gutter on the right edge.
+
+## Content
+
+All placeholder copy lives in **`app/site/data/content.ts`** with a `@status`
+flag per block:
+
+- `verified` — copied verbatim from crs-ins.co.uk, no change needed
+- `from-brief` — Jason's CRS rebuild brief; treated as authoritative direction
+- `placeholder` — invented for the design north-star; **MUST be replaced
+  before launch**
+
+Once a block has real CRS-supplied content, change `status: "placeholder"` to
+`"verified"` so future maintainers can see at a glance what's done.
+
+## Pre-launch checklist
+
+| Status | Item |
+| --- | --- |
+| ⚠️ | Replace `team`, `testimonial`, `clientRoster`, `insights`, `heroStats`, `whyPillars` proof stats — all flagged `placeholder` in `content.ts` |
+| ⚠️ | Build remaining specialism pages (Construction, Contractors & Engineers, Manufacturing & Wholesale) — clone `app/site/specialisms/high-risk/page.tsx` |
+| ⚠️ | Build About / Team page with named staff + qualifications |
+| ⚠️ | Build "How we are paid" transparency page |
+| ⚠️ | Build /contact page with two-step qualifying form |
+| ⚠️ | Wire LinkedIn feed to a real source (`app/site/data/linkedin-posts.ts` documents the migration paths) |
+| ⚠️ | Replace Unsplash placeholder photos with real CRS photography |
+| ⚠️ | Create Wikidata entry for CRS Insurance Brokers / CIB Group UK Ltd |
+| ✅ | Schema.org JSON-LD (Organization + InsuranceAgency + LocalBusiness + FAQPage) |
+| ✅ | robots.txt with explicit AI bot directives |
+| ✅ | sitemap.xml + llms.txt |
+| ✅ | OpenGraph + Twitter card metadata |
+| ✅ | Title tags with geographic qualifiers |
+| ✅ | Single H1 per page, semantic heading hierarchy |
+| ✅ | Brand-aligned palette, Poppins typography, real CRS logo |
+
+When you remove the basic-auth gate for public launch:
+
+1. Delete `proxy.ts`
+2. In Netlify dashboard → Site settings → Environment variables, unset
+   `PREVIEW_AUTH_USER` and `PREVIEW_AUTH_PASS`
+3. Redeploy
 
 ## Environment variables
 
-Copy [.env.example](./.env.example) to `.env.local` and fill as needed.
-All persistence and email is optional in v0.2 — missing config degrades
-gracefully per the brief's never-block-the-user rule.
+See `.env.example`. The only vars that affect the deployed site:
 
-| Variable | When to set | Notes |
-| --- | --- | --- |
-| `SESSION_SECRET` | Always in prod | 32+ char random. `node -e "console.log(require('node:crypto').randomBytes(32).toString('base64url'))"` |
-| `SUPABASE_URL` | For persistence | Project URL from Supabase Settings → API |
-| `SUPABASE_SERVICE_ROLE_KEY` | For persistence | Service role key (bypasses RLS; server-only) |
-| `RESEND_API_KEY` | For email | Resend dashboard → API Keys |
-| `MAIL_FROM` | For email | Verified sender in Resend |
-| `HANDLER_EMAIL` | For email | Recipient (preview inbox in dev, claims address in prod) |
-| `NEXT_PUBLIC_SHOW_KITCHEN_SINK` | Preview only | Set to `1` to expose `/kitchen-sink` |
+| Var | Purpose |
+| --- | --- |
+| `PREVIEW_AUTH_USER` | Basic auth username for the pre-launch gate |
+| `PREVIEW_AUTH_PASS` | Basic auth password (leave empty in local dev to bypass the gate) |
 
-## Supabase schema
+Set both in the Netlify dashboard, not in `.env.local`.
 
-After setting `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`, apply the
-migrations:
+## Deploy
+
+GitHub → Netlify auto-deploy is configured (push to `main` triggers a
+production build). For manual deploys from a laptop:
 
 ```bash
-# via Supabase CLI
-supabase db push
-
-# or paste each .sql file into the SQL editor at
-# https://supabase.com/dashboard/project/<ref>/sql/new
+netlify deploy --build           # draft URL, doesn't touch production
+netlify deploy --build --prod    # promotes to crs-riddor.netlify.app
 ```
 
-Files in order: [`0001_incident_reports.sql`](./supabase/migrations/0001_incident_reports.sql),
-[`0002_incident_line_and_attachments.sql`](./supabase/migrations/0002_incident_line_and_attachments.sql).
-RLS policies are present as defence-in-depth; the service role bypasses
-them during normal operation.
+## Note for collaborators
 
-## Deploy — web (Netlify)
-
-The repo is wired to a Netlify site (`crs-riddor` under team `jpembo83`)
-via `netlify.toml` and `@netlify/plugin-nextjs`.
+This repo previously hosted a separate **RIDDOR Helper** FNOL prototype
+alongside the website. That code was moved out in commit `<see git log>` —
+recover any of it via:
 
 ```bash
-# First-time setup — creates the project + links this directory
-netlify sites:create --account-slug jpembo83 --name crs-riddor
-netlify link --id <project-id>
-
-# Ongoing deploys
-git push origin main                 # Netlify auto-builds from GitHub
-# or for ad-hoc manual deploys:
-netlify deploy --build --prod
+git log --diff-filter=D -- '<path>'   # find the deleting commit
+git show <commit>:<path>              # read the file at that commit
+git checkout <commit> -- '<path>'     # restore it to the working tree
 ```
 
-Set all production env vars via the Netlify dashboard
-(`https://app.netlify.com/projects/crs-riddor/configuration/env`) or
-the CLI (`netlify env:set KEY value --context production`).
-
-### Azure Static Web Apps fallback
-
-The brief requires the app to also build cleanly on Azure SWA.
-`@netlify/plugin-nextjs` is Netlify-specific, but stock `next build`
-works on SWA. See [TODO.md](./TODO.md) for the end-to-end verification
-that's still pending.
-
-## Deploy — iOS (TestFlight)
-
-Prerequisites: Apple Developer Program membership, Xcode 26+, signed
-into your Apple ID in Xcode, and an App Store Connect API key at
-`~/.appstoreconnect/private_keys/AuthKey_<keyid>.p8`.
-
-One-time setup for this repo:
-
-1. The bundle ID `com.crsriddor.app` is registered in the Apple
-   Developer portal under Team `V5F47Y6MGH`.
-2. The App Store Connect app record exists (app id 6763401002).
-3. An internal TestFlight group called "PMBRTN + CRS" is configured
-   with automatic distribution enabled.
-
-Every new build:
-
-```bash
-# 1. Bump the iOS project version
-#    edit ios/App/App.xcodeproj/project.pbxproj
-#    change CURRENT_PROJECT_VERSION = N → N+1
-
-cd ios/App
-
-# 2. Archive
-xcodebuild archive \
-  -project App.xcodeproj -scheme App -configuration Release \
-  -destination "generic/platform=iOS" \
-  -archivePath build/CRSRiddor.xcarchive \
-  -allowProvisioningUpdates
-
-# 3. Export
-xcodebuild -exportArchive \
-  -archivePath build/CRSRiddor.xcarchive \
-  -exportPath build/export \
-  -exportOptionsPlist ExportOptions.plist \
-  -allowProvisioningUpdates
-
-# 4. Upload
-xcrun altool --upload-app \
-  -f build/export/App.ipa -t ios \
-  --apiKey <YOUR_KEY_ID> \
-  --apiIssuer <YOUR_ISSUER_ID>
-```
-
-Processing takes 5–15 minutes. Auto-distribution delivers the invite to
-every tester in the internal group. First-time builds require answering
-the export-compliance question in ASC — subsequent builds inherit the
-`ITSAppUsesNonExemptEncryption = false` flag from `Info.plist`.
-
-### Capacitor shell note
-
-The native shell loads `https://crs-riddor.netlify.app` directly via
-`server.url`, so server actions and schema changes flow through the
-live web deploy without an App Store update. `capacitor.config.ts`
-points `webDir` at `capacitor-shell/` (a 20-line bounce page) rather
-than `.next` because the Next.js build output contains sharp's
-`darwin-arm64.node` and libvips `.dylib`, which Apple rejects in the
-bundle. Do not change `webDir` back to `.next`.
-
-## Architecture map
-
-```
-app/                               → Next App Router
-  layout.tsx                         fonts, metadata, PWA register
-  page.tsx                           dashboard (Langley Demolition mocked)
-  actions.ts                         server actions: submitIncident, fetchLog, submitReport wrapper
-  report/                            multi-FNOL routing
-    page.tsx                         chooser (RIDDOR / Motor / Property / PL / call)
-    riddor/page.tsx                  full URL-stateful RIDDOR flow
-    motor/page.tsx                   Motor FNOL
-    property/page.tsx                Property FNOL
-    public-liability/page.tsx        PL FNOL
-  cover/
-    page.tsx                         your cover — policies, claims, renewal
-    certificate/page.tsx             printable Certificate of Insurance
-  kitchen-sink/                      gated component library
-components/
-  flow/                              per-flow screens + the generic OutcomeView
-  panels/                            HandlerPanel + LogPanel sharing BottomSheet
-  ui/                                Button, Card, Heading, Body, SectionLabel, Checkbox,
-                                     OutcomeBanner, ActionStep
-  dashboard/Dashboard.tsx            home-tile layout
-  cover/                             CoverOverview + Certificate
-  TopBar, FooterMark, RegisterPWA, InstallPrompt
-lib/
-  decision-tree.ts                   RIDDOR OUTCOMES + DANGEROUS_ITEMS + DISEASE_ITEMS
-                                     + deriveOutcome — the single source of truth
-  flows/                             motor.ts, property.ts, public-liability.ts, shared.ts
-  session.ts                         signed HTTP-only cookie (HMAC-SHA256 + timingSafeEqual)
-  supabase/server.ts                 service-role admin client
-  email.ts                           Resend wrapper — never-throws
-  schemas.ts                         Zod schemas for server action inputs
-  mock-account.ts                    Langley Demolition Ltd fixture
-  use-draft.ts                       useSyncExternalStore-based draft store
-  offline-queue.ts                   idb-backed offline submission queue
-supabase/migrations/                 numbered SQL migrations
-ios/App/                             Capacitor 7 Xcode project
-capacitor-shell/index.html           tiny bounce page that is the iOS webDir
-scripts/generate-icons.mjs           Sharp-based PWA + iOS icon generator
-tests/
-  decision-tree.test.ts              26 unit tests — truth table + structure
-  e2e/flow.spec.ts                   Playwright happy-path
-```
-
-## Lighthouse
-
-Latest mobile run against the live deploy:
-
-| | Performance | Accessibility | Best practices | SEO |
-| --- | --- | --- | --- | --- |
-| Mobile | 100 | 100 | 100 | 100 |
-| Desktop | 100 | 100 | 100 | 100 |
-
-Rerun:
-
-```bash
-npx lighthouse https://crs-riddor.netlify.app \
-  --output=html --output-path=./lighthouse.html \
-  --only-categories=performance,accessibility,best-practices,seo
-```
-
-## License
-
-Private. PMBRTN Consultancy, for CRS Insurance Brokers.
+The original FNOL implementation (Welcome / Outcome / DangerousCheck /
+DiseaseCheck / Severity steps) lives in commits up to and including
+`c2a8788` (`docs: final README + TODO + cleanup`).
