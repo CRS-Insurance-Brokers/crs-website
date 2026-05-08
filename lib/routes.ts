@@ -4,7 +4,8 @@
  */
 
 export const ROUTES = {
-  home: "/",
+  // The marketing site lives at /, the existing app's dashboard is at /dashboard.
+  home: "/dashboard",
   report: "/report",
   reportRiddor: "/report/riddor",
   reportMotor: "/report/motor",
