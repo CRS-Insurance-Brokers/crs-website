@@ -43,3 +43,9 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# Netlify edge-function bundler artifact
+deno.lock
+
+# website-v2/ — early demo dir, kept around for reference but not built
+/website-v2

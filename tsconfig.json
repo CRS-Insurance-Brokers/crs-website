@@ -32,5 +32,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "RiddorHelper.jsx"]
+  "exclude": ["node_modules", "RiddorHelper.jsx", "website-v2"]
 }
