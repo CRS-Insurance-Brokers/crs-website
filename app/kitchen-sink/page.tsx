@@ -16,7 +16,7 @@ import { FooterMark } from "@/components/FooterMark";
 import { KitchenSinkCheckboxes } from "./KitchenSinkCheckboxes";
 
 export const metadata = {
-  title: "Kitchen sink · RIDDOR Helper",
+  title: "Kitchen sink · CRS",
   robots: { index: false, follow: false },
 };
 

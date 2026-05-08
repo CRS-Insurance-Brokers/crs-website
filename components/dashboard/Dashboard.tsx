@@ -101,7 +101,7 @@ export function Dashboard() {
             href={ROUTES.report}
             icon={FileText}
             title="Report an incident"
-            subtitle="RIDDOR, motor, property, public liability"
+            subtitle="Workplace injury, motor, property, public liability"
           />
           <ActionRow
             href={ROUTES.cover}

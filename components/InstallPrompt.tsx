@@ -74,7 +74,7 @@ export function InstallPrompt() {
   return (
     <div
       role="dialog"
-      aria-label="Install CRS RIDDOR Helper"
+      aria-label="Install CRS · Report an incident"
       className="fixed left-4 right-4 bottom-20 z-40 bg-surface border border-primary rounded-soft p-4 shadow-[0_-2px_10px_rgba(26,31,26,0.08)]"
     >
       <button

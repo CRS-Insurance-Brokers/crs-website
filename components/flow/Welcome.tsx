@@ -13,7 +13,7 @@ export function Welcome() {
   return (
     <div>
       <div className="mb-7">
-        <SectionLabel>RIDDOR helper</SectionLabel>
+        <SectionLabel>Report an incident</SectionLabel>
         <Heading size="xl">
           Let&rsquo;s work out what needs to happen next.
         </Heading>

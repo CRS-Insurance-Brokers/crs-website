@@ -19,16 +19,16 @@ const plexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "RIDDOR Helper · CRS Insurance",
+  title: "Report an incident · CRS Insurance",
   description:
     "Work out what to do after a workplace incident. A CRS concept build.",
-  applicationName: "CRS RIDDOR Helper",
+  applicationName: "CRS · Report an incident",
   manifest: "/manifest.json",
   referrer: "origin-when-cross-origin",
   formatDetection: { telephone: true, email: false, address: false },
   appleWebApp: {
     capable: true,
-    title: "RIDDOR",
+    title: "Report",
     statusBarStyle: "default",
   },
   icons: {
