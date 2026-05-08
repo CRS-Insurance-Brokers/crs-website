@@ -1,0 +1,127 @@
+/*
+ * CRS marketing site — design tokens scoped to the marketing layout.
+ * All tokens are namespaced `--m-*` and Tailwind utilities `bg-m-ink` etc.
+ * Nothing in this file affects the existing RIDDOR Helper styles.
+ */
+
+/*
+ * @theme tokens for the marketing site moved to /app/globals.css.
+ * Tailwind v4 only scans the entry CSS imported via `@import "tailwindcss"`
+ * for @theme directives — token definitions in this file weren't generating
+ * the bg-m-* / text-m-* utilities.
+ *
+ * Body / animation styles below are still scoped to [data-marketing] and
+ * remain in this file so they don't bleed into the existing RIDDOR Helper.
+ */
+
+/* ---- Scoped layer: only inside the marketing subtree ---------------- */
+
+[data-marketing] {
+  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--color-m-ink);
+  color: var(--color-m-bone);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "ss02";
+}
+
+[data-marketing] ::selection {
+  background: var(--color-m-coral);
+  color: #FFFFFF;
+}
+
+/* Tabular figures helpers */
+[data-marketing] .tnum,
+[data-marketing] .font-mono,
+[data-marketing] [data-tabular] {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* Display font */
+[data-marketing] .font-display {
+  font-family: var(--font-instrument-serif), "Times New Roman", Georgia, serif;
+}
+
+/* Sans (override the body inheritance from Poppins on mono spans) */
+[data-marketing] .font-mono {
+  font-family: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* Easing tokens — Emil Kowalski's stronger curves */
+[data-marketing] {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-glide: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Film grain overlay — fixed, pointer-events-none */
+[data-marketing] > .marketing-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Reveal animation primitive */
+[data-marketing] .reveal {
+  opacity: 0;
+  transform: translate3d(0, 2rem, 0);
+  filter: blur(10px);
+  transition: opacity 1100ms var(--ease-glide), transform 1100ms var(--ease-glide), filter 1100ms var(--ease-glide);
+  will-change: opacity, transform, filter;
+}
+[data-marketing] .reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+/* Marquee */
+@keyframes marketing-drift {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+[data-marketing] .drift {
+  animation: marketing-drift 60s linear infinite;
+}
+
+/* Pulse dot */
+@keyframes marketing-pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.85); }
+}
+[data-marketing] .pulse-dot {
+  animation: marketing-pulse-dot 2.4s var(--ease-glide) infinite;
+}
+
+/* Hairline helpers */
+[data-marketing] .inner-glow { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08); }
+[data-marketing] .inner-glow-cream { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7); }
+
+/* Editorial coral wipe — used on .group hover across all card components */
+[data-marketing] .group:hover [data-coral-rule] {
+  clip-path: inset(0 0 0 0) !important;
+}
+/* Nav link bottom rule */
+[data-marketing] a:hover [data-rule] {
+  clip-path: inset(0 0 0 0) !important;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-marketing] .reveal,
+  [data-marketing] .drift,
+  [data-marketing] .pulse-dot {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

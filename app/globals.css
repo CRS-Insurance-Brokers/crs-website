@@ -43,6 +43,31 @@
 
   --radius-sharp: 2px;
   --radius-soft: 3px;
+
+  /* ---- Marketing site (m-*) tokens -----------------------------------
+   * Tokens for /site/* — namespaced m- so they don't collide with the
+   * RIDDOR Helper's --color-ink, --color-cream etc. above. Tailwind v4
+   * only scans the entry CSS for @theme, so these must live here (not
+   * in a separate marketing.css) to generate bg-m-ink / text-m-ink
+   * utilities. Style scoping stays in app/site/marketing.css via
+   * [data-marketing] selectors.
+   * --------------------------------------------------------------- */
+  --color-m-ink: #14102E;
+  --color-m-ink-2: #1C173C;
+  --color-m-ink-3: #221B48;
+  --color-m-ink-4: #2A2354;
+  --color-m-primary: #262262;
+  --color-m-primary-2: #322D7B;
+  --color-m-base: #1D3658;
+  --color-m-cream: #F7F7F7;
+  --color-m-cream-2: #ECE9E2;
+  --color-m-bone: #FFFFFF;
+  --color-m-bone-2: #D6D3E2;
+  --color-m-coral: #E56C70;
+  --color-m-coral-2: #D85A5E;
+  --color-m-coral-3: #F08C90;
+  --color-m-steel: #707070;
+  --color-m-steel-2: #4A475A;
 }
 
 html, body {
