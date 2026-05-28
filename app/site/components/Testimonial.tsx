@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+﻿import { Reveal } from "./Reveal";
 import { testimonial, clientRoster } from "../data/content";
 
 export function Testimonial() {
@@ -34,7 +34,7 @@ export function Testimonial() {
                   &ldquo;
                 </span>
                 <span className="text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/40 lg:-mt-6">
-                  Plate <span className="text-m-bone/70 tnum">07</span> — Voices from site
+                  Voices from site
                 </span>
               </div>
 

@@ -1,20 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Poppins, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import { OrganizationSchema } from "./components/SchemaJsonLd";
 import "./marketing.css";
 
-const instrumentSerif = Instrument_Serif({
-  weight: "400",
+const inter = Inter({
+  weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-instrument-serif",
-  display: "swap",
-});
-
-const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -97,7 +90,7 @@ export default function MarketingLayout({
   return (
     <div
       data-marketing
-      className={`${instrumentSerif.variable} ${poppins.variable} ${geistMono.variable} min-h-[100dvh]`}
+      className={`${inter.variable} ${geistMono.variable} min-h-[100dvh]`}
     >
       <OrganizationSchema />
       <div className="marketing-grain" aria-hidden />

@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+﻿import { Reveal } from "./Reveal";
 import { CompassIcon, ShieldIcon, HandshakeIcon } from "./icons";
 import { whyPillars } from "../data/content";
 
@@ -14,7 +14,6 @@ const pillars = whyPillars.data.map((p, i) => ({
   sub: p.sub,
   icon: iconMap[p.iconKey],
   body: p.body,
-  proof: { stat: p.proofStat, label: p.proofLabel },
 }));
 
 export function WhyCRS() {
@@ -40,26 +39,19 @@ export function WhyCRS() {
           >
             <div className="lg:col-span-7">
               <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-ink/55">
-                Plate <span className="text-m-ink tnum">03</span> — Our promise to you
+                Our promise to you
               </span>
               <h2 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] tracking-[-0.02em] text-m-ink">
-                Three words<br />
-                we&rsquo;ll <span className="italic">defend</span> with proof.
+                Three promises.<br />
+                <span className="italic">All kept.</span>
               </h2>
             </div>
             <div className="lg:col-span-5 lg:pt-6">
               <p className="text-[15px] md:text-[16px] leading-[1.65] text-m-ink/65 max-w-md">
-                Independence, service, commitment. Every broker says it.
-                We back ours with the numbers, the named handlers, and the insurer
-                relationships to actually mean it.
+                Independence, service excellence, commitment. Every broker says it.
+                We back ours with named handlers, direct underwriter relationships,
+                and a track record that speaks for itself.
               </p>
-              <a
-                href="#about"
-                className="group mt-6 inline-flex items-center gap-3 text-[12px] font-mono uppercase tracking-[0.22em] text-m-ink hover:text-m-coral transition-colors duration-300"
-                style={{ transitionTimingFunction: "cubic-bezier(0.23, 1, 0.32, 1)" }}
-              >
-                Read our promise →
-              </a>
             </div>
           </div>
         </Reveal>
@@ -107,30 +99,12 @@ export function WhyCRS() {
                   </div>
 
                   <p className="text-[14.5px] leading-[1.65] text-m-ink/70">{p.body}</p>
-
-                  <div
-                    className="mt-auto pt-6 flex items-baseline gap-4"
-                    style={{ borderTop: "1px solid rgba(10,10,10,0.10)" }}
-                  >
-                    <span className="font-display text-[44px] leading-none tracking-[-0.02em] text-m-ink tnum">
-                      {p.proof.stat}
-                    </span>
-                    <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-m-ink/55 max-w-[140px] leading-snug">
-                      {p.proof.label}
-                    </span>
-                  </div>
                 </div>
               </Reveal>
             );
           })}
         </div>
 
-        <Reveal delay={400}>
-          <p className="mt-12 text-[10.5px] font-mono uppercase tracking-[0.28em] text-m-ink/35">
-            ¹ Stats illustrative · validated annually · figures from{" "}
-            <span className="text-m-ink/55">2024 service review</span>
-          </p>
-        </Reveal>
 
       </div>
     </section>

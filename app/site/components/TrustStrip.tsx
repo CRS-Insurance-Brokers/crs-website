@@ -1,10 +1,10 @@
 import { Reveal } from "./Reveal";
 
 const accreditations = [
-  { name: "NFDC", long: "National Federation of Demolition Contractors" },
-  { name: "DSA", long: "Demolition Services Association" },
-  { name: "BIBA", long: "British Insurance Brokers' Association" },
-  { name: "FCA", long: "Financial Conduct Authority — FRN 960073" },
+  { name: "NFDC", logo: "/logos/nfdc.png",  long: "National Federation of Demolition Contractors", href: "https://demolition-nfdc.com/service-providers/type/financial-services/#filters" },
+  { name: "DSA",  logo: "/logos/dsa.webp",   long: "Drilling & Sawing Association",                 href: "https://www.drillandsaw.org.uk/member/crs/" },
+  { name: "BIBA", logo: "/logos/biba.svg",  long: "British Insurance Brokers' Association",         href: "https://www.biba.org.uk/find-insurance/broker-directory/cib-group-uk-ltd/" },
+  { name: "FCA",  logo: "/logos/fca.png",   long: "Financial Conduct Authority — FRN 960073",       href: "https://register.fca.org.uk/s/search?predefined=ALL&q=960073" },
 ];
 
 export function TrustStrip() {
@@ -13,12 +13,9 @@ export function TrustStrip() {
   return (
     <section className="relative py-14 md:py-20 border-y border-white/8">
       <Reveal>
-        <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 mb-10">
-          <p className="text-[10px] font-mono uppercase tracking-[0.22em] text-m-bone/40">
-            <span className="text-m-bone/65">Accredited, regulated,</span> and on the trade
-            bodies that matter
-          </p>
-        </div>
+        <p className="text-center text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/40 mb-8">
+          <span className="text-m-bone/65">Accredited, regulated,</span> and on the trade bodies that matter
+        </p>
       </Reveal>
 
       <div className="relative overflow-hidden">
@@ -33,15 +30,27 @@ export function TrustStrip() {
 
         <div className="flex drift gap-12 md:gap-20 whitespace-nowrap will-change-transform">
           {repeated.map((a, i) => (
-            <div key={`${a.name}-${i}`} className="flex items-center gap-4 shrink-0">
-              <span className="font-display text-[44px] md:text-[60px] leading-none tracking-[-0.02em] text-m-cream/90">
-                {a.name}
-              </span>
-              <span className="hidden md:inline text-[10px] font-mono uppercase tracking-[0.22em] text-m-bone/35 max-w-[180px] whitespace-normal leading-snug">
+            <a
+              key={`${a.name}-${i}`}
+              href={a.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-6 shrink-0 group"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={a.logo}
+                alt={a.name}
+                className="h-9 md:h-11 w-auto opacity-50 group-hover:opacity-90 transition-opacity duration-300"
+                style={{ filter: "brightness(0) invert(1)" }}
+                loading="lazy"
+                decoding="async"
+              />
+              <span className="hidden md:inline text-[10px] font-mono uppercase tracking-[0.22em] text-m-bone/35 max-w-[140px] whitespace-normal leading-snug">
                 {a.long}
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-m-bone/20 shrink-0" />
-            </div>
+            </a>
           ))}
         </div>
       </div>

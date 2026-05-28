@@ -1,30 +1,30 @@
-import { Reveal } from "./Reveal";
+﻿import { Reveal } from "./Reveal";
 import { ArrowUpRight, AlertIcon, ClockIcon, ShieldIcon } from "./icons";
 
 const panels = [
   {
-    eyebrow: "Now",
-    title: "I need to report something now",
-    body: "Voice or typed. Photos. RIDDOR runs inline. You get a reference number on the spot.",
-    cta: "Start a report",
-    href: "/claims/report-an-incident",
+    eyebrow: "Call",
+    title: "Report a claim by phone",
+    body: "Call 01455 244630 and select Option 4 for Claims. You'll speak directly to a member of our dedicated Claims team who knows your policy.",
+    cta: "Call now",
+    href: "tel:01455244630",
     icon: AlertIcon,
     accent: true,
   },
   {
-    eyebrow: "Existing",
-    title: "I want to check on an existing claim",
-    body: "Status timeline, named handler, document upload, and async messaging — no email tennis.",
-    cta: "Track a claim",
-    href: "/claims/track-a-claim",
+    eyebrow: "Email",
+    title: "Email the Claims team",
+    body: "For non-urgent notifications or follow-up queries, email claims@crs-ins.co.uk. The mailbox is monitored and we respond as quickly as possible.",
+    cta: "Send an email",
+    href: "mailto:claims@crs-ins.co.uk",
     icon: ClockIcon,
   },
   {
     eyebrow: "Guidance",
-    title: "What should I do at the scene?",
-    body: "First-hour checklist, RIDDOR essentials, evidence preservation. Plain English. Print and put in the site box.",
+    title: "What should I do first?",
+    body: "A first-hour checklist covering evidence preservation, what information to gather, and what to tell us when you call. Plain English.",
     cta: "Read the guidance",
-    href: "/claims/what-to-do-on-site",
+    href: "/site/claims/what-to-do-on-site",
     icon: ShieldIcon,
   },
 ];
@@ -53,20 +53,21 @@ export function Claims() {
           >
             <div className="lg:col-span-7">
               <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
-                Plate <span className="text-white tnum">04</span> — Claims
+                Claims
               </span>
-              <h2 className="font-display text-[clamp(2.5rem,6vw,5.75rem)] leading-[0.95] tracking-[-0.02em] text-white">
+              <h2 className="font-display text-[clamp(2.25rem,4.8vw,4rem)] leading-[1.1] tracking-[-0.015em] text-white">
                 When something<br />
-                happens on site,<br />
+                goes wrong,<br />
                 <span className="italic text-m-coral">we&rsquo;re your first call.</span>
               </h2>
             </div>
-            <div className="lg:col-span-5 lg:pt-6">
+            <div className="lg:col-span-5 lg:pt-16">
               <p className="text-[15px] md:text-[16px] leading-[1.65] text-m-bone/60 max-w-md">
-                Across every UK broker we benchmarked, the claims journey is the
-                weakest part of the site. Ours is the product. Voice-first incident
-                reporting, RIDDOR decision logic that runs inline, and a status
-                tracker that names a human.
+                We run a small, close-knit Client Services department with a
+                dedicated Claims team. When something happens, you reach the
+                people who know your policy — and they manage the process from
+                first notification through to settlement, dealing directly with
+                the insurer on your behalf.
               </p>
             </div>
           </div>
@@ -203,9 +204,9 @@ export function Claims() {
                 <span className="relative w-2.5 h-2.5 rounded-full bg-emerald-400" />
               </span>
               <p className="text-[14px] md:text-[15.5px] text-m-bone/85 leading-snug">
-                <span className="text-white">Speak to a person now —</span>{" "}
-                answered by a named CRS handler in working hours, with on-call
-                cover for incidents on a covered site.
+                <span className="text-white">Speak to a person —</span>{" "}
+                answered by a member of our Claims team during working hours —
+                select Option 4. Mon–Fri 09:00–17:00.
               </p>
             </div>
             <a href="tel:01455244630" className="group flex items-center gap-3 shrink-0">

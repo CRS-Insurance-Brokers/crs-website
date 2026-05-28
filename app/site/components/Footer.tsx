@@ -4,36 +4,36 @@ const cols = [
   {
     heading: "Specialisms",
     links: [
-      { label: "High Risk", href: "/specialisms/high-risk" },
-      { label: "Construction", href: "/specialisms/construction" },
-      { label: "Contractors & Engineers", href: "/specialisms/contractors-engineers" },
-      { label: "Manufacturing & Wholesale", href: "/specialisms/manufacturing-wholesale" },
+      { label: "Overview",                  href: "/site/specialisms" },
+      { label: "High Risk",                 href: "/site/specialisms/high-risk" },
+      { label: "Construction",              href: "/site/specialisms/construction" },
+      { label: "Engineering",               href: "/site/specialisms/engineering" },
+      { label: "Manufacturing & Wholesale", href: "/site/specialisms/manufacturing-wholesale" },
     ],
   },
   {
     heading: "Claims",
     links: [
-      { label: "Report an incident", href: "/claims/report-an-incident" },
-      { label: "Track a claim", href: "/claims/track-a-claim" },
-      { label: "What to do on site", href: "/claims/what-to-do-on-site" },
+      { label: "What to do first", href: "/site/claims/what-to-do-on-site" },
+      { label: "Report a claim",   href: "/site#contact" },
     ],
   },
   {
     heading: "About",
     links: [
-      { label: "Team", href: "/about/team" },
-      { label: "Our promise", href: "/about/our-promise" },
-      { label: "How we are paid", href: "/about/how-we-are-paid" },
-      { label: "Memberships", href: "/about/memberships" },
+      { label: "About CRS",                  href: "/site/about" },
+      { label: "Management Team",            href: "/site/about/team" },
+      { label: "How we are paid",            href: "/site/about/how-we-are-paid" },
+      { label: "Memberships & Associations", href: "/site/about/memberships" },
     ],
   },
   {
     heading: "Resources",
     links: [
-      { label: "Insights", href: "/insights" },
-      { label: "Client login", href: "/clients" },
-      { label: "Rewards", href: "/rewards" },
-      { label: "Contact", href: "/contact" },
+      { label: "Beyond the basics", href: "/site/resources" },
+      { label: "Rewards",           href: "/site/rewards" },
+      { label: "News",              href: "/site/news" },
+      { label: "Contact",           href: "/site#contact" },
     ],
   },
 ];
@@ -50,7 +50,7 @@ export function Footer() {
               <img
                 src="/crs-logo-dark.svg"
                 alt="CRS Insurance Brokers"
-                className="h-9 w-auto"
+                className="h-14 w-auto"
                 width={172}
                 height={40}
               />
@@ -70,15 +70,48 @@ export function Footer() {
               </span>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["NFDC", "DSA", "BIBA", "FCA"].map((b) => (
-                <span
-                  key={b}
-                  className="rounded-full px-3 py-1.5 bg-white/[0.04] ring-1 ring-white/10 text-[10px] font-mono uppercase tracking-[0.22em] text-m-bone/65"
+            <div className="mt-8 flex flex-wrap items-center gap-5">
+              {/* Each logo sits in a fixed 72×28 box — normalises visual weight across different aspect ratios */}
+              {[
+                { src: "/logos/nfdc.png",  alt: "NFDC member",    href: "https://demolition-nfdc.com/service-providers/type/financial-services/#filters" },
+                { src: "/logos/dsa.webp",   alt: "DSA member",     href: "https://www.drillandsaw.org.uk/member/crs/" },
+                { src: "/logos/fca.png",   alt: "FCA regulated",  href: "https://register.fca.org.uk/s/search?predefined=ALL&q=960073" },
+              ].map((b) => (
+                <a
+                  key={b.alt}
+                  href={b.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center opacity-45 hover:opacity-80 transition-opacity duration-300"
+                  style={{ width: 72, height: 28 }}
                 >
-                  {b}
-                </span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={b.src}
+                    alt={b.alt}
+                    style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", filter: "brightness(0) invert(1)" }}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
               ))}
+              <a
+                key="BIBA"
+                href="https://www.biba.org.uk/find-insurance/broker-directory/cib-group-uk-ltd/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center opacity-35 hover:opacity-75 transition-opacity duration-300"
+                style={{ width: 72, height: 28 }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/logos/biba.svg"
+                  alt="BIBA member"
+                  style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", filter: "brightness(0) invert(1)" }}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
             </div>
           </div>
 
@@ -90,7 +123,7 @@ export function Footer() {
                 </h4>
                 <ul className="flex flex-col gap-3">
                   {col.links.map((l) => (
-                    <li key={l.href}>
+                    <li key={l.label}>
                       <a
                         href={l.href}
                         className="text-[14px] text-m-bone/75 hover:text-m-coral transition-colors duration-500"
@@ -106,18 +139,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Massive wordmark */}
-        <div className="py-12 md:py-16 overflow-hidden">
-          <p
-            className="font-display leading-[0.85] tracking-[-0.04em] text-m-cream/95 select-none"
-            style={{ fontSize: "clamp(5.5rem, 22vw, 22rem)" }}
-            aria-hidden
-          >
-            <span>CRS</span>
-            <span className="text-m-coral">.</span>
-          </p>
-        </div>
-
         {/* FCA disclosure */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-10 border-t border-white/8 text-[11px] leading-relaxed text-m-bone/45">
           <p className="md:col-span-8 font-mono">
@@ -125,21 +146,21 @@ export function Footer() {
             in England &amp; Wales (company no. <span className="text-m-bone/65">13360654</span>).
             Authorised and regulated by the Financial Conduct Authority,{" "}
             <span className="text-m-bone/65">FRN 960073</span>. Registered office:
-            Unit 2 Oakberry Road, Lutterworth, LE17 4PP. Calls may be recorded for
-            training and quality.
+            The Copper Room, Deva City Office Park, Trinity Way, Salford, M3 7BG.
+            All calls are recorded for training and regulatory purposes.
           </p>
           <div className="md:col-span-4 flex flex-col md:items-end gap-2 text-[10px] font-mono uppercase tracking-[0.2em]">
             <span>© 2026 CIB Group UK Ltd</span>
             <div className="flex gap-3">
-              <a href="/privacy" className="hover:text-m-bone transition-colors duration-300">
+              <a href="/site/privacy" className="hover:text-m-bone transition-colors duration-300">
                 Privacy
               </a>
               <span className="text-m-bone/25">·</span>
-              <a href="/terms" className="hover:text-m-bone transition-colors duration-300">
+              <a href="/site/terms" className="hover:text-m-bone transition-colors duration-300">
                 Terms
               </a>
               <span className="text-m-bone/25">·</span>
-              <a href="/cookies" className="hover:text-m-bone transition-colors duration-300">
+              <a href="/site/cookies" className="hover:text-m-bone transition-colors duration-300">
                 Cookies
               </a>
             </div>

@@ -17,7 +17,7 @@
 /* ---- Scoped layer: only inside the marketing subtree ---------------- */
 
 [data-marketing] {
-  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--color-m-ink);
   color: var(--color-m-bone);
   -webkit-font-smoothing: antialiased;
@@ -38,12 +38,12 @@
   font-feature-settings: "tnum" 1, "lnum" 1;
 }
 
-/* Display font */
+/* Display font — now Inter, same as body for consistency */
 [data-marketing] .font-display {
-  font-family: var(--font-instrument-serif), "Times New Roman", Georgia, serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Sans (override the body inheritance from Poppins on mono spans) */
+/* Sans (override the body inheritance on mono spans) */
 [data-marketing] .font-mono {
   font-family: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
 }
@@ -71,15 +71,13 @@
 /* Reveal animation primitive */
 [data-marketing] .reveal {
   opacity: 0;
-  transform: translate3d(0, 2rem, 0);
-  filter: blur(10px);
-  transition: opacity 1100ms var(--ease-glide), transform 1100ms var(--ease-glide), filter 1100ms var(--ease-glide);
-  will-change: opacity, transform, filter;
+  transform: translate3d(0, 1.5rem, 0);
+  transition: opacity 900ms var(--ease-glide), transform 900ms var(--ease-glide);
+  will-change: opacity, transform;
 }
 [data-marketing] .reveal.is-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  filter: blur(0);
 }
 
 /* Marquee */
@@ -122,6 +120,5 @@
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
-    filter: none !important;
   }
 }

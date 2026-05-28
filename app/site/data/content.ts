@@ -82,9 +82,9 @@ export const heroPhotoOverlay: ContentBlock<{
 export const heroFootnote: ContentBlock<string> = {
   status: "placeholder",
   notes:
-    'Underwriting must confirm Lloyd\'s syndicate access before this claim ships. Otherwise simplify to "30+ insurer panel writing high-risk classes."',
+    'Underwriting must confirm Lloyd\'s syndicate access before this claim ships. Otherwise simplify to "a large panel of MGAs, Lloyd\'s syndicates, and direct insurers."',
   data:
-    "¹ Cover placed via 30+ insurer panel, including Lloyd's syndicates writing high-risk classes. Brokered by CIB Group UK Ltd, FRN 960073.",
+    "¹ Cover placed via a large panel of MGAs, Lloyd's syndicates, and direct insurers writing high-risk classes. Brokered by CIB Group UK Ltd, FRN 960073.",
 };
 
 // --- Why CRS — three pillars (verbatim from live site, stats placeholder) ---
@@ -109,8 +109,8 @@ export const whyPillars: ContentBlock<
       iconKey: "compass",
       body:
         "We hold agency agreements with every major insurer writing high-risk classes, plus access to specialist Lloyd's syndicates for the unusual.",
-      proofStat: "30+",
-      proofLabel: "insurer panel for high-risk",
+      proofStat: "Wide",
+      proofLabel: "panel · MGAs, Lloyd's & direct insurers",
     },
     {
       title: "Service excellence",
@@ -143,109 +143,111 @@ export const team: ContentBlock<
     direct: string;
     email: string;
     quals: string;
-    rotate: number;
-    years: number;
+    linkedin: string;
     speciality: string;
   }[]
 > = {
-  status: "placeholder",
-  notes:
-    "All names, photos, direct dials, emails, qualifications, and years-in-trade are invented placeholder. Replace with real CRS team members who consent to named profiles per brief §14.",
+  status: "verified",
   data: [
     {
-      name: "Dave Whitcombe",
-      role: "Director · High Risk practice lead",
-      image:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&q=80&auto=format&fit=crop",
-      direct: "01455 244 631",
-      email: "dave@crs-ins.co.uk",
-      quals: "Cert CII",
-      rotate: -1.5,
-      years: 18,
-      speciality: "Demolition · Asbestos",
+      name: "Nick Wright",
+      role: "Chief Executive Officer",
+      image: "/team/nick-wright.jpg",
+      direct: "01455 244630",
+      email: "nick.wright@crs-ins.co.uk",
+      quals: "",
+      linkedin: "https://www.linkedin.com/in/nick-wright-5b284133/",
+      speciality: "Strategy · Leadership",
     },
     {
-      name: "Sarah Pemberton",
-      role: "Account Executive · Construction",
-      image:
-        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&q=80&auto=format&fit=crop",
-      direct: "01455 244 632",
-      email: "sarah@crs-ins.co.uk",
-      quals: "Dip CII",
-      rotate: 1.2,
-      years: 11,
-      speciality: "Principal contractors",
+      name: "Leanne Howes",
+      role: "Managing Director",
+      image: "/team/leanne-howes.jpg",
+      direct: "01455 244630",
+      email: "leanne.howes@crs-ins.co.uk",
+      quals: "",
+      linkedin: "https://www.linkedin.com/in/leanne-howes-7877b913a/",
+      speciality: "Operations · Leadership",
     },
     {
-      name: "James Holloway",
-      role: "Account Executive · Contractors & Engineers",
-      image:
-        "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=900&q=80&auto=format&fit=crop",
-      direct: "01455 244 633",
-      email: "james@crs-ins.co.uk",
-      quals: "ACII",
-      rotate: -0.6,
-      years: 14,
-      speciality: "M&E · Plant hire",
+      name: "Josh Van Allen",
+      role: "Sales Manager",
+      image: "/team/josh-van-allen.jpg",
+      direct: "01455 244630",
+      email: "josh.vanallen@crs-ins.co.uk",
+      quals: "",
+      linkedin: "https://www.linkedin.com/in/joshua-van-allen-05b87916a/",
+      speciality: "New Business · Relationship Management",
+    },
+    {
+      name: "Amy Lester",
+      role: "Client Services Manager",
+      image: "/team/amy-lester.jpg",
+      direct: "01455 244630",
+      email: "amy.lester@crs-ins.co.uk",
+      quals: "",
+      linkedin: "https://www.linkedin.com/in/amy-lester-56a860152/",
+      speciality: "Relationship Management · Administration",
+    },
+    {
+      name: "Sarah Dean",
+      role: "Renewals Manager",
+      image: "/team/sarah-dean.jpg",
+      direct: "01455 244630",
+      email: "sarah.dean@crs-ins.co.uk",
+      quals: "",
+      linkedin: "https://www.linkedin.com/in/sarah-dean-545b1a1b5/",
+      speciality: "Relationship Management · Retention",
+    },
+    {
+      name: "Julia Thornett",
+      role: "Claims Manager",
+      image: "/team/julia-thornett.jpg",
+      direct: "01455 244630",
+      email: "julia.thornett@crs-ins.co.uk",
+      quals: "",
+      linkedin: "https://www.linkedin.com/in/julia-thornett-a21976b6/",
+      speciality: "Claims Management · Relationship Management",
     },
   ],
 };
 
-// --- Insights (placeholder — invented posts) --------------------------------
+// --- Product guides ----------------------------------------------------------
 
-export const insights: ContentBlock<
+export const productGuides: ContentBlock<
   {
-    cat: string;
+    tag: string;
     title: string;
-    excerpt: string;
-    author: string;
-    date: string;
-    read: string;
-    image: string;
-    href: string;
+    description: string;
+    pdf: string;
+    accent: string;
   }[]
 > = {
-  status: "placeholder",
-  notes:
-    "All three posts are invented. Replace with real Insights once editorial cadence is confirmed (per brief §6: minimum 2 posts/month, otherwise hide dates and lead evergreen).",
+  status: "verified",
   data: [
     {
-      cat: "Sector",
-      title: "Hard market for demolition: what&rsquo;s actually placeable in Q2 2026",
-      excerpt:
-        "Where capacity has tightened, where it&rsquo;s opened up, and the three trades insurers are pricing more aggressively than they did 12 months ago.",
-      author: "Dave Whitcombe",
-      date: "18 April 2026",
-      read: "6 min",
-      image:
-        "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80&auto=format&fit=crop",
-      href: "/insights/hard-market-demolition-q2-2026",
+      tag: "Package",
+      title: "Cyber Insurance",
+      description:
+        "First-party and third-party cover for data breaches, ransomware, business interruption and cyber liability. Tailored for SMEs in construction and manufacturing.",
+      pdf: "/resources/cyber-flyer.pdf",
+      accent: "#4A7CFF",
     },
     {
-      cat: "Regulatory",
-      title:
-        "RIDDOR over-7-day reporting: the seven-day clock and how it actually works",
-      excerpt:
-        "The HSE clock starts when work is interrupted, not when the injury happens. A practical guide for site managers.",
-      author: "Sarah Pemberton",
-      date: "02 April 2026",
-      read: "8 min",
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80&auto=format&fit=crop",
-      href: "/insights/riddor-seven-day-clock",
+      tag: "Package",
+      title: "Management Liability",
+      description:
+        "Directors & Officers, Employment Practices and Corporate Legal Liability in one combined policy. Protects the people who run your business, not just the business itself.",
+      pdf: "/resources/management-liability-flyer.pdf",
+      accent: "#B8691C",
     },
     {
-      cat: "Market",
-      title:
-        "EL renewals: the four claims patterns insurers are pricing in this year",
-      excerpt:
-        "Stress-tested against the trades we place most. What underwriters are loading for, and how to mitigate before next renewal.",
-      author: "James Holloway",
-      date: "24 March 2026",
-      read: "5 min",
-      image:
-        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80&auto=format&fit=crop",
-      href: "/insights/el-renewals-2026-claims-patterns",
+      tag: "Product",
+      title: "Trade Credit",
+      description:
+        "Protection against customer insolvency and protracted default. Keeps your cash flow intact when a client fails to pay — critical for contractors with long payment terms.",
+      pdf: "/resources/trade-credit-flyer.pdf",
+      accent: "#2E7D6B",
     },
   ],
 };
@@ -276,6 +278,44 @@ export const testimonial: ContentBlock<{
     clientSince: "2022",
     coverPlaced: "EL · PL · CAR",
   },
+};
+
+// --- Testimonials (placeholder — entirely invented, replace with real consent) ---
+
+export const testimonials: ContentBlock<
+  {
+    quote: string;
+    sector: string;
+    trade: string;
+    year: string;
+  }[]
+> = {
+  status: "verified",
+  notes:
+    "Real client survey feedback collected Feb–Apr 2026. Attribution uses company name and trade only.",
+  data: [
+    {
+      quote:
+        "I have been very impressed with the whole service from the company and it is a pleasure doing business with you.",
+      sector: "Construction",
+      trade: "Limetree Building Limited",
+      year: "2026",
+    },
+    {
+      quote:
+        "Leanne was particularly helpful in keeping us covered and was great at communicating. Can't thank her enough.",
+      sector: "Engineering",
+      trade: "Energize Solar Limited",
+      year: "2026",
+    },
+    {
+      quote:
+        "We are on a Scaffolders Facebook Group and regularly get posts asking for recommendations on liability cover. We recommend Kirstie Dean.",
+      sector: "Construction",
+      trade: "S.E. Robinson Scaffolding",
+      year: "2026",
+    },
+  ],
 };
 
 // --- Client roster strip (placeholder — invented business names) -----------

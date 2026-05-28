@@ -49,3 +49,6 @@ deno.lock
 
 # website-v2/ — early demo dir, kept around for reference but not built
 /website-v2
+
+# Deleted contact form — OneDrive may re-sync these files
+/app/site/contact

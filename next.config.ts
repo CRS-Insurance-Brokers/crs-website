@@ -17,10 +17,13 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Bare URL hits the marketing site.
+  // Bare URL hits the marketing site. Legacy legal-page routes redirect permanently.
   async redirects() {
     return [
-      { source: "/", destination: "/site", permanent: false },
+      { source: "/",        destination: "/site",          permanent: false },
+      { source: "/privacy", destination: "/site/privacy",  permanent: true  },
+      { source: "/terms",   destination: "/site/terms",    permanent: true  },
+      { source: "/cookies", destination: "/site/cookies",  permanent: true  },
     ];
   },
 };

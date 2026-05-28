@@ -1,11 +1,10 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "./Reveal";
-import { Counter } from "./Counter";
 import { HoldToCall } from "./HoldToCall";
 import { ArrowUpRight } from "./icons";
-import { heroStats, heroPhotoOverlay, heroFootnote, heroPlate, brand } from "../data/content";
+import { heroFootnote, heroPlate, brand } from "../data/content";
 
 /**
  * Editorial broadsheet hero.
@@ -63,42 +62,25 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative pt-[140px] md:pt-[180px] pb-24 md:pb-32 overflow-hidden">
+    <section className="relative pt-[160px] md:pt-[180px] pb-24 md:pb-32 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
-        {/* Plate strip — replaces "01 / Specialisms" eyebrow */}
-        <Reveal>
-          <div className="flex items-baseline justify-between mb-12 md:mb-16 pb-4"
-            style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
-          >
-            <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-m-bone/55 tnum">
-              {heroPlate.data.plateLabel}
-            </span>
-            <span className="hidden sm:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-m-bone/35 tnum">
-              {heroPlate.data.rightLabel}
-            </span>
-          </div>
-        </Reveal>
-
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-14 lg:gap-y-0 items-end">
           {/* Headline column */}
           <div className="lg:col-span-7 min-w-0">
             <Reveal delay={120}>
-              <h1 className="font-display leading-[0.92] tracking-[-0.025em] text-white"
-                style={{ fontSize: "clamp(3rem, 8.4vw, 9rem)" }}
+              <h1 className="font-display font-bold leading-[1.15] tracking-[-0.015em] text-white"
+                style={{ fontSize: "clamp(2.25rem, 4.8vw, 4rem)" }}
               >
-                Specialist cover<sup className="font-mono text-[0.18em] tracking-[0.18em] text-m-coral align-super ml-1.5 tnum">¹</sup>
-                <br />
+                Specialist cover<sup className="font-mono text-[0.18em] tracking-[0.18em] text-m-coral align-super ml-1.5 tnum">¹</sup>{" "}
                 for <span className="italic">high-risk</span> trades.
                 <br />
-                <span className="text-m-bone-2/85">Built for sites,</span>{" "}
-                <span className="italic text-m-bone-2/70">not boardrooms.</span>
+                Named specialists. Direct lines.
               </h1>
             </Reveal>
 
             <Reveal delay={300}>
               <p className="mt-10 md:mt-12 max-w-[42ch] text-[15.5px] leading-[1.65] text-m-bone/70">
-                <span className="float-left font-display text-[68px] leading-[0.78] mr-3 mt-1 text-white">D</span>
-                emolition, construction, contractors and manufacturing.
+                Demolition, construction, contractors and manufacturing.
                 We place cover others can&rsquo;t,{" "}
                 <span className="text-white">and answer the phone when it matters.</span>
               </p>
@@ -123,11 +105,8 @@ export function Hero() {
                     e.currentTarget.style.transform = "scale(1)";
                   }}
                 >
-                  <span className="text-[11px] font-medium uppercase tracking-[0.22em]">
-                    Talk to us
-                  </span>
-                  <span className="font-display text-[20px] leading-none">
-                    Get in touch →
+                  <span className="text-[13px] font-semibold tracking-[0.08em]">
+                    Talk to us →
                   </span>
                 </a>
 
@@ -184,51 +163,12 @@ export function Hero() {
                   }}
                 />
 
-                {/* Bottom strip — typeset like a photo caption */}
-                <figcaption className="absolute left-0 right-0 bottom-0 px-4 py-3 flex items-end justify-between text-[10px] font-mono uppercase tracking-[0.24em] text-m-bone/85 tnum">
-                  <span>{heroPlate.data.figLabel}</span>
-                  <span>{heroPlate.data.coords}</span>
-                </figcaption>
               </div>
 
-              {/* Spec line under image */}
-              <div className="mt-3 grid grid-cols-3 gap-3 text-[9.5px] font-mono uppercase tracking-[0.26em] text-m-bone/40 tnum">
-                <span>Frame 01 / 04</span>
-                <span className="text-center font-display italic text-[12px] tracking-normal text-m-bone/55 normal-case">
-                  Independent · since 2021
-                </span>
-                <span className="text-right">Reg. 13360654</span>
-              </div>
             </figure>
           </Reveal>
         </div>
 
-        {/* Stat strip — animated counters, broadsheet table */}
-        <Reveal delay={760}>
-          <div className="mt-24 md:mt-32 pt-8 grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6"
-            style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
-          >
-            {heroStats.data.map((s, i) => (
-              <div key={s.key} className="flex flex-col gap-3">
-                <span className="font-mono text-[9.5px] uppercase tracking-[0.26em] text-m-bone/40 tnum">
-                  {String(i + 1).padStart(2, "0")} · {s.key}
-                </span>
-                <span className="font-display leading-none tracking-[-0.02em] text-white"
-                  style={{ fontSize: "clamp(2.75rem, 5.4vw, 4.5rem)" }}
-                >
-                  <Counter
-                    value={s.value}
-                    suffix={s.suffix}
-                    decimals={s.decimals ?? 0}
-                  />
-                </span>
-                <span className="text-[12px] text-m-bone/45 leading-snug max-w-[18ch]">
-                  {s.note}
-                </span>
-              </div>
-            ))}
-          </div>
-        </Reveal>
       </div>
     </section>
   );

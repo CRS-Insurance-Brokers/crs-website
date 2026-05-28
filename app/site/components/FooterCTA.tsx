@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+﻿import { Reveal } from "./Reveal";
 import { ArrowUpRight, PhoneIcon } from "./icons";
 
 export function FooterCTA() {
@@ -21,14 +21,14 @@ export function FooterCTA() {
         <Reveal>
           <span className="inline-flex items-center gap-2 mb-8 text-[10px] font-mono uppercase tracking-[0.32em] text-m-ink/55">
             <span className="w-1.5 h-1.5 rounded-full bg-m-coral pulse-dot" />
-            Plate <span className="text-m-ink tnum">08</span> — Save the number
+            Save the number
           </span>
         </Reveal>
 
         <Reveal delay={150}>
-          <h2 className="font-display text-[clamp(2.75rem,8vw,8.5rem)] leading-[0.92] tracking-[-0.02em] text-m-ink max-w-5xl">
+          <h2 className="font-display font-bold text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.15] tracking-[-0.015em] text-m-ink max-w-3xl">
             When something<br />
-            happens on site,<br />
+            goes wrong,<br />
             <span className="italic">we want to be</span><br />
             your <span className="text-m-coral italic">first call.</span>
           </h2>
@@ -56,7 +56,7 @@ export function FooterCTA() {
                   style={{ borderBottom: "1px solid rgba(255,255,255,0.10)" }}
                 >
                   <span className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/55 tnum">
-                    Call us · Mon&ndash;Fri 08:30&ndash;18:00
+                    Call us · Mon&ndash;Fri 09:00&ndash;17:00
                   </span>
                   <span
                     className="w-10 h-10 bg-m-coral text-m-ink flex items-center justify-center group-hover:translate-x-[3px] group-hover:-translate-y-[2px] transition-transform duration-300"
@@ -96,7 +96,7 @@ export function FooterCTA() {
                   style={{ borderTop: "1px solid rgba(10,10,10,0.10)" }}
                 >
                   <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-m-ink/55">
-                    We reply same day
+                    We respond as quickly as possible
                   </span>
                   <span
                     className="w-8 h-8 bg-m-ink text-m-cream flex items-center justify-center group-hover:bg-m-coral group-hover:text-m-ink transition-colors duration-300"
@@ -108,22 +108,22 @@ export function FooterCTA() {
               </a>
 
               <a
-                href="/claims/report-an-incident"
+                href="tel:01455244630"
                 className="group block bg-m-coral text-m-ink px-6 py-7 md:px-7 md:py-8"
                 style={{ border: "1px solid rgba(10,10,10,0.20)" }}
               >
                 <span className="text-[10px] font-mono uppercase tracking-[0.32em] text-m-ink/65">
-                  Or, if you&rsquo;re on site now
+                  Report a claim · Option 4
                 </span>
                 <p className="mt-3 font-display text-[28px] md:text-[32px] leading-[1.05] tracking-[-0.01em] text-m-ink">
-                  Report an incident
+                  01455 244630
                 </p>
                 <div
                   className="mt-5 pt-4 flex items-center justify-between"
                   style={{ borderTop: "1px solid rgba(10,10,10,0.18)" }}
                 >
                   <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-m-ink/65">
-                    Voice or typed · 60 sec
+                    Tap to call · Claims team
                   </span>
                   <span
                     className="w-8 h-8 bg-m-ink text-m-coral flex items-center justify-center group-hover:translate-x-[3px] group-hover:-translate-y-[2px] transition-transform duration-300"
