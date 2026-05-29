@@ -276,7 +276,7 @@ export default function HighRiskPage() {
               >
                 <div>
                   <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/55 mb-3">
-                    Call · Option 4 for high-risk enquiries
+                    Sector contact
                   </p>
                   <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none tracking-[-0.02em] text-white tnum">
                     01455 244630
