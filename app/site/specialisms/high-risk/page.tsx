@@ -253,7 +253,7 @@ export default function HighRiskPage() {
         </div>
       </section>
 
-      {/* SECTION 4 — Sector contact CTA */}
+      {/* SECTION 4 — Contact CTA */}
       <section
         id="sector-contact"
         className="relative py-32 md:py-44"
@@ -263,7 +263,7 @@ export default function HighRiskPage() {
           <Reveal>
             <span className="inline-flex items-center gap-2 mb-8 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
               <span className="w-1.5 h-1.5 rounded-full bg-m-coral pulse-dot" />
-              Sector contact
+              Contact
             </span>
           </Reveal>
 
@@ -276,7 +276,7 @@ export default function HighRiskPage() {
               >
                 <div>
                   <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/55 mb-3">
-                    Sector contact
+                    Contact
                   </p>
                   <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none tracking-[-0.02em] text-white tnum">
                     01455 244630

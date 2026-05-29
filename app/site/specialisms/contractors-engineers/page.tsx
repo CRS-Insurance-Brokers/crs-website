@@ -252,7 +252,7 @@ export default function ContractorsEngineersPage() {
         </div>
       </section>
 
-      {/* SECTION 4 — Sector contact CTA */}
+      {/* SECTION 4 — Contact CTA */}
       <section
         id="sector-contact"
         className="relative py-32 md:py-44"
@@ -262,7 +262,7 @@ export default function ContractorsEngineersPage() {
           <Reveal>
             <span className="inline-flex items-center gap-2 mb-8 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
               <span className="w-1.5 h-1.5 rounded-full bg-m-coral pulse-dot" />
-              Sector contact
+              Contact
             </span>
           </Reveal>
 
