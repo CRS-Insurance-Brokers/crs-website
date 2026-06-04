@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/site/about/team`,            lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE}/site/about/how-we-are-paid`, lastModified: now, changeFrequency: "yearly",  priority: 0.5 },
     { url: `${SITE}/site/about/memberships`,     lastModified: now, changeFrequency: "yearly",  priority: 0.6 },
+    { url: `${SITE}/site/about/charity`,         lastModified: now, changeFrequency: "monthly", priority: 0.7 },
 
     // Resources & Rewards
     { url: `${SITE}/site/resources`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
