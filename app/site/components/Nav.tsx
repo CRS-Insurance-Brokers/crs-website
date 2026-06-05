@@ -43,7 +43,7 @@ const links: NavLink[] = [
       { label: "Management Team",            href: "/site/about/team" },
       { label: "How we are paid",            href: "/site/about/how-we-are-paid" },
       { label: "Memberships & Associations", href: "/site/about/memberships" },
-      { label: "Charity Pledge",             href: "/site/about/charity" },
+      { label: "Lighthouse Charity",          href: "/site/about/charity" },
     ],
   },
   {

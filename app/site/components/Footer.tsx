@@ -25,6 +25,7 @@ const cols = [
       { label: "Management Team",            href: "/site/about/team" },
       { label: "How we are paid",            href: "/site/about/how-we-are-paid" },
       { label: "Memberships & Associations", href: "/site/about/memberships" },
+      { label: "Lighthouse Charity",         href: "/site/about/charity" },
     ],
   },
   {
@@ -70,7 +71,14 @@ export function Footer() {
               </span>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-5">
+            <a
+              href="/site/about/charity"
+              className="mt-6 mb-8 inline-flex items-center gap-2 text-[14px] leading-relaxed text-m-bone/55 hover:text-m-bone/80 transition-colors duration-300"
+            >
+              Proud supporters of the Lighthouse Construction Industry Charity
+            </a>
+
+            <div className="flex flex-wrap items-center gap-5">
               {/* Each logo sits in a fixed 72×28 box — normalises visual weight across different aspect ratios */}
               {[
                 { src: "/logos/nfdc.png",  alt: "NFDC member",    href: "https://demolition-nfdc.com/service-providers/type/financial-services/#filters" },
