@@ -57,13 +57,13 @@ export function WhyCRS() {
         </Reveal>
 
         {/* Three pillar specimens — flat, hairline borders, no rounding */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
           {pillars.map((p, i) => {
             const Icon = p.icon;
             return (
-              <Reveal key={p.num} delay={i * 110}>
+              <Reveal key={p.num} delay={i * 110} className="h-full">
                 <div
-                  className="group relative h-full bg-m-cream-2/40 p-7 md:p-8 flex flex-col gap-6 transition-colors duration-300"
+                  className="group relative h-full overflow-hidden bg-m-cream-2/40 p-7 md:p-8 flex flex-col gap-6 transition-colors duration-300"
                   style={{ border: "1px solid rgba(10,10,10,0.10)" }}
                 >
                   {/* Coral wipe at bottom */}
@@ -84,13 +84,10 @@ export function WhyCRS() {
                     <span className="w-11 h-11 bg-m-ink text-m-cream flex items-center justify-center">
                       <Icon className="w-5 h-5" strokeWidth={1.1} />
                     </span>
-                    <span className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-ink/40 tnum">
-                      Specimen <span className="text-m-ink/70">{p.num}</span> / 03
-                    </span>
                   </div>
 
                   <div>
-                    <h3 className="font-display text-[44px] md:text-[52px] leading-[0.95] tracking-[-0.02em] text-m-ink">
+                    <h3 className="font-display leading-[0.95] tracking-[-0.02em] text-m-ink" style={{ fontSize: "clamp(1.25rem, 3vw, 3.25rem)" }}>
                       {p.title}
                     </h3>
                     <p className="mt-2 text-[11.5px] font-mono uppercase tracking-[0.22em] text-m-ink/55">

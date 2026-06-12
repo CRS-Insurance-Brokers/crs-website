@@ -19,8 +19,7 @@ const cards: Card[] = [
     body:
       "Hot works permits, asbestos surveys pre-strip, party wall implications, work at height, environmental impairment, explosives. Where generalist brokers stop pricing, we start.",
     covers: ["Demolition", "Asbestos removal", "Work at height", "Hot works", "Environmental"],
-    image:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80&auto=format&fit=crop",
+    image: "/images/high-risk-demolition.jpg",
     href: "/site/specialisms/high-risk",
   },
   {
@@ -30,8 +29,7 @@ const cards: Card[] = [
     body:
       "Contractors All Risks, Professional Indemnity for design-and-build, and contract-aligned cover for the full contractor spectrum — from principal to specialist trade.",
     covers: ["Principal contractors", "Subcontractors", "Civils", "Groundworks"],
-    image:
-      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80&auto=format&fit=crop",
+    image: "/images/construction.jpg",
     href: "/site/specialisms/construction",
   },
   {
@@ -41,8 +39,7 @@ const cards: Card[] = [
     body:
       "Mechanical and electrical, machinery, and specialist engineering trades — bespoke schedules for tools, machinery in transit, and hired-in cover.",
     covers: ["M&E", "Machinery", "Specialist engineering"],
-    image:
-      "https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=1200&q=80&auto=format&fit=crop",
+    image: "/images/engineering.jpg",
     href: "/site/specialisms/engineering",
   },
   {
@@ -50,10 +47,9 @@ const cards: Card[] = [
     title: "Manufacturing & Wholesale",
     tagline: "Industrial plant · Warehousing",
     body:
-      "Combined commercial, machinery breakdown, and business interruption structured around your shifts, plant, and supply chain exposure.",
+      "Commercial combined, machinery breakdown, and business interruption structured around your shifts, plant, and supply chain exposure.",
     covers: ["Industrial plant", "Warehousing", "Distribution"],
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80&auto=format&fit=crop",
+    image: "/images/manufacturing.jpg",
     href: "/site/specialisms/manufacturing-wholesale",
   },
 ];

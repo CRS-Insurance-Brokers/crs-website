@@ -11,12 +11,12 @@ import { FAQPageSchema } from "../../components/SchemaJsonLd";
 export const metadata: Metadata = {
   title: "Manufacturing & Wholesale Insurance · Industrial plant, warehousing & distribution",
   description:
-    "Combined commercial, machinery breakdown, and business interruption cover for manufacturers, wholesalers, and distributors. Industrial plant, warehousing, and supply chain exposure. FCA FRN 960073.",
+    "Commercial combined, machinery breakdown, and business interruption cover for manufacturers, wholesalers, and distributors. Industrial plant, warehousing, and supply chain exposure. FCA FRN 960073.",
   alternates: { canonical: "/site/specialisms/manufacturing-wholesale" },
   openGraph: {
     title: "Manufacturing & Wholesale Insurance · CRS Insurance Brokers",
     description:
-      "Combined commercial, machinery breakdown, and business interruption cover built around how your operation actually runs.",
+      "Commercial combined, machinery breakdown, and business interruption cover built around how your operation actually runs.",
     type: "website",
   },
 };
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 const faqs: FAQItem[] = [
   {
-    q: "What does a combined commercial policy cover for a manufacturer?",
+    q: "What does a commercial combined policy cover for a manufacturer?",
     a: "A combined policy brings together the main classes your business needs: property, business interruption, employers liability, public liability, and often machinery breakdown. The detail of how each section is structured matters as much as having the cover in place. We build it around your specific operation rather than fitting you into a standard package.",
   },
   {
@@ -68,23 +68,8 @@ export default function ManufacturingWholesalePage() {
       <Marginalia />
 
       {/* SECTION 1 — Sector hero */}
-      <section className="relative pt-[160px] md:pt-[180px] pb-16 md:pb-20 overflow-hidden">
+      <section className="relative pt-[160px] md:pt-[180px] pb-10 md:pb-14 overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
-          <Reveal>
-            <div
-              className="flex items-baseline justify-between mb-12 md:mb-16 pb-4"
-              style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
-            >
-              <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-m-bone/55 tnum">
-                Plate <span className="text-white">02</span> · Specialism{" "}
-                <span className="text-white">04 / 04</span> — Manufacturing &amp; Wholesale
-              </span>
-              <span className="hidden sm:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-m-bone/35 tnum">
-                Industrial plant · Warehousing · Distribution
-              </span>
-            </div>
-          </Reveal>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-14 items-start">
             <div className="lg:col-span-7">
               <Reveal delay={120}>
@@ -102,7 +87,7 @@ export default function ManufacturingWholesalePage() {
 
               <Reveal delay={300}>
                 <p className="mt-10 md:mt-12 max-w-[44ch] text-[15.5px] leading-[1.65] text-m-bone/70">
-                  Combined commercial, machinery breakdown, and business
+                  Commercial combined, machinery breakdown, and business
                   interruption structured around your operation. Industrial
                   plant, warehousing,{" "}
                   <span className="text-white">
@@ -137,7 +122,7 @@ export default function ManufacturingWholesalePage() {
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80&auto=format&fit=crop"
+                    src="/images/manufacturing.jpg"
                     alt="Manufacturing warehouse and industrial plant"
                     className="absolute inset-0 w-full h-full object-cover"
                     loading="eager"
@@ -156,17 +141,6 @@ export default function ManufacturingWholesalePage() {
                         "linear-gradient(180deg, transparent 50%, rgba(20,16,46,0.85) 100%)",
                     }}
                   />
-                  <figcaption className="absolute left-0 right-0 bottom-0 px-4 py-3 flex items-end justify-between text-[10px] font-mono uppercase tracking-[0.24em] text-m-bone/85 tnum">
-                    <span>Fig. 05 — Manufacturing</span>
-                    <span>Industrial &amp; wholesale</span>
-                  </figcaption>
-                </div>
-                <div className="mt-3 grid grid-cols-3 gap-3 text-[9.5px] font-mono uppercase tracking-[0.26em] text-m-bone/40 tnum">
-                  <span>Class · Manufacturing</span>
-                  <span className="text-center font-display italic text-[12px] tracking-normal text-m-bone/55 normal-case">
-                    Industrial · Wholesale
-                  </span>
-                  <span className="text-right">2026 edition</span>
                 </div>
               </figure>
             </Reveal>
@@ -176,7 +150,7 @@ export default function ManufacturingWholesalePage() {
 
       {/* SECTION 2 — Editorial */}
       <section
-        className="relative py-20 md:py-28"
+        className="relative py-12 md:py-16"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
@@ -219,7 +193,7 @@ export default function ManufacturingWholesalePage() {
 
       {/* SECTION 3 — Sector FAQs */}
       <section
-        className="relative py-32 md:py-44"
+        className="relative py-16 md:py-24"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
@@ -257,7 +231,7 @@ export default function ManufacturingWholesalePage() {
       {/* SECTION 4 — Contact CTA */}
       <section
         id="sector-contact"
-        className="relative py-32 md:py-44"
+        className="relative py-16 md:py-24"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
@@ -326,3 +300,4 @@ export default function ManufacturingWholesalePage() {
     </main>
   );
 }
+

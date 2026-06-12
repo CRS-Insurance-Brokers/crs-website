@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 import { SpecialismsBento } from "../components/SpecialismsBento";
 
 export const metadata: Metadata = {
-  title: "Specialisms · CRS Insurance Brokers",
+  title: "Specialisms",
   description:
     "Specialist commercial insurance for demolition, construction, engineering, and manufacturing. Cover placed by CRS Insurance Brokers.",
   alternates: { canonical: "/site/specialisms" },

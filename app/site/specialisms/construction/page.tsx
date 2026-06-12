@@ -46,7 +46,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: "We use a lot of subcontractors. Are they covered under our policy?",
-    a: "Subcontractors are generally required to carry their own Employers Liability. Whether your policy extends to cover their work under your Public Liability depends on the specific wording. We make sure you understand exactly what is and is not covered, and what warranties you need in place from your subcontractors.",
+    a: "We will take you through exactly how an insurer views the subcontractors you are using. Cover required will vary dependent upon the nature of the agreement. We make sure you understand exactly what is and is not covered, and what warranties you need in place from your subcontractors to ensure you are protected.",
   },
   {
     q: "We are working on a live building with occupants present. Does that change the cover?",
@@ -68,23 +68,8 @@ export default function ConstructionPage() {
       <Marginalia />
 
       {/* SECTION 1 — Sector hero */}
-      <section className="relative pt-[160px] md:pt-[180px] pb-16 md:pb-20 overflow-hidden">
+      <section className="relative pt-[160px] md:pt-[180px] pb-10 md:pb-14 overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
-          <Reveal>
-            <div
-              className="flex items-baseline justify-between mb-12 md:mb-16 pb-4"
-              style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
-            >
-              <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-m-bone/55 tnum">
-                Plate <span className="text-white">02</span> · Specialism{" "}
-                <span className="text-white">02 / 04</span> — Construction
-              </span>
-              <span className="hidden sm:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-m-bone/35 tnum">
-                Principal contractors · Subcontractors · Civils
-              </span>
-            </div>
-          </Reveal>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-14 items-start">
             <div className="lg:col-span-7">
               <Reveal delay={120}>
@@ -135,7 +120,7 @@ export default function ConstructionPage() {
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80&auto=format&fit=crop"
+                    src="/images/construction.jpg"
                     alt="Construction site"
                     className="absolute inset-0 w-full h-full object-cover"
                     loading="eager"
@@ -154,17 +139,6 @@ export default function ConstructionPage() {
                         "linear-gradient(180deg, transparent 50%, rgba(20,16,46,0.85) 100%)",
                     }}
                   />
-                  <figcaption className="absolute left-0 right-0 bottom-0 px-4 py-3 flex items-end justify-between text-[10px] font-mono uppercase tracking-[0.24em] text-m-bone/85 tnum">
-                    <span>Fig. 03 — Construction</span>
-                    <span>Principal contractor</span>
-                  </figcaption>
-                </div>
-                <div className="mt-3 grid grid-cols-3 gap-3 text-[9.5px] font-mono uppercase tracking-[0.26em] text-m-bone/40 tnum">
-                  <span>Class · Construction</span>
-                  <span className="text-center font-display italic text-[12px] tracking-normal text-m-bone/55 normal-case">
-                    JCT · NEC
-                  </span>
-                  <span className="text-right">2026 edition</span>
                 </div>
               </figure>
             </Reveal>
@@ -174,7 +148,7 @@ export default function ConstructionPage() {
 
       {/* SECTION 2 — Editorial */}
       <section
-        className="relative py-20 md:py-28"
+        className="relative py-12 md:py-16"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
@@ -217,7 +191,7 @@ export default function ConstructionPage() {
 
       {/* SECTION 3 — Sector FAQs */}
       <section
-        className="relative py-32 md:py-44"
+        className="relative py-16 md:py-24"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
@@ -255,7 +229,7 @@ export default function ConstructionPage() {
       {/* SECTION 4 — Contact CTA */}
       <section
         id="sector-contact"
-        className="relative py-32 md:py-44"
+        className="relative py-16 md:py-24"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
@@ -324,3 +298,4 @@ export default function ConstructionPage() {
     </main>
   );
 }
+

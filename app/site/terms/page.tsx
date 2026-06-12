@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 import { Reveal } from "../components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Terms of Business · CRS Insurance Brokers",
+  title: "Terms of Business",
   description:
     "Terms of business for CRS Insurance Brokers. How we act for you, our regulatory status, and your rights as a client. CIB Group UK Ltd, FCA FRN 960073.",
   alternates: { canonical: "/site/terms" },

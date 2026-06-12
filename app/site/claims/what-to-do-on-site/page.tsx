@@ -6,7 +6,7 @@ import { Reveal } from "../../components/Reveal";
 import { ArrowUpRight } from "../../components/icons";
 
 export const metadata: Metadata = {
-  title: "What to do when something goes wrong · CRS Insurance Brokers",
+  title: "What to do when something goes wrong",
   description:
     "Early notification protects your claim. Find out what to do — and what not to do — the moment an incident occurs or a claim circumstance arises.",
   alternates: { canonical: "/site/claims/what-to-do-on-site" },
@@ -133,8 +133,7 @@ export default function WhatToDoPage() {
                   className="h-full p-8 md:p-10"
                   style={{ border: "1px solid rgba(255,255,255,0.08)" }}
                 >
-                  <span className="inline-flex items-center gap-2 mb-8 text-[10px] font-mono uppercase tracking-[0.32em] text-emerald-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <span className="block mb-8 font-display font-bold text-[2rem] leading-none tracking-[-0.015em] text-emerald-400">
                     Do
                   </span>
                   <ul className="flex flex-col gap-5">
@@ -156,8 +155,7 @@ export default function WhatToDoPage() {
                   className="h-full p-8 md:p-10 bg-m-ink-2"
                   style={{ border: "1px solid rgba(255,255,255,0.08)" }}
                 >
-                  <span className="inline-flex items-center gap-2 mb-8 text-[10px] font-mono uppercase tracking-[0.32em] text-m-coral">
-                    <span className="w-1.5 h-1.5 rounded-full bg-m-coral" />
+                  <span className="block mb-8 font-display font-bold text-[2rem] leading-none tracking-[-0.015em] text-m-coral">
                     Don&rsquo;t
                   </span>
                   <ul className="flex flex-col gap-5">

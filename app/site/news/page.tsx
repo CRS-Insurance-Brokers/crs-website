@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 import { NewsStrip } from "../components/NewsStrip";
 
 export const metadata: Metadata = {
-  title: "News · CRS Insurance Brokers",
+  title: "News",
   description:
     "The latest news from CRS Insurance Brokers. Team updates, sponsorships, and company news.",
   alternates: { canonical: "/site/news" },

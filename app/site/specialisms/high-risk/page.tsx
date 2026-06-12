@@ -58,6 +58,22 @@ const faqs: FAQItem[] = [
     q: "What's the typical excess on our class?",
     a: "It varies depending on your turnover, claims history, and the nature of the work you do. We can adjust the excess up or down to move the premium and there is usually a clear point where it makes sense to do so. We will show you the options at quote stage.",
   },
+  {
+    q: "We've won a contract to carry out construction works inside the airport perimeter. Does our existing cover extend to that?",
+    a: "Not automatically. Airside work is a specific risk. The proximity to aircraft, live taxiways, and the airport operator's permit-to-work regime all change the picture, and most standard construction policies are silent on it at best. We place airside extensions for construction contractors regularly. What we need from you is the nature of the works, how operatives will be managed in the restricted zone, and a copy of the operator's contract requirements. Bring us that before you mobilise.",
+  },
+  {
+    q: "The airport operator is requiring higher liability limits and wants to be named as an additional insured. Can you deal with that?",
+    a: "Yes. Both are common in airside contracts. The right limit depends on the airport and the scope of works and we will advise what the market expects. The additional insured wording needs checking too; some operators have standard clauses that go further than a basic endorsement will cover. We look at the operator's contract before we place the cover, not after.",
+  },
+  {
+    q: "We carry out works in confined spaces. Does that need to be declared?",
+    a: "Yes. Some policies exclude it outright; others attach conditions that are easy to miss. Insurers want to know about operative competency, the relevant confined space tickets, what atmosphere monitoring is in place, and whether entries are supervised or lone working. Declare it at submission. Left undeclared, it becomes a coverage argument exactly when you do not want one.",
+  },
+  {
+    q: "Some of our work is on contaminated land or near live buried services. Are there cover implications?",
+    a: "There can be. Contaminated land work sometimes needs an Environmental Impairment Liability extension, particularly where disturbing or spreading existing contamination is a real possibility. Working near live buried gas, electricity, or water mains increases the liability exposure and some insurers impose conditions around ground investigation and permit-to-dig. Both need to be on the submission rather than discovered at claim.",
+  },
 ];
 
 // ---- Page ----------------------------------------------------------------
@@ -70,23 +86,8 @@ export default function HighRiskPage() {
       <Marginalia />
 
       {/* SECTION 1 — Sector hero */}
-      <section className="relative pt-[160px] md:pt-[180px] pb-16 md:pb-20 overflow-hidden">
+      <section className="relative pt-[160px] md:pt-[180px] pb-10 md:pb-14 overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
-          <Reveal>
-            <div
-              className="flex items-baseline justify-between mb-12 md:mb-16 pb-4"
-              style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
-            >
-              <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-m-bone/55 tnum">
-                Plate <span className="text-white">02</span> · Specialism{" "}
-                <span className="text-white">01 / 04</span> — High Risk
-              </span>
-              <span className="hidden sm:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-m-bone/35 tnum">
-                NFDC · DSA affiliated
-              </span>
-            </div>
-          </Reveal>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-14 items-start">
             <div className="lg:col-span-7">
               <Reveal delay={120}>
@@ -139,7 +140,7 @@ export default function HighRiskPage() {
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80&auto=format&fit=crop"
+                    src="/images/high-risk-demolition.jpg"
                     alt="Demolition site with steel reinforcement exposed"
                     className="absolute inset-0 w-full h-full object-cover"
                     loading="eager"
@@ -158,17 +159,6 @@ export default function HighRiskPage() {
                         "linear-gradient(180deg, transparent 50%, rgba(20,16,46,0.85) 100%)",
                     }}
                   />
-                  <figcaption className="absolute left-0 right-0 bottom-0 px-4 py-3 flex items-end justify-between text-[10px] font-mono uppercase tracking-[0.24em] text-m-bone/85 tnum">
-                    <span>Fig. 02 — Demolition</span>
-                    <span>Pre-strip survey complete</span>
-                  </figcaption>
-                </div>
-                <div className="mt-3 grid grid-cols-3 gap-3 text-[9.5px] font-mono uppercase tracking-[0.26em] text-m-bone/40 tnum">
-                  <span>Class · High Risk</span>
-                  <span className="text-center font-display italic text-[12px] tracking-normal text-m-bone/55 normal-case">
-                    NFDC · DSA
-                  </span>
-                  <span className="text-right">2026 edition</span>
                 </div>
               </figure>
             </Reveal>
@@ -178,7 +168,7 @@ export default function HighRiskPage() {
 
       {/* SECTION 2 — Editorial */}
       <section
-        className="relative py-20 md:py-28"
+        className="relative py-12 md:py-16"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
@@ -218,7 +208,7 @@ export default function HighRiskPage() {
 
       {/* SECTION 3 — Sector FAQs */}
       <section
-        className="relative py-32 md:py-44"
+        className="relative py-16 md:py-24"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
@@ -232,7 +222,7 @@ export default function HighRiskPage() {
                   Sector FAQs
                 </span>
                 <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-[-0.02em] text-white">
-                  Eight questions<br />
+                  Twelve questions<br />
                   <span className="italic text-m-bone-2/85">
                     we&rsquo;re asked every week.
                   </span>
@@ -256,7 +246,7 @@ export default function HighRiskPage() {
       {/* SECTION 4 — Contact CTA */}
       <section
         id="sector-contact"
-        className="relative py-32 md:py-44"
+        className="relative py-16 md:py-24"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
@@ -325,3 +315,4 @@ export default function HighRiskPage() {
     </main>
   );
 }
+

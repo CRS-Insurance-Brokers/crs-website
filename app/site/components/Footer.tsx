@@ -26,13 +26,13 @@ const cols = [
       { label: "How we are paid",            href: "/site/about/how-we-are-paid" },
       { label: "Memberships & Associations", href: "/site/about/memberships" },
       { label: "Lighthouse Charity",         href: "/site/about/charity" },
+      { label: "Rewards",                   href: "/site/rewards" },
     ],
   },
   {
-    heading: "Resources",
+    heading: "Additional",
     links: [
       { label: "Beyond the basics", href: "/site/resources" },
-      { label: "Rewards",           href: "/site/rewards" },
       { label: "News",              href: "/site/news" },
       { label: "Contact",           href: "/site#contact" },
     ],

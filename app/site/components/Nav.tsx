@@ -44,15 +44,12 @@ const links: NavLink[] = [
       { label: "How we are paid",            href: "/site/about/how-we-are-paid" },
       { label: "Memberships & Associations", href: "/site/about/memberships" },
       { label: "Lighthouse Charity",          href: "/site/about/charity" },
+      { label: "Rewards",                    href: "/site/rewards" },
     ],
   },
   {
-    label: "Resources",
+    label: "Beyond the Basics",
     href: "/site/resources",
-    dropdown: [
-      { label: "Beyond the basics", href: "/site/resources" },
-      { label: "Rewards",           href: "/site/rewards" },
-    ],
   },
   { label: "News",    href: "/site/news" },
   { label: "Contact", href: "/site#contact" },

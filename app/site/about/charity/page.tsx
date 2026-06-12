@@ -6,7 +6,7 @@ import { Reveal } from "../../components/Reveal";
 import { ArrowUpRight } from "../../components/icons";
 
 export const metadata: Metadata = {
-  title: "Lighthouse Charity · CRS Insurance Brokers",
+  title: "Lighthouse Charity",
   description:
     "CRS Insurance Brokers is proud to support the Lighthouse Construction Industry Charity — providing free 24/7 wellbeing support to construction workers and their families.",
   alternates: { canonical: "/site/about/charity" },
@@ -29,7 +29,8 @@ export default function CharityPage() {
                 style={{ fontSize: "clamp(2.25rem, 4.8vw, 4rem)" }}
               >
                 Proud to support<br />
-                <span className="italic">Lighthouse.</span>
+                <span className="italic">Lighthouse &mdash;</span><br />
+                <span className="text-m-bone-2/85">the Construction Industry Charity.</span>
               </h1>
               <p className="text-[16px] md:text-[18px] leading-[1.65] text-m-bone/55">
                 Standing beside the people who build things — since 1956.

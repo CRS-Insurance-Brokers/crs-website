@@ -5,7 +5,7 @@ import { Footer } from "../../components/Footer";
 import { Team } from "../../components/Team";
 
 export const metadata: Metadata = {
-  title: "Management Team · CRS Insurance Brokers",
+  title: "Management Team",
   description:
     "Meet the CRS Insurance Brokers management team. Named handlers, direct lines, specialist knowledge across high-risk trades.",
   alternates: { canonical: "/site/about/team" },

@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 import { Reveal } from "../components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy · CRS Insurance Brokers",
+  title: "Cookie Policy",
   description:
     "How CRS Insurance Brokers uses cookies on this website. CIB Group UK Ltd, FCA FRN 960073.",
   alternates: { canonical: "/site/cookies" },

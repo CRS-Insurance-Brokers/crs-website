@@ -68,23 +68,8 @@ export default function ContractorsEngineersPage() {
       <Marginalia />
 
       {/* SECTION 1 — Sector hero */}
-      <section className="relative pt-[160px] md:pt-[180px] pb-16 md:pb-20 overflow-hidden">
+      <section className="relative pt-[160px] md:pt-[180px] pb-10 md:pb-14 overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
-          <Reveal>
-            <div
-              className="flex items-baseline justify-between mb-12 md:mb-16 pb-4"
-              style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
-            >
-              <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-m-bone/55 tnum">
-                Plate <span className="text-white">02</span> · Specialism{" "}
-                <span className="text-white">03 / 04</span> — Engineering
-              </span>
-              <span className="hidden sm:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-m-bone/35 tnum">
-                M&amp;E · Machinery · Specialist engineering
-              </span>
-            </div>
-          </Reveal>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-14 items-start">
             <div className="lg:col-span-7">
               <Reveal delay={120}>
@@ -137,7 +122,7 @@ export default function ContractorsEngineersPage() {
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=1200&q=80&auto=format&fit=crop"
+                    src="/images/engineering.jpg"
                     alt="Engineer working with equipment"
                     className="absolute inset-0 w-full h-full object-cover"
                     loading="eager"
@@ -156,17 +141,6 @@ export default function ContractorsEngineersPage() {
                         "linear-gradient(180deg, transparent 50%, rgba(20,16,46,0.85) 100%)",
                     }}
                   />
-                  <figcaption className="absolute left-0 right-0 bottom-0 px-4 py-3 flex items-end justify-between text-[10px] font-mono uppercase tracking-[0.24em] text-m-bone/85 tnum">
-                    <span>Fig. 04 — Engineers</span>
-                    <span>M&amp;E · Machinery</span>
-                  </figcaption>
-                </div>
-                <div className="mt-3 grid grid-cols-3 gap-3 text-[9.5px] font-mono uppercase tracking-[0.26em] text-m-bone/40 tnum">
-                  <span>Class · Engineers</span>
-                  <span className="text-center font-display italic text-[12px] tracking-normal text-m-bone/55 normal-case">
-                    M&amp;E · Machinery
-                  </span>
-                  <span className="text-right">2026 edition</span>
                 </div>
               </figure>
             </Reveal>
@@ -176,7 +150,7 @@ export default function ContractorsEngineersPage() {
 
       {/* SECTION 2 — Editorial */}
       <section
-        className="relative py-20 md:py-28"
+        className="relative py-12 md:py-16"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
@@ -217,7 +191,7 @@ export default function ContractorsEngineersPage() {
 
       {/* SECTION 3 — Sector FAQs */}
       <section
-        className="relative py-32 md:py-44"
+        className="relative py-16 md:py-24"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
@@ -255,7 +229,7 @@ export default function ContractorsEngineersPage() {
       {/* SECTION 4 — Contact CTA */}
       <section
         id="sector-contact"
-        className="relative py-32 md:py-44"
+        className="relative py-16 md:py-24"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
@@ -324,3 +298,4 @@ export default function ContractorsEngineersPage() {
     </main>
   );
 }
+
