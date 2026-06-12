@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Reveal } from "./Reveal";
 import { HoldToCall } from "./HoldToCall";
 import { ArrowUpRight } from "./icons";
@@ -16,18 +16,36 @@ import { heroFootnote, heroPlate, brand } from "../data/content";
  */
 export function Hero() {
   const photoRef = useRef<HTMLDivElement>(null);
-  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+  const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = photoRef.current;
-    if (!el) return;
+    const moving = parallaxRef.current;
+    if (!el || !moving) return;
     const isFine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!isFine || reduceMotion) return;
 
-    let target = { x: 0, y: 0 };
-    let current = { x: 0, y: 0 };
+    const target = { x: 0, y: 0 };
+    const current = { x: 0, y: 0 };
     let raf = 0;
+
+    // Spring lerp written straight to the DOM — no React state, so the hero
+    // never re-renders. The loop parks itself once settled and restarts on
+    // the next mouse move.
+    const tick = () => {
+      current.x += (target.x - current.x) * 0.06;
+      current.y += (target.y - current.y) * 0.06;
+      moving.style.transform = `translate3d(${current.x * -14}px, ${current.y * -14}px, 0) scale(1.06)`;
+      const settled =
+        Math.abs(target.x - current.x) < 0.001 &&
+        Math.abs(target.y - current.y) < 0.001;
+      raf = settled ? 0 : requestAnimationFrame(tick);
+    };
+
+    const wake = () => {
+      if (!raf) raf = requestAnimationFrame(tick);
+    };
 
     const onMove = (e: MouseEvent) => {
       const r = el.getBoundingClientRect();
@@ -36,28 +54,21 @@ export function Hero() {
       // normalised offset, capped at ±1
       target.x = Math.max(-1, Math.min(1, (e.clientX - cx) / (r.width * 0.6)));
       target.y = Math.max(-1, Math.min(1, (e.clientY - cy) / (r.height * 0.6)));
+      wake();
     };
 
     const onLeave = () => {
       target.x = 0;
       target.y = 0;
+      wake();
     };
-
-    // Spring lerp — stiffness 0.06, damping via velocity decay
-    const tick = () => {
-      current.x += (target.x - current.x) * 0.06;
-      current.y += (target.y - current.y) * 0.06;
-      setParallax({ x: current.x, y: current.y });
-      raf = requestAnimationFrame(tick);
-    };
-    tick();
 
     window.addEventListener("mousemove", onMove);
     window.addEventListener("mouseleave", onLeave);
     return () => {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseleave", onLeave);
-      cancelAnimationFrame(raf);
+      if (raf) cancelAnimationFrame(raf);
     };
   }, []);
 
@@ -134,10 +145,9 @@ export function Hero() {
                 }}
               >
                 <div
+                  ref={parallaxRef}
                   className="absolute inset-0 will-change-transform"
-                  style={{
-                    transform: `translate3d(${parallax.x * -14}px, ${parallax.y * -14}px, 0) scale(1.06)`,
-                  }}
+                  style={{ transform: "translate3d(0, 0, 0) scale(1.06)" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -145,6 +155,7 @@ export function Hero() {
                     alt={heroPlate.data.photoAlt}
                     className="absolute inset-0 w-full h-full object-cover"
                     loading="eager"
+                    fetchPriority="high"
                     decoding="async"
                   />
                 </div>

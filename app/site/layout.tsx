@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import { OrganizationSchema } from "./components/SchemaJsonLd";
+import { ConsentBanner } from "./components/ConsentBanner";
 import "./marketing.css";
 
 const inter = Inter({
@@ -45,14 +46,10 @@ export const metadata: Metadata = {
   authors: [{ name: "CRS Insurance Brokers" }],
   creator: "CIB Group UK Ltd",
   publisher: "CRS Insurance Brokers",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "CRS Insurance Brokers — Specialist cover for high-risk trades",
     description:
       "Demolition, construction, contractors and manufacturing. We place cover others can't, and answer the phone when it matters. Lutterworth, UK.",
-    url: "https://crs-ins.co.uk",
     siteName: "CRS Insurance Brokers",
     locale: "en_GB",
     type: "website",
@@ -92,9 +89,21 @@ export default function MarketingLayout({
       data-marketing
       className={`${inter.variable} ${geistMono.variable} min-h-[100dvh]`}
     >
+      {/* Without JS the IntersectionObserver never fires and .reveal content
+          stays at opacity 0 — force everything visible. */}
+      <noscript>
+        <style>{`[data-marketing] .reveal { opacity: 1 !important; transform: none !important; }`}</style>
+      </noscript>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-white focus:text-m-ink focus:px-5 focus:py-3 focus:text-[13px] focus:font-semibold focus:tracking-[0.08em]"
+      >
+        Skip to content
+      </a>
       <OrganizationSchema />
       <div className="marketing-grain" aria-hidden />
       {children}
+      <ConsentBanner />
     </div>
   );
 }

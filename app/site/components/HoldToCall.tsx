@@ -71,6 +71,11 @@ export function HoldToCall({
       onPointerUp={release}
       onPointerLeave={release}
       onPointerCancel={release}
+      onClick={(e) => {
+        // Keyboard activation (Enter/Space) fires click with detail 0 and no
+        // pointer events — dial immediately; the hold gesture is pointer-only.
+        if (e.detail === 0) window.location.href = `tel:${number}`;
+      }}
       className={`group relative isolate overflow-hidden inline-flex items-center justify-between gap-4 select-none ${className}`}
       style={{
         background: "transparent",
@@ -78,7 +83,7 @@ export function HoldToCall({
         transition: "transform 160ms cubic-bezier(0.23, 1, 0.32, 1), border-color 200ms ease",
         transform: holding ? "scale(0.99)" : "scale(1)",
       }}
-      aria-label={`Press and hold to call ${display}`}
+      aria-label={`Call ${display}`}
     >
       {/* Coral fill that wipes left → right via clip-path */}
       <span

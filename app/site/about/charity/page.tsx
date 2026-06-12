@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Nav } from "../../components/Nav";
-import { Marginalia } from "../../components/Marginalia";
 import { Footer } from "../../components/Footer";
 import { Reveal } from "../../components/Reveal";
 import { ArrowUpRight } from "../../components/icons";
@@ -14,9 +13,8 @@ export const metadata: Metadata = {
 
 export default function CharityPage() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Nav />
-      <Marginalia />
 
       {/* Hero — heading left, logo right */}
       <section className="relative pt-[160px] md:pt-[180px] pb-14 md:pb-20">

@@ -28,7 +28,7 @@ export function TrustStrip() {
           style={{ background: "linear-gradient(270deg, var(--color-ink), transparent)" }}
         />
 
-        <div className="flex drift gap-12 md:gap-20 whitespace-nowrap will-change-transform">
+        <div className="flex drift drift-pausable gap-12 md:gap-20 whitespace-nowrap will-change-transform">
           {repeated.map((a, i) => (
             <a
               key={`${a.name}-${i}`}
@@ -36,6 +36,10 @@ export function TrustStrip() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-6 shrink-0 group"
+              // Copies beyond the first set exist only for the seamless loop —
+              // hide them from keyboard and screen readers.
+              aria-hidden={i >= accreditations.length || undefined}
+              tabIndex={i >= accreditations.length ? -1 : undefined}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

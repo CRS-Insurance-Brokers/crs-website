@@ -1,6 +1,5 @@
 ﻿import type { Metadata } from "next";
 import { Nav } from "../../components/Nav";
-import { Marginalia } from "../../components/Marginalia";
 import { Footer } from "../../components/Footer";
 import { Reveal } from "../../components/Reveal";
 import { ArrowUpRight } from "../../components/icons";
@@ -18,6 +17,8 @@ export const metadata: Metadata = {
     description:
       "Specialist cover for M&E engineers and engineering trades. Bespoke schedules for tools, machinery in transit, and hired-in cover.",
     type: "website",
+    siteName: "CRS Insurance Brokers",
+    locale: "en_GB",
   },
 };
 
@@ -62,10 +63,9 @@ const faqs: FAQItem[] = [
 
 export default function EngineeringPage() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <FAQPageSchema items={faqs} />
       <Nav />
-      <Marginalia />
 
       {/* SECTION 1 — Sector hero */}
       <section className="relative pt-[160px] md:pt-[180px] pb-10 md:pb-14 overflow-hidden">
@@ -126,6 +126,7 @@ export default function EngineeringPage() {
                     alt="Engineer working with equipment"
                     className="absolute inset-0 w-full h-full object-cover"
                     loading="eager"
+                    fetchPriority="high"
                     decoding="async"
                   />
                   <div className="absolute inset-0 pointer-events-none mix-blend-difference">

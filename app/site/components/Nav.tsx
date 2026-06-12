@@ -59,10 +59,31 @@ export function Nav() {
   const [open, setOpen]                   = useState(false);
   const [openDropdown, setOpenDropdown]   = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const burgerRef  = useRef<HTMLButtonElement>(null);
+  const menuRef    = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
+  // Escape closes mobile menu and desktop dropdowns; opening the mobile menu
+  // moves focus into it, closing returns focus to the burger.
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key !== "Escape") return;
+      setOpenDropdown(null);
+      if (open) {
+        setOpen(false);
+        burgerRef.current?.focus();
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  useEffect(() => {
+    if (open) menuRef.current?.querySelector("a")?.focus();
   }, [open]);
 
   function handleEnter(label: string) {
@@ -107,10 +128,18 @@ export function Nav() {
                 className="relative h-full flex items-center"
                 onMouseEnter={() => l.dropdown && handleEnter(l.label)}
                 onMouseLeave={() => l.dropdown && handleLeave()}
+                onFocus={() => l.dropdown && handleEnter(l.label)}
+                onBlur={(e) => {
+                  if (l.dropdown && !e.currentTarget.contains(e.relatedTarget)) {
+                    handleLeave();
+                  }
+                }}
               >
                 <a
                   href={l.href}
                   onMouseEnter={() => l.dropdown && handleEnter(l.label)}
+                  aria-expanded={l.dropdown ? openDropdown === l.label : undefined}
+                  aria-haspopup={l.dropdown ? "menu" : undefined}
                   className="relative flex items-center gap-1.5 px-4 lg:px-5 py-2 text-[12px] font-medium uppercase tracking-[0.16em] text-m-bone/65 hover:text-white transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)]"
                 >
                   {l.label}
@@ -149,7 +178,10 @@ export function Nav() {
                       opacity: openDropdown === l.label ? 1 : 0,
                       transform: openDropdown === l.label ? "translateY(0)" : "translateY(-6px)",
                       pointerEvents: openDropdown === l.label ? "auto" : "none",
-                      transition: "opacity 180ms cubic-bezier(0.23,1,0.32,1), transform 180ms cubic-bezier(0.23,1,0.32,1)",
+                      // visibility keeps closed panels out of the tab order and
+                      // accessibility tree; the delay preserves the fade-out.
+                      visibility: openDropdown === l.label ? "visible" : "hidden",
+                      transition: `opacity 180ms cubic-bezier(0.23,1,0.32,1), transform 180ms cubic-bezier(0.23,1,0.32,1), visibility 0s linear ${openDropdown === l.label ? "0ms" : "180ms"}`,
                     }}
                     onMouseEnter={() => handleEnter(l.label)}
                     onMouseLeave={handleLeave}
@@ -188,6 +220,7 @@ export function Nav() {
 
           {/* Mobile hamburger */}
           <button
+            ref={burgerRef}
             onClick={() => setOpen((o) => !o)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
@@ -206,11 +239,18 @@ export function Nav() {
         </div>
       </header>
 
-      {/* Mobile expanded menu */}
+      {/* Mobile expanded menu — visibility:hidden keeps the closed menu out of
+          the tab order and screen-reader tree; the transition delay lets the
+          fade-out finish before it disappears. */}
       <div
-        className={`fixed inset-0 z-[90] md:hidden transition-opacity duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+        ref={menuRef}
+        className={`fixed inset-0 z-[90] md:hidden ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
+        style={{
+          visibility: open ? "visible" : "hidden",
+          transition: `opacity 300ms cubic-bezier(0.23,1,0.32,1), visibility 0s linear ${open ? "0ms" : "300ms"}`,
+        }}
       >
         <div className="absolute inset-0 bg-m-ink" onClick={() => setOpen(false)} />
         <div className="relative h-full flex flex-col justify-between pt-[120px] pb-10 px-6 overflow-y-auto">

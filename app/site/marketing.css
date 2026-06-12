@@ -88,6 +88,11 @@
 [data-marketing] .drift {
   animation: marketing-drift 60s linear infinite;
 }
+/* WCAG 2.2.2 — auto-scrolling content must be pausable */
+[data-marketing] .drift-pausable:hover,
+[data-marketing] .drift-pausable:focus-within {
+  animation-play-state: paused;
+}
 
 /* Pulse dot */
 @keyframes marketing-pulse-dot {

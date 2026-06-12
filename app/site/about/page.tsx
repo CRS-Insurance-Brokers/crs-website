@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Nav } from "../components/Nav";
-import { Marginalia } from "../components/Marginalia";
 import { Footer } from "../components/Footer";
 import { Reveal } from "../components/Reveal";
 import { WhyCRS } from "../components/WhyCRS";
@@ -14,9 +13,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Nav />
-      <Marginalia />
 
       <section className="relative pt-[160px] md:pt-[180px] pb-16 md:pb-20">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">

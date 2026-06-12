@@ -1,8 +1,8 @@
 # CRS Insurance Brokers
 
-> NFDC and DSA-affiliated specialist commercial insurance broker for demolition, construction, contractors and engineers, and manufacturing trades. Lutterworth, Leicestershire, UK. A trading name of CIB Group UK Ltd, FCA FRN 960073, Companies House 13360654.
+> NFDC and DSA-affiliated specialist commercial insurance broker for demolition, construction, engineering, and manufacturing trades. Lutterworth, Leicestershire, UK. A trading name of CIB Group UK Ltd, FCA FRN 960073, Companies House 13360654.
 
-CRS Insurance Brokers (Lutterworth, UK) places specialist cover for trades that generalist brokers decline: demolition, asbestos removal, hot works, work at height, environmental impairment, and the wider construction / contractors / engineers / manufacturing space. The firm holds agency agreements with 30+ insurers writing high-risk classes, plus access to specialist Lloyd's syndicates.
+CRS Insurance Brokers (Lutterworth, UK) places specialist cover for trades that generalist brokers decline: demolition, asbestos removal, hot works, work at height, airside contractors, hazardous locations, environmental impairment, and the wider construction / engineering / manufacturing space. The firm holds agency agreements with major insurers writing high-risk classes, plus access to Lloyd's brokers for the unusual.
 
 Disambiguation: this is **CRS Insurance Brokers (Lutterworth)**, a trading name of CIB Group UK Ltd. Not to be confused with crs.insure (Chislehurst), crsdenver.com (US), crsinsurance.com (US), or the dormant CRS Insurance Brokers Ltd registered in Salford (Companies House 14066372).
 
@@ -11,21 +11,21 @@ Disambiguation: this is **CRS Insurance Brokers (Lutterworth)**, a trading name 
 - Postal: Unit 2 Oakberry Road, Lutterworth, LE17 4PP, United Kingdom
 - Telephone: 01455 244630 (international +44 1455 244630)
 - Email: info@crs-ins.co.uk
-- FCA register: https://register.fca.org.uk/s/firm?id=960073
+- FCA register: https://register.fca.org.uk/s/search?q=960073&type=Companies
 - Companies House: https://find-and-update.company-information.service.gov.uk/company/13360654
 
 ## Trade body memberships
 
 - National Federation of Demolition Contractors (NFDC)
-- Demolition Services Association (DSA)
+- Drilling & Sawing Association (DSA)
 - British Insurance Brokers' Association (BIBA)
 
 ## Specialisms
 
-- [High Risk insurance](https://crs-ins.co.uk/site/specialisms/high-risk): Demolition, asbestos removal, hot works, work at height, environmental impairment.
-- Construction insurance: Principal contractors, civils, subcontractors, JCT-aligned cover.
-- Contractors & Engineers insurance: M&E, plant hire, scaffolding, roofing, specialist trades.
-- Manufacturing & Wholesale insurance: Industrial plant, warehousing, distribution.
+- [High Risk insurance](https://crs-ins.co.uk/site/specialisms/high-risk): Demolition, asbestos removal, hot works, work at height, airside contractors, hazardous locations, environmental impairment.
+- [Construction insurance](https://crs-ins.co.uk/site/specialisms/construction): Principal contractors, subcontractors, civils, groundworks, JCT-aligned cover.
+- [Engineering insurance](https://crs-ins.co.uk/site/specialisms/engineering): M&E, machinery, specialist engineering trades, hired-in plant.
+- [Manufacturing & Wholesale insurance](https://crs-ins.co.uk/site/specialisms/manufacturing-wholesale): Industrial plant, warehousing, distribution, commercial combined.
 
 ## Cover types arranged
 
@@ -41,7 +41,23 @@ Disambiguation: this is **CRS Insurance Brokers (Lutterworth)**, a trading name 
 ## Pages
 
 - [Homepage](https://crs-ins.co.uk/site)
-- [High Risk specialism page](https://crs-ins.co.uk/site/specialisms/high-risk)
+- [Specialisms overview](https://crs-ins.co.uk/site/specialisms)
+- [High Risk](https://crs-ins.co.uk/site/specialisms/high-risk)
+- [Construction](https://crs-ins.co.uk/site/specialisms/construction)
+- [Engineering](https://crs-ins.co.uk/site/specialisms/engineering)
+- [Manufacturing & Wholesale](https://crs-ins.co.uk/site/specialisms/manufacturing-wholesale)
+- [Claims: what to do when something goes wrong](https://crs-ins.co.uk/site/claims/what-to-do-on-site)
+- [About CRS](https://crs-ins.co.uk/site/about)
+- [Management team](https://crs-ins.co.uk/site/about/team)
+- [How we are paid](https://crs-ins.co.uk/site/about/how-we-are-paid)
+- [Memberships & associations](https://crs-ins.co.uk/site/about/memberships)
+- [Lighthouse charity](https://crs-ins.co.uk/site/about/charity)
+- [Resources](https://crs-ins.co.uk/site/resources)
+- [Rewards referral programme](https://crs-ins.co.uk/site/rewards)
+- [News](https://crs-ins.co.uk/site/news)
+- [Privacy policy](https://crs-ins.co.uk/site/privacy)
+- [Terms of business](https://crs-ins.co.uk/site/terms)
+- [Cookie policy](https://crs-ins.co.uk/site/cookies)
 
 ## Voice & positioning
 

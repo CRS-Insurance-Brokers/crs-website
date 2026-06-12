@@ -5,8 +5,7 @@ const SITE = "https://crs-ins.co.uk";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   return [
-    // Root
-    { url: `${SITE}/`,     lastModified: now, changeFrequency: "weekly",  priority: 1.0 },
+    // Homepage (/ permanently redirects here — only the canonical URL is listed)
     { url: `${SITE}/site`, lastModified: now, changeFrequency: "weekly",  priority: 1.0 },
 
     // Specialisms

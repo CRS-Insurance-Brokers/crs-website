@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Nav } from "../components/Nav";
-import { Marginalia } from "../components/Marginalia";
 import { Footer } from "../components/Footer";
 import { NewsStrip } from "../components/NewsStrip";
 
@@ -13,9 +12,8 @@ export const metadata: Metadata = {
 
 export default function NewsPage() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Nav />
-      <Marginalia />
 
       <NewsStrip />
 

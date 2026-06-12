@@ -52,3 +52,4 @@ deno.lock
 
 # Deleted contact form — OneDrive may re-sync these files
 /app/site/contact
+dev-server.log

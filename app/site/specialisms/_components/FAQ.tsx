@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 
 export type FAQItem = {
   q: string;
@@ -9,11 +9,13 @@ export type FAQItem = {
 
 export function FAQList({ items }: { items: FAQItem[] }) {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const baseId = useId();
 
   return (
     <ul className="flex flex-col">
       {items.map((item, i) => {
         const open = openIdx === i;
+        const panelId = `${baseId}-faq-${i}`;
         return (
           <li
             key={item.q}
@@ -26,6 +28,7 @@ export function FAQList({ items }: { items: FAQItem[] }) {
               type="button"
               onClick={() => setOpenIdx(open ? null : i)}
               aria-expanded={open}
+              aria-controls={panelId}
               className="group w-full text-left py-6 md:py-7 flex items-start justify-between gap-6 transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)]"
             >
               <span className="flex items-baseline gap-5 md:gap-7 min-w-0">
@@ -62,10 +65,15 @@ export function FAQList({ items }: { items: FAQItem[] }) {
               </span>
             </button>
             <div
+              id={panelId}
               className="grid transition-[grid-template-rows] duration-500"
               style={{
                 gridTemplateRows: open ? "1fr" : "0fr",
                 transitionTimingFunction: "cubic-bezier(0.23, 1, 0.32, 1)",
+                // Collapsed zero-height content is still read by screen readers;
+                // visibility removes it while the delay preserves the animation.
+                visibility: open ? "visible" : "hidden",
+                transition: `grid-template-rows 500ms cubic-bezier(0.23,1,0.32,1), visibility 0s linear ${open ? "0ms" : "500ms"}`,
               }}
             >
               <div className="overflow-hidden">

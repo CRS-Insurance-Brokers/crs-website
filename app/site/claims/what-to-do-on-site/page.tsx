@@ -1,6 +1,5 @@
 ﻿import type { Metadata } from "next";
 import { Nav } from "../../components/Nav";
-import { Marginalia } from "../../components/Marginalia";
 import { Footer } from "../../components/Footer";
 import { Reveal } from "../../components/Reveal";
 import { ArrowUpRight } from "../../components/icons";
@@ -15,6 +14,8 @@ export const metadata: Metadata = {
     description:
       "Early notification protects your claim. Find out what to do — and what not to do — the moment an incident occurs.",
     type: "website",
+    siteName: "CRS Insurance Brokers",
+    locale: "en_GB",
   },
 };
 
@@ -39,9 +40,8 @@ const triggers = [
 
 export default function WhatToDoPage() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Nav />
-      <Marginalia />
 
         {/* Hero */}
         <section className="relative pt-[160px] md:pt-[180px] pb-24 md:pb-36 overflow-hidden">
@@ -192,9 +192,9 @@ export default function WhatToDoPage() {
                   </h2>
                   <p className="mt-6 text-[15px] leading-[1.65] text-m-ink/70 max-w-lg">
                     Our commitment doesn&rsquo;t end at the placement of your policy.
-                    By reporting early, we can promise unparalleled support — with our
-                    Claims team on hand every step of the way, tailoring guidance to
-                    your specific circumstances.
+                    Reporting early lets our Claims team give you the strongest
+                    support from day one — on hand every step of the way, tailoring
+                    guidance to your specific circumstances.
                   </p>
                 </div>
                 <div className="lg:col-span-5 flex flex-col gap-4">

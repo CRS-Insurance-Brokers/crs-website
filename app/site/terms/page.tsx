@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Nav } from "../components/Nav";
-import { Marginalia } from "../components/Marginalia";
 import { Footer } from "../components/Footer";
 import { Reveal } from "../components/Reveal";
 
@@ -75,9 +74,8 @@ const sections = [
 
 export default function TermsPage() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Nav />
-      <Marginalia />
 
       {/* Hero */}
       <section className="relative pt-[160px] md:pt-[180px] pb-16 md:pb-20">

@@ -59,7 +59,7 @@ export function OrganizationSchema() {
       },
     ],
     sameAs: [
-      `https://register.fca.org.uk/s/firm?id=${brand.data.fcaFrn}`,
+      `https://register.fca.org.uk/s/search?q=${brand.data.fcaFrn}&type=Companies`,
       `https://find-and-update.company-information.service.gov.uk/company/${brand.data.companyNumber}`,
       "https://www.linkedin.com/company/crs-insurance-brokers",
     ],
@@ -72,7 +72,7 @@ export function OrganizationSchema() {
       {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "Trade body membership",
-        name: "Demolition Services Association (DSA)",
+        name: "Drilling & Sawing Association (DSA)",
       },
       {
         "@type": "EducationalOccupationalCredential",
