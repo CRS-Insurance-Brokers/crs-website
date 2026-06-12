@@ -11,12 +11,13 @@ import { useEffect, useState } from "react";
  * The cookie policy at /site/cookies describes exactly this behaviour;
  * keep the two in sync if either changes.
  *
- * GA4 Measurement ID comes from NEXT_PUBLIC_GA_ID (inlined at build time).
- * Without an ID the banner still records the choice but loads nothing.
+ * The GA4 Measurement ID is baked in (it is public by nature — visible in
+ * page source on any GA site). NEXT_PUBLIC_GA_ID overrides it if a separate
+ * property is ever needed, e.g. on preview deploys.
  */
 
 const CONSENT_COOKIE = "crs_cookie_consent";
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-6BWHLCMP75";
 
 function readConsent(): string | null {
   const match = document.cookie.match(
