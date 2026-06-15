@@ -31,7 +31,7 @@ export default function NotFound() {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/crs-logo-light.svg"
+        src="/crs-logo-dark.svg"
         alt="CRS Insurance Brokers"
         style={{ height: "40px", marginBottom: "1rem" }}
       />
