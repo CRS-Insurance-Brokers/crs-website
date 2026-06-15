@@ -33,7 +33,7 @@ export default function NotFound() {
       <img
         src="/crs-logo-dark.svg"
         alt="CRS Insurance Brokers"
-        style={{ height: "40px", marginBottom: "1rem" }}
+        style={{ height: "64px", marginBottom: "1rem" }}
       />
       <p
         style={{
