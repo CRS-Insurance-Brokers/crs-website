@@ -71,7 +71,7 @@ export default function NotFound() {
         and we&rsquo;ll point you the right way.
       </p>
       <Link
-        href="/site"
+        href="/"
         style={{
           marginTop: "0.5rem",
           padding: "1rem 1.5rem",
