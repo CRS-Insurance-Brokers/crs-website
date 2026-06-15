@@ -21,25 +21,14 @@ export function FooterCTA() {
         <Reveal>
           <span className="inline-flex items-center gap-2 mb-8 text-[10px] font-mono uppercase tracking-[0.32em] text-m-ink/55">
             <span className="w-1.5 h-1.5 rounded-full bg-m-coral pulse-dot" />
-            Save the number
+            Contact
           </span>
         </Reveal>
 
         <Reveal delay={150}>
           <h2 className="font-display font-bold text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.15] tracking-[-0.015em] text-m-ink max-w-3xl">
-            When something<br />
-            goes wrong,<br />
-            <span className="italic">we want to be</span><br />
-            your <span className="text-m-coral italic">first call.</span>
+            Talk to us.
           </h2>
-        </Reveal>
-
-        <Reveal delay={300}>
-          <p className="mt-10 md:mt-14 max-w-xl text-[15px] md:text-[17px] leading-[1.65] text-m-ink/70">
-            Save 01455 244630 to your phone now. Pin the contact card. Put it in the
-            site induction pack. We&rsquo;d rather be the call you don&rsquo;t need to
-            make than the one you can&rsquo;t reach.
-          </p>
         </Reveal>
 
         <Reveal delay={420}>
