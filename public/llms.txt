@@ -22,10 +22,10 @@ Disambiguation: this is **CRS Insurance Brokers (Lutterworth)**, a trading name 
 
 ## Specialisms
 
-- [High Risk insurance](https://crs-ins.co.uk/site/specialisms/high-risk): Demolition, asbestos removal, hot works, work at height, airside contractors, hazardous locations, environmental impairment.
-- [Construction insurance](https://crs-ins.co.uk/site/specialisms/construction): Principal contractors, subcontractors, civils, groundworks, JCT-aligned cover.
-- [Engineering insurance](https://crs-ins.co.uk/site/specialisms/engineering): M&E, machinery, specialist engineering trades, hired-in plant.
-- [Manufacturing & Wholesale insurance](https://crs-ins.co.uk/site/specialisms/manufacturing-wholesale): Industrial plant, warehousing, distribution, commercial combined.
+- [High Risk insurance](https://crs-ins.co.uk/specialisms/high-risk): Demolition, asbestos removal, hot works, work at height, airside contractors, hazardous locations, environmental impairment.
+- [Construction insurance](https://crs-ins.co.uk/specialisms/construction): Principal contractors, subcontractors, civils, groundworks, JCT-aligned cover.
+- [Engineering insurance](https://crs-ins.co.uk/specialisms/engineering): M&E, machinery, specialist engineering trades, hired-in plant.
+- [Manufacturing & Wholesale insurance](https://crs-ins.co.uk/specialisms/manufacturing-wholesale): Industrial plant, warehousing, distribution, commercial combined.
 
 ## Cover types arranged
 
@@ -40,24 +40,24 @@ Disambiguation: this is **CRS Insurance Brokers (Lutterworth)**, a trading name 
 
 ## Pages
 
-- [Homepage](https://crs-ins.co.uk/site)
-- [Specialisms overview](https://crs-ins.co.uk/site/specialisms)
-- [High Risk](https://crs-ins.co.uk/site/specialisms/high-risk)
-- [Construction](https://crs-ins.co.uk/site/specialisms/construction)
-- [Engineering](https://crs-ins.co.uk/site/specialisms/engineering)
-- [Manufacturing & Wholesale](https://crs-ins.co.uk/site/specialisms/manufacturing-wholesale)
-- [Claims: what to do when something goes wrong](https://crs-ins.co.uk/site/claims/what-to-do-on-site)
-- [About CRS](https://crs-ins.co.uk/site/about)
-- [Management team](https://crs-ins.co.uk/site/about/team)
-- [How we are paid](https://crs-ins.co.uk/site/about/how-we-are-paid)
-- [Memberships & associations](https://crs-ins.co.uk/site/about/memberships)
-- [Lighthouse charity](https://crs-ins.co.uk/site/about/charity)
-- [Resources](https://crs-ins.co.uk/site/resources)
-- [Rewards referral programme](https://crs-ins.co.uk/site/rewards)
-- [News](https://crs-ins.co.uk/site/news)
-- [Privacy policy](https://crs-ins.co.uk/site/privacy)
-- [Terms of business](https://crs-ins.co.uk/site/terms)
-- [Cookie policy](https://crs-ins.co.uk/site/cookies)
+- [Homepage](https://crs-ins.co.uk/)
+- [Specialisms overview](https://crs-ins.co.uk/specialisms)
+- [High Risk](https://crs-ins.co.uk/specialisms/high-risk)
+- [Construction](https://crs-ins.co.uk/specialisms/construction)
+- [Engineering](https://crs-ins.co.uk/specialisms/engineering)
+- [Manufacturing & Wholesale](https://crs-ins.co.uk/specialisms/manufacturing-wholesale)
+- [Claims: what to do when something goes wrong](https://crs-ins.co.uk/claims/what-to-do-on-site)
+- [About CRS](https://crs-ins.co.uk/about)
+- [Management team](https://crs-ins.co.uk/about/team)
+- [How we are paid](https://crs-ins.co.uk/about/how-we-are-paid)
+- [Memberships & associations](https://crs-ins.co.uk/about/memberships)
+- [Lighthouse charity](https://crs-ins.co.uk/about/charity)
+- [Resources](https://crs-ins.co.uk/resources)
+- [Rewards referral programme](https://crs-ins.co.uk/rewards)
+- [News](https://crs-ins.co.uk/news)
+- [Privacy policy](https://crs-ins.co.uk/privacy)
+- [Terms of business](https://crs-ins.co.uk/terms)
+- [Cookie policy](https://crs-ins.co.uk/cookies)
 
 ## Voice & positioning
 
