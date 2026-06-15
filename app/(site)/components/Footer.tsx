@@ -23,10 +23,10 @@ const cols = [
     links: [
       { label: "About CRS",                  href: "/about" },
       { label: "Management Team",            href: "/about/team" },
-      { label: "How we are paid",            href: "/about/how-we-are-paid" },
       { label: "Memberships & Associations", href: "/about/memberships" },
       { label: "Lighthouse Charity",         href: "/about/charity" },
       { label: "Rewards",                   href: "/rewards" },
+      { label: "How we are paid",            href: "/about/how-we-are-paid" },
     ],
   },
   {

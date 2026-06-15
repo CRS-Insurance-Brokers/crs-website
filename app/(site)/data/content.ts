@@ -165,7 +165,7 @@ export const productGuides: ContentBlock<
     tag: string;
     title: string;
     description: string;
-    pdf: string;
+    pdf: string | null;
     accent: string;
   }[]
 > = {
@@ -194,6 +194,62 @@ export const productGuides: ContentBlock<
         "Protection against customer insolvency and protracted default. Keeps your cash flow intact when a client fails to pay — critical for contractors with long payment terms.",
       pdf: "/resources/trade-credit-flyer.pdf",
       accent: "#2E7D6B",
+    },
+    {
+      tag: "Product",
+      title: "Motor Fleet",
+      description:
+        "Motor insurance for businesses running multiple vehicles. Fleet terms cover cars, vans, and HGVs, with options for named driver or any driver.",
+      pdf: null,
+      accent: "#5C7AEA",
+    },
+    {
+      tag: "Package",
+      title: "Commercial Legal Expenses",
+      description:
+        "Covers legal costs for contract disputes, debt recovery, employment claims, and tax investigations. Sits alongside your main commercial policy.",
+      pdf: null,
+      accent: "#8B5CF6",
+    },
+    {
+      tag: "Product",
+      title: "Motor Legal Expenses",
+      description:
+        "Legal costs cover following a non-fault road accident. Used to recover uninsured losses and pursue compensation claims.",
+      pdf: null,
+      accent: "#C084FC",
+    },
+    {
+      tag: "Product",
+      title: "Tools in Transit",
+      description:
+        "Cover for tools and equipment in transit between sites and depots. The specific conditions vary by policy — ask us about what applies to how you work.",
+      pdf: null,
+      accent: "#F97316",
+    },
+    {
+      tag: "Package",
+      title: "Group PA & Travel",
+      description:
+        "Personal accident and travel cover for employees on company business. Can be arranged as a group scheme or on a named individual basis.",
+      pdf: null,
+      accent: "#EAB308",
+    },
+    {
+      tag: "Product",
+      title: "Performance Bonds",
+      description:
+        "A bond that guarantees a contractor's obligations under a contract. Often required by clients as a condition of tendering, particularly on public sector and large commercial work.",
+      pdf: null,
+      accent: "#06B6D4",
+    },
+    {
+      tag: "Product",
+      title: "Insurance Backed Guarantees",
+      description:
+        "A guarantee backed by an insurer rather than the contractor, protecting the end client if the contractor can no longer honour their warranty. Common on new-build and retrofit projects.",
+      pdf: null,
+      accent: "#10B981",
     },
   ],
 };

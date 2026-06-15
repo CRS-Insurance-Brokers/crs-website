@@ -11,6 +11,22 @@ type NewsPost = {
 
 const posts: NewsPost[] = [
   {
+    tag: "Charity",
+    date: "13 Jun 2026",
+    headline: "The Great CRS Bake Off",
+    body: "We're baking for The Lighthouse Charity. In support of Wear It Purple Week, the office has turned into a competition kitchen. Entries in, judging underway, funds going to a good cause.",
+    image: "/news/bake-off.jpg",
+    imagePosition: "center",
+  },
+  {
+    tag: "Charity",
+    date: "9 Jun 2026",
+    headline: "A visit from The Lighthouse Charity",
+    body: "Ruth Beaney from The Lighthouse Charity came in last week to talk to the team. Free, confidential support for anyone working in construction — 24/7. Good to have her in.",
+    image: "/news/lighthouse-visit.jpg",
+    imagePosition: "top",
+  },
+  {
     tag: "Team News",
     date: "7 May 2026",
     headline: "Welcome to the team, Andrei",

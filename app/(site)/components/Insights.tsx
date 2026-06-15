@@ -36,9 +36,9 @@ export function Insights() {
           {guides.map((g, i) => (
             <Reveal key={g.title} delay={i * 110}>
               <a
-                href={g.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={g.pdf ?? "/#contact"}
+                target={g.pdf ? "_blank" : undefined}
+                rel={g.pdf ? "noopener noreferrer" : undefined}
                 className="group relative flex flex-col h-full bg-m-ink-2 hover:bg-m-ink-3 transition-colors duration-300"
                 style={{ border: "1px solid rgba(255,255,255,0.08)" }}
               >
@@ -87,7 +87,7 @@ export function Insights() {
                     style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
                   >
                     <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-m-bone/55 group-hover:text-white transition-colors duration-300">
-                      View guide
+                      {g.pdf ? "View guide" : "Talk to us"}
                     </span>
                     <span
                       className="flex items-center justify-center w-9 h-9 text-m-bone transition-all duration-300 group-hover:translate-x-[2px] group-hover:-translate-y-[1px]"
@@ -97,9 +97,15 @@ export function Insights() {
                         transitionTimingFunction: "cubic-bezier(0.23, 1, 0.32, 1)",
                       }}
                     >
-                      <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M7 1v8M3 6l4 4 4-4M1 11h12" />
-                      </svg>
+                      {g.pdf ? (
+                        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M7 1v8M3 6l4 4 4-4M1 11h12" />
+                        </svg>
+                      ) : (
+                        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M1 7h12M7 1l6 6-6 6" />
+                        </svg>
+                      )}
                     </span>
                   </div>
                 </div>
