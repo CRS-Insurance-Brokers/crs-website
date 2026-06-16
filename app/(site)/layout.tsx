@@ -60,6 +60,9 @@ export const metadata: Metadata = {
     description:
       "Demolition, construction, contractors and manufacturing. We place cover others can't.",
   },
+  verification: {
+    google: "488VqjQ5-wQmJ0sRioLm5K_SmKnmf9HH5gqx5NGo4bk",
+  },
   robots: {
     index: true,
     follow: true,
