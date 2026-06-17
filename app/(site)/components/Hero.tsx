@@ -82,8 +82,7 @@ export function Hero() {
               <h1 className="font-display font-bold leading-[1.15] tracking-[-0.015em] text-white"
                 style={{ fontSize: "clamp(2.25rem, 4.8vw, 4rem)" }}
               >
-                Specialist cover<sup className="font-mono text-[0.18em] tracking-[0.18em] text-m-coral align-super ml-1.5 tnum">¹</sup>{" "}
-                for <span className="italic">high-risk</span> trades.
+                Specialist cover for <span className="italic">high-risk</span> trades.
                 <br />
                 Named specialists. Direct lines.
               </h1>

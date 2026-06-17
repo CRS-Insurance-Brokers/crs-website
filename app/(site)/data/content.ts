@@ -40,7 +40,7 @@ export const brand = {
 export const heroFootnote: ContentBlock<string> = {
   status: "verified",
   data:
-    "¹ Cover placed via a large panel of MGAs, Lloyd's brokers, and direct insurers writing high-risk classes. Brokered by CIB Group UK Ltd, FRN 960073.",
+    "Cover placed via a large panel of MGAs, Lloyd's brokers, and direct insurers writing high-risk classes. Brokered by CIB Group UK Ltd, FRN 960073.",
 };
 
 // --- Why CRS — three pillars -------------------------------------------------
