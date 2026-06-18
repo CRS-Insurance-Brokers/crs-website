@@ -12,14 +12,6 @@ type NewsPost = {
 const posts: NewsPost[] = [
   {
     tag: "Charity",
-    date: "13 Jun 2026",
-    headline: "The Great CRS Bake Off",
-    body: "We're baking for The Lighthouse Charity. In support of Wear It Purple Week, the office has turned into a competition kitchen. Entries in, judging underway, funds going to a good cause.",
-    image: "/news/bake-off.jpg",
-    imagePosition: "center",
-  },
-  {
-    tag: "Charity",
     date: "9 Jun 2026",
     headline: "A visit from The Lighthouse Charity",
     body: "Ruth Beaney from The Lighthouse Charity came in last week to talk to the team. Free, confidential support for anyone working in construction — 24/7. Good to have her in.",
@@ -86,6 +78,40 @@ export function NewsStrip() {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+          {/* Wear Purple Week card — links to full post */}
+          <Reveal>
+            <a
+              href="/news/wear-purple-week"
+              className="group relative flex flex-col h-full bg-m-ink-2 transition-colors duration-300 hover:bg-m-ink-3"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/wear-purple-team.jpg"
+                  alt="CRS team wearing purple for Wear Purple Week"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="flex items-center justify-between text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                  <span className="text-m-coral/80">Charity</span>
+                  <span>16 Jun 2026</span>
+                </div>
+                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white group-hover:text-m-bone/90 transition-colors duration-300">
+                  CRS backs Wear Purple Week.
+                </h3>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  Wolf run, office bake-off, and a team that showed up in purple. How CRS supported The Lighthouse Charity this June.
+                </p>
+              </div>
+            </a>
+          </Reveal>
           {posts.map((post, i) => (
             <Reveal key={post.headline} delay={i * 110}>
               <div

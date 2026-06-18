@@ -101,13 +101,13 @@ export function Nav() {
         className="fixed inset-x-0 top-0 z-[100] bg-m-ink/90 backdrop-blur-[18px]"
         style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
       >
-        <div className="flex items-stretch justify-between px-4 md:px-8 lg:px-12 h-[88px]">
+        <div className="flex items-stretch justify-between px-4 lg:px-6 xl:px-12 h-[88px]">
 
           {/* Logo */}
           <Link
             href="/"
             aria-label="CRS Insurance Brokers — home"
-            className="flex items-center pr-6 lg:pr-8 hover:opacity-90 transition-opacity duration-200 ease-[cubic-bezier(0.23,1,0.32,1)]"
+            className="flex items-center pr-5 xl:pr-8 hover:opacity-90 transition-opacity duration-200 ease-[cubic-bezier(0.23,1,0.32,1)]"
             style={{ borderRight: "1px solid rgba(255,255,255,0.08)" }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -121,7 +121,7 @@ export function Nav() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center flex-1 px-2 lg:px-4">
+          <nav className="hidden lg:flex items-center flex-1 px-2 xl:px-4">
             {links.map((l) => (
               <div
                 key={l.href}
@@ -140,7 +140,7 @@ export function Nav() {
                   onMouseEnter={() => l.dropdown && handleEnter(l.label)}
                   aria-expanded={l.dropdown ? openDropdown === l.label : undefined}
                   aria-haspopup={l.dropdown ? "menu" : undefined}
-                  className="relative flex items-center gap-1.5 px-4 lg:px-5 py-2 text-[12px] font-medium uppercase tracking-[0.16em] text-m-bone/65 hover:text-white transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)]"
+                  className="relative flex items-center gap-1.5 whitespace-nowrap px-3 xl:px-5 py-2 text-[12px] font-medium uppercase tracking-[0.16em] text-m-bone/65 hover:text-white transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)]"
                 >
                   {l.label}
 
@@ -159,7 +159,7 @@ export function Nav() {
                   {/* Coral underline rule */}
                   <span
                     aria-hidden
-                    className="absolute left-4 right-4 lg:left-5 lg:right-5 -bottom-px h-px bg-m-coral"
+                    className="absolute left-3 right-3 xl:left-5 xl:right-5 -bottom-px h-px bg-m-coral"
                     style={{
                       clipPath: openDropdown === l.label ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
                       transition: "clip-path 280ms cubic-bezier(0.23, 1, 0.32, 1)",
@@ -209,7 +209,7 @@ export function Nav() {
           {/* Report a claim CTA */}
           <a
             href="tel:01455244630"
-            className="hidden md:flex group items-center gap-3 pl-5 lg:pl-6 pr-2 text-[12px] font-medium uppercase tracking-[0.16em] text-white"
+            className="hidden lg:flex group items-center gap-3 pl-4 xl:pl-6 pr-2 text-[12px] font-medium uppercase tracking-[0.16em] text-white whitespace-nowrap"
             style={{ borderLeft: "1px solid rgba(255,255,255,0.08)" }}
           >
             <span>Report a claim</span>
@@ -224,7 +224,7 @@ export function Nav() {
             onClick={() => setOpen((o) => !o)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="md:hidden relative flex items-center justify-center w-12"
+            className="lg:hidden relative flex items-center justify-center w-12"
             style={{ borderLeft: "1px solid rgba(255,255,255,0.08)" }}
           >
             <span
@@ -244,7 +244,7 @@ export function Nav() {
           fade-out finish before it disappears. */}
       <div
         ref={menuRef}
-        className={`fixed inset-0 z-[90] md:hidden ${
+        className={`fixed inset-0 z-[90] lg:hidden ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         style={{
