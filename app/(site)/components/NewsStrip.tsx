@@ -78,6 +78,39 @@ export function NewsStrip() {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+          {/* Eva welcome card — newest */}
+          <Reveal>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/Eva.jpg"
+                  alt="Eva Matthews, Client Services Executive at CRS Insurance Brokers"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="flex items-center justify-between text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                  <span className="text-m-coral/80">Team News</span>
+                  <span>6 Jul 2026</span>
+                </div>
+                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  Welcome to the team, Eva
+                </h3>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  Eva Matthews joins CRS as a Client Services Executive, starting her apprenticeship with Skills Edge Training. Great to have her on board.
+                </p>
+              </div>
+            </div>
+          </Reveal>
           {/* Wear Purple Week card — links to full post */}
           <Reveal>
             <a
