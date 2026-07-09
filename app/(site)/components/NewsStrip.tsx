@@ -78,7 +78,62 @@ export function NewsStrip() {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-          {/* Eva welcome card — newest */}
+          {/* Cobblers Golf Day card — newest */}
+          <Reveal>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* Three-photo collage (mirrors the LinkedIn post): two of the
+                    team large on the left, tee-off and branded fairway stacked right. */}
+                <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-[2px]">
+                  {/* eslint-disable @next/next/no-img-element */}
+                  <img
+                    src="/news/golf-day.jpg"
+                    alt="Two of the CRS team at the Cobblers Golf Day, Northampton"
+                    className="row-span-2 w-full h-full object-cover"
+                    style={{ objectPosition: "center 42%" }}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="/news/golf-day-swing.jpg"
+                    alt=""
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: "center 38%" }}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="/news/golf-day-green.jpg"
+                    alt=""
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: "center 70%" }}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  {/* eslint-enable @next/next/no-img-element */}
+                </div>
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="flex items-center justify-between text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                  <span className="text-m-coral/80">Community</span>
+                  <span>9 Jul 2026</span>
+                </div>
+                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  CRS sponsors the Cobblers Golf Day
+                </h3>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  CRS sponsored the Cobblers Golf Day, out on the course with clients, friends and familiar faces. Thanks to Northampton Town Football Club and the Northampton Town FC Community Trust for a well-run day.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          {/* Eva welcome card */}
           <Reveal>
             <div
               className="relative flex flex-col h-full bg-m-ink-2"
