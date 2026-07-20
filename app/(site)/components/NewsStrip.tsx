@@ -78,7 +78,43 @@ export function NewsStrip() {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-          {/* Cobblers Golf Day card — newest */}
+          {/* UK Broker Awards card — newest, links to full post */}
+          <Reveal>
+            <a
+              href="/news/uk-broker-awards-2026"
+              className="group relative flex flex-col h-full bg-m-ink-2 transition-colors duration-300 hover:bg-m-ink-3"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden flex items-center justify-center p-5 md:p-6 bg-m-ink-2"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                <div className="w-full h-full flex items-center justify-center rounded-xl bg-white px-6">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/news/uk-broker-awards-finalist.png"
+                    alt="UK Broker Awards 2026 Finalist"
+                    className="w-full max-w-[86%] h-auto object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="flex items-center justify-between text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                  <span className="text-m-coral/80">Awards</span>
+                  <span>17 Jul 2026</span>
+                </div>
+                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white group-hover:text-m-bone/90 transition-colors duration-300">
+                  Finalists at the UK Broker Awards 2026
+                </h3>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  CRS is a finalist in two categories at the UK Broker Awards 2026, for Commercial Lines Broker of the Year and Customer Service. A shortlisting that belongs to the team.
+                </p>
+              </div>
+            </a>
+          </Reveal>
+          {/* Cobblers Golf Day card */}
           <Reveal>
             <div
               className="relative flex flex-col h-full bg-m-ink-2"
