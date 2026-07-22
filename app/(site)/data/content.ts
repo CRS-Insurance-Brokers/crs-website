@@ -155,6 +155,16 @@ export const team: ContentBlock<
       linkedin: "https://www.linkedin.com/in/julia-thornett-a21976b6/",
       speciality: "Claims Management · Relationship Management",
     },
+    {
+      name: "Jake Pemberton",
+      role: "Head of Technology",
+      image: "/team/jake-pemberton.jpg",
+      direct: "01455 244630",
+      email: "jake.pemberton@crs-ins.co.uk",
+      quals: "",
+      linkedin: "https://www.linkedin.com/in/jake-pemberton-05877025b/",
+      speciality: "Business Transformation · Technology",
+    },
   ],
 };
 
