@@ -1,4 +1,4 @@
-import { PinIcon } from "./icons";
+import { PinIcon, ArrowUpRight } from "./icons";
 
 const cols = [
   {
@@ -73,9 +73,20 @@ export function Footer() {
 
             <a
               href="/about/charity"
-              className="mt-6 mb-8 inline-flex items-center gap-2 text-[14px] leading-relaxed text-m-bone/55 hover:text-m-bone/80 transition-colors duration-300"
+              className="mt-6 mb-6 inline-flex items-center gap-2 text-[14px] leading-relaxed text-m-bone/55 hover:text-m-bone/80 transition-colors duration-300"
             >
               Proud supporters of the Lighthouse Construction Industry Charity
+            </a>
+
+            {/* Google Business Profile "write a review" deep link. */}
+            <a
+              href="https://g.page/r/CTaY9bfeTcxsEBk/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-8 flex w-fit items-center gap-2 text-[14px] leading-relaxed text-m-bone/55 hover:text-m-bone/80 transition-colors duration-300"
+            >
+              Leave us a Google review
+              <ArrowUpRight className="w-3 h-3" strokeWidth={1.5} />
             </a>
 
             <div className="flex flex-wrap items-center gap-5">
