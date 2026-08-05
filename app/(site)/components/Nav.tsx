@@ -98,7 +98,7 @@ export function Nav() {
   return (
     <>
       <header
-        className="fixed inset-x-0 top-0 z-[100] bg-m-ink/90 backdrop-blur-[18px]"
+        className="fixed inset-x-0 top-0 z-[170] bg-m-ink/90 backdrop-blur-[18px]"
         style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="flex items-stretch justify-between px-4 lg:px-6 xl:px-12 h-[88px]">
@@ -244,7 +244,7 @@ export function Nav() {
           fade-out finish before it disappears. */}
       <div
         ref={menuRef}
-        className={`fixed inset-0 z-[90] lg:hidden ${
+        className={`fixed inset-0 z-[160] lg:hidden ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         style={{
@@ -253,8 +253,11 @@ export function Nav() {
         }}
       >
         <div className="absolute inset-0 bg-m-ink" onClick={() => setOpen(false)} />
-        <div className="relative h-full flex flex-col justify-between pt-[120px] pb-10 px-6 overflow-y-auto">
-          <nav className="flex flex-col">
+        {/* 100dvh tracks iOS Safari's visible viewport as the URL bar shows and
+            hides. inset-0/h-full resolve against the tall viewport instead, which
+            left the bottom of the panel stranded under the Safari toolbar. */}
+        <div className="relative flex flex-col" style={{ height: "100dvh" }}>
+          <nav className="flex flex-col flex-1 overflow-y-auto overscroll-contain px-6 pt-[112px] pb-6">
             {links.map((l, i) => (
               <div key={l.href}>
                 <a
@@ -273,53 +276,71 @@ export function Nav() {
                   </span>
                 </a>
                 {/* Mobile sub-links */}
+                {/* One row per link rather than a wrapping row: on a phone the
+                    wrapped version ran together into a single block of text with
+                    17px tap targets. */}
                 {l.dropdown && (
                   <div
-                    className="flex flex-wrap gap-x-5 gap-y-1 pb-4"
+                    className="pb-3"
                     style={{
                       borderBottom: "1px solid rgba(255,255,255,0.08)",
                       opacity: open ? 1 : 0,
                       transition: `opacity 500ms cubic-bezier(0.23,1,0.32,1) ${80 + i * 50 + 40}ms`,
                     }}
                   >
-                    {l.dropdown.map((sub) => (
-                      <a
-                        key={sub.href}
-                        href={sub.href}
-                        onClick={() => setOpen(false)}
-                        className="text-[11px] font-mono uppercase tracking-[0.18em] text-m-bone/40 hover:text-m-coral transition-colors duration-200"
-                      >
-                        {sub.label}
-                      </a>
-                    ))}
+                    <div
+                      className="flex flex-col pl-4"
+                      style={{ borderLeft: "1px solid rgba(255,255,255,0.12)" }}
+                    >
+                      {l.dropdown.map((sub) => (
+                        <a
+                          key={sub.href}
+                          href={sub.href}
+                          onClick={() => setOpen(false)}
+                          className="flex items-center min-h-[44px] text-[11px] font-mono uppercase tracking-[0.14em] text-m-bone/55 hover:text-m-coral active:text-m-coral transition-colors duration-200"
+                        >
+                          {sub.label}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
             ))}
           </nav>
 
+          {/* Sits outside the scroll area: the phone number and claim CTA are the
+              point of the menu, so they stay pinned instead of landing ~300px
+              below the fold. env() keeps them clear of the home indicator. */}
           <div
-            className="flex items-end justify-between transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"
+            className="shrink-0 bg-m-ink px-6 pt-4 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"
             style={{
+              borderTop: "1px solid rgba(255,255,255,0.08)",
+              paddingBottom: "calc(1.25rem + env(safe-area-inset-bottom))",
               transitionDelay: open ? "440ms" : "0ms",
               transform: open ? "translateY(0)" : "translateY(1rem)",
               opacity: open ? 1 : 0,
             }}
           >
-            <div>
-              <p className="text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 mb-2">
-                Speak to a person
-              </p>
-              <a href="tel:01455244630" className="font-display text-[34px] leading-none text-m-coral tnum">
-                01455 244630
-              </a>
-            </div>
+            {/* Stacked, not side by side: at 375px the number and the button
+                each wrapped onto two lines when they shared a row. */}
+            <p className="text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 mb-1">
+              Speak to a person
+            </p>
+            <a
+              href="tel:01455244630"
+              className="block font-display text-[32px] leading-none text-m-coral tnum whitespace-nowrap"
+            >
+              01455 244630
+            </a>
             <a
               href="tel:01455244630"
               onClick={() => setOpen(false)}
-              className="group flex items-center gap-2 px-3 py-2 bg-m-coral text-m-ink"
+              className="group mt-3 flex items-center justify-center gap-2 w-full min-h-[48px] bg-m-coral text-m-ink"
             >
-              <span className="text-[11.5px] font-medium uppercase tracking-[0.16em]">Report a claim</span>
+              <span className="text-[11.5px] font-medium uppercase tracking-[0.16em] whitespace-nowrap">
+                Report a claim
+              </span>
               <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={1.4} />
             </a>
           </div>
