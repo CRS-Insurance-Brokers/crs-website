@@ -78,6 +78,138 @@ export function NewsStrip() {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+          {/* Thompson Utd sponsorship card — newest */}
+          <Reveal>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/thompson-utd.jpg"
+                  alt="CRS-sponsored Thompson Utd Veterans new home and away kits for the 26-27 season"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                  <span className="text-m-coral/80">Community</span>
+                  <span>14 Aug 2026</span>
+                </div>
+                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  CRS sponsors Thompson Utd Veterans&rsquo; new kit
+                </h3>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  CRS is sponsoring Thompson Utd Veterans&rsquo; new home kit for the 26-27 season.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          {/* Josh Antill welcome card */}
+          <Reveal delay={60}>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/Josh.jpg"
+                  alt="Josh Antill, Sales Executive at CRS Insurance Brokers"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                  <span className="text-m-coral/80">Team News</span>
+                  <span>10 Aug 2026</span>
+                </div>
+                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  Welcome to the team, Josh
+                </h3>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  Josh Antill joins CRS as a Sales Executive. Welcome aboard, Josh.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          {/* Apprentice milestones card */}
+          <Reveal delay={120}>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/apprentices.jpg"
+                  alt="Ethan Tate, Libby Otway and Evie Watts, CRS apprentices with Skills Edge Training"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                  <span className="text-m-coral/80">Team News</span>
+                  <span>31 Jul 2026</span>
+                </div>
+                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  Milestones for our apprentices
+                </h3>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  Ethan, Libby and Evie are making progress with Skills Edge Training: distinctions on their assignments, and exam passes on the way to qualifying.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          {/* Jake Pemberton promotion card */}
+          <Reveal delay={180}>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/jake-promotion.jpg"
+                  alt="Jake Pemberton, Head of Technology at CRS Insurance Brokers"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                  <span className="text-m-coral/80">Team News</span>
+                  <span>20 Jul 2026</span>
+                </div>
+                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  Jake Pemberton promoted to Head of Technology
+                </h3>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  Congratulations to Jake on his promotion, now leading technology strategy at CRS.
+                </p>
+              </div>
+            </div>
+          </Reveal>
           {/* UK Broker Awards card — newest, links to full post */}
           <Reveal>
             <a
@@ -101,7 +233,7 @@ export function NewsStrip() {
                 </div>
               </div>
               <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                <div className="flex items-center justify-between text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
                   <span className="text-m-coral/80">Awards</span>
                   <span>17 Jul 2026</span>
                 </div>
@@ -156,7 +288,7 @@ export function NewsStrip() {
                 </div>
               </div>
               <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                <div className="flex items-center justify-between text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
                   <span className="text-m-coral/80">Community</span>
                   <span>9 Jul 2026</span>
                 </div>
@@ -189,7 +321,7 @@ export function NewsStrip() {
                 />
               </div>
               <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                <div className="flex items-center justify-between text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
                   <span className="text-m-coral/80">Team News</span>
                   <span>6 Jul 2026</span>
                 </div>
@@ -223,7 +355,7 @@ export function NewsStrip() {
                 />
               </div>
               <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                <div className="flex items-center justify-between text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
                   <span className="text-m-coral/80">Charity</span>
                   <span>16 Jun 2026</span>
                 </div>
@@ -258,7 +390,7 @@ export function NewsStrip() {
                 </div>
 
                 <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                  <div className="flex items-center justify-between text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                  <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
                     <span className="text-m-coral/80">{post.tag}</span>
                     <span>{post.date}</span>
                   </div>

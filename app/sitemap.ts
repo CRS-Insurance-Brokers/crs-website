@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/rewards`,   lastModified: "2026-06-15", changeFrequency: "monthly", priority: 0.6 },
 
     // News
-    { url: `${SITE}/news`, lastModified: "2026-06-15", changeFrequency: "weekly", priority: 0.7 },
+    { url: `${SITE}/news`, lastModified: "2026-08-18", changeFrequency: "weekly", priority: 0.7 },
 
     // Legal
     { url: `${SITE}/privacy`, lastModified: "2026-06-15", changeFrequency: "yearly", priority: 0.3 },
