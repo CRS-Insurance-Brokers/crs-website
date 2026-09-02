@@ -25,7 +25,7 @@ export function CharityStrip() {
             <div className="flex flex-wrap gap-4 items-center">
               <Link
                 href="/about/charity"
-                className="group inline-flex items-center gap-2.5 px-6 py-3.5 bg-m-coral text-m-ink text-[11px] font-mono uppercase tracking-[0.24em] hover:bg-m-cream transition-colors duration-300"
+                className="font-semibold group inline-flex items-center gap-2.5 px-6 py-3.5 bg-m-coral text-m-ink text-[13px] tracking-[0.01em] hover:bg-m-cream transition-colors duration-300"
                 style={{ transitionTimingFunction: "cubic-bezier(0.23, 1, 0.32, 1)" }}
               >
                 Our commitment
@@ -35,7 +35,7 @@ export function CharityStrip() {
                 href="https://lighthousecharity.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.24em] text-m-bone/55 hover:text-m-bone transition-colors duration-300"
+                className="font-semibold inline-flex items-center gap-2 text-[13px] tracking-[0.01em] text-m-bone/55 hover:text-m-bone transition-colors duration-300"
               >
                 Visit Lighthouse
                 <ArrowUpRight className="w-3 h-3" strokeWidth={1.25} />

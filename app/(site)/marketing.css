@@ -38,14 +38,17 @@
   font-feature-settings: "tnum" 1, "lnum" 1;
 }
 
-/* Display font — now Inter, same as body for consistency */
+/* Display font — same family as body, weight carries the difference */
 [data-marketing] .font-display {
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-inter), "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Sans (override the body inheritance on mono spans) */
+/* .font-mono no longer means monospace. A code typeface on a broker's website
+   read as a developer's placeholder rather than a design decision. The class
+   name is left alone so the markup does not need touching in fifty files; it
+   now just means "tabular figures", which is all it was ever wanted for. */
 [data-marketing] .font-mono {
-  font-family: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  font-family: var(--font-inter), "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 /* Easing tokens — Emil Kowalski's stronger curves */
@@ -92,6 +95,21 @@
 [data-marketing] .drift-pausable:hover,
 [data-marketing] .drift-pausable:focus-within {
   animation-play-state: paused;
+}
+/* Hover and focus cover mouse and keyboard. A touchscreen has neither, so
+   below the hover breakpoint the strip stops moving and becomes a scroller
+   the visitor pushes themselves. */
+@media (hover: none) {
+  [data-marketing] .drift {
+    animation: none;
+  }
+  [data-marketing] .marquee-viewport {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  [data-marketing] .marquee-viewport::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Pulse dot */

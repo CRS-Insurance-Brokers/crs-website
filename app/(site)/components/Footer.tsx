@@ -1,4 +1,5 @@
 import { PinIcon, ArrowUpRight } from "./icons";
+import { CookieSettingsButton } from "./CookieSettingsButton";
 
 const cols = [
   {
@@ -59,11 +60,12 @@ export function Footer() {
 
             <p className="text-[14px] leading-relaxed text-m-bone/55 max-w-sm mb-8">
               Specialist commercial insurance for high-risk trades. A trading name
-              of CIB Group UK Ltd, regulated by the Financial Conduct Authority.
+              of CIB Group UK Ltd, authorised and regulated by the Financial
+              Conduct Authority.
             </p>
 
-            <div className="flex items-start gap-3 text-[12px] font-mono uppercase tracking-[0.18em] text-m-bone/55">
-              <PinIcon className="w-3.5 h-3.5 mt-0.5 text-m-bone/45" strokeWidth={1.25} />
+            <div className="font-semibold flex items-start gap-3 text-[13px] tracking-[0.01em] text-m-bone/55">
+              <PinIcon className="w-3.5 h-3.5 mt-0.5 text-m-bone/60" strokeWidth={1.25} />
               <span className="leading-snug">
                 Unit 2 Oakberry Road
                 <br />
@@ -136,9 +138,11 @@ export function Footer() {
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
             {cols.map((col) => (
               <div key={col.heading}>
-                <h4 className="text-[10px] font-mono uppercase tracking-[0.22em] text-m-bone/40 mb-5">
+                {/* h2: these are top-level groupings in the footer landmark.
+                    As h4 they left an h2 -> h4 gap on every page. */}
+                <h2 className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60 mb-5">
                   {col.heading}
-                </h4>
+                </h2>
                 <ul className="flex flex-col gap-3">
                   {col.links.map((l) => (
                     <li key={l.label}>
@@ -158,13 +162,13 @@ export function Footer() {
         </div>
 
         {/* FCA disclosure */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-10 border-t border-white/8 text-[11px] leading-relaxed text-m-bone/45">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-10 border-t border-white/8 text-[11px] leading-relaxed text-m-bone/60">
           <p className="md:col-span-8 font-mono">
             CRS Insurance Brokers is a trading name of CIB Group UK Ltd, registered
             in England &amp; Wales (company no. <span className="text-m-bone/65">13360654</span>).
             Authorised and regulated by the Financial Conduct Authority,{" "}
             <a
-              href="https://register.fca.org.uk/s/search?predefined=ALL&q=960073"
+              href="https://register.fca.org.uk/s/search?q=960073&type=firms"
               target="_blank"
               rel="noopener noreferrer"
               className="text-m-bone/65 underline underline-offset-2 hover:text-m-bone transition-colors duration-300"
@@ -174,9 +178,17 @@ export function Footer() {
             The Copper Room, Deva City Office Park, Trinity Way, Salford, M3 7BG.
             All calls are recorded for training and regulatory purposes.
           </p>
-          <div className="md:col-span-4 flex flex-col md:items-end gap-2 text-[10px] font-mono uppercase tracking-[0.2em]">
+          <div className="font-semibold md:col-span-4 flex flex-col md:items-end gap-2 text-[12px] tracking-[0.01em]">
             <span>© 2026 CIB Group UK Ltd</span>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3 md:justify-end">
+              <a href="/complaints" className="hover:text-m-bone transition-colors duration-300">
+                Complaints
+              </a>
+              <span className="text-m-bone/25">·</span>
+              <a href="/accessibility" className="hover:text-m-bone transition-colors duration-300">
+                Accessibility
+              </a>
+              <span className="text-m-bone/25">·</span>
               <a href="/privacy" className="hover:text-m-bone transition-colors duration-300">
                 Privacy
               </a>
@@ -188,6 +200,8 @@ export function Footer() {
               <a href="/cookies" className="hover:text-m-bone transition-colors duration-300">
                 Cookies
               </a>
+              <span className="text-m-bone/25">·</span>
+              <CookieSettingsButton />
             </div>
           </div>
         </div>

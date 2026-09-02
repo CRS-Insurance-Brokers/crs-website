@@ -55,7 +55,7 @@ export default function WhatToDoPage() {
           />
           <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
             <Reveal>
-              <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+              <span className="font-semibold inline-flex items-center gap-2 mb-6 text-[12px] tracking-[0.01em] text-m-bone/55">
                 Claims guidance
               </span>
               <h1 className="font-display font-bold text-[clamp(2.25rem,4.8vw,4rem)] leading-[1.1] tracking-[-0.015em] text-white max-w-3xl">
@@ -183,7 +183,7 @@ export default function WhatToDoPage() {
             <Reveal>
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 <div className="lg:col-span-7">
-                  <p className="text-[10px] font-mono uppercase tracking-[0.32em] text-m-ink/55 mb-4">
+                  <p className="font-semibold text-[12px] tracking-[0.01em] text-m-ink mb-4">
                     Remember
                   </p>
                   <h2 className="font-display font-bold text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.1] tracking-[-0.015em] text-m-ink">
@@ -204,7 +204,7 @@ export default function WhatToDoPage() {
                     style={{ border: "1px solid rgba(10,10,10,0.20)" }}
                   >
                     <div>
-                      <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/55 mb-1">
+                      <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/55 mb-1">
                         Call · Option 4 for Claims
                       </p>
                       <p className="font-display text-[26px] leading-none tracking-[-0.02em] text-white tnum">
@@ -221,7 +221,7 @@ export default function WhatToDoPage() {
                     style={{ border: "1px solid rgba(10,10,10,0.20)" }}
                   >
                     <div>
-                      <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/55 mb-1">
+                      <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/55 mb-1">
                         Email the Claims team
                       </p>
                       <p className="font-display text-[20px] leading-none tracking-[-0.01em] text-white">

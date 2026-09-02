@@ -34,10 +34,10 @@ export default function Image() {
         >
           <div
             style={{
-              fontSize: 24,
-              letterSpacing: "0.32em",
-              textTransform: "uppercase",
-              color: "rgba(237,234,226,0.55)",
+              fontSize: 26,
+              fontWeight: 600,
+              letterSpacing: "0.01em",
+              color: "rgba(237,234,226,0.72)",
             }}
           >
             CRS Insurance Brokers

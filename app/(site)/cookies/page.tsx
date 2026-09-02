@@ -10,26 +10,22 @@ export const metadata: Metadata = {
   alternates: { canonical: "/cookies" },
 };
 
+/* The actual cookies, not categories. The ICO expects visitors to be told the
+ * name, purpose and lifetime of each one. Keep this in step with
+ * ConsentBanner.tsx — it is the only thing that sets any of them. */
 const cookieTypes = [
   {
-    name: "Strictly necessary",
+    name: "crs_cookie_consent",
     description:
-      "These cookies are essential for the website to function. They enable core features such as page navigation and access to secure areas. The website cannot function properly without these cookies and they cannot be switched off.",
-    examples: "Session management, security tokens.",
+      "Records whether you accepted or declined analytics cookies, so we do not ask again on every page. It holds one word: granted or denied.",
+    examples: "Set by this site · expires after 12 months",
     canDisable: false,
   },
   {
-    name: "Analytics",
+    name: "_ga and _ga_6BWHLCMP75",
     description:
-      "These cookies allow us to understand how visitors interact with the website — which pages are visited most, how long visitors spend on each page, and how they arrived. This information is used in aggregate to improve our content and user experience.",
-    examples: "Google Analytics (anonymised IP).",
-    canDisable: true,
-  },
-  {
-    name: "Functional",
-    description:
-      "These cookies allow the website to remember choices you make and provide enhanced features. They may be set by us or by third-party providers whose services we use on our pages.",
-    examples: "Remembering form preferences.",
+      "Google Analytics. Counts visits and the pages viewed so we can see which parts of the site people actually use. These are only set if you accept, and the data goes to Google, who may process it outside the UK.",
+    examples: "Set by Google Analytics · expires after 2 years",
     canDisable: true,
   },
 ];
@@ -45,8 +41,15 @@ const sections = [
   {
     heading: "How we use cookies",
     body: [
-      "We use cookies to ensure the website functions correctly, to understand how it is used, and to improve the experience for visitors. We do not use cookies for advertising or to track you across other websites.",
-      "When you first visit this site, you will be given the option to accept or decline non-essential cookies. You can change your preferences at any time by clearing cookies in your browser settings and revisiting the site.",
+      "We use cookies to see how the site is being used and to remember the answer you gave us about that. We do not use cookies for advertising, and we do not track you across other websites.",
+      "Nothing but the consent cookie is set until you accept. If you decline, or close the banner without answering, no analytics cookies are placed and Google Analytics is never loaded.",
+    ],
+  },
+  {
+    heading: "Changing your mind",
+    body: [
+      "Select Cookie settings at the foot of any page. That reopens the banner so you can give a different answer.",
+      "If you decline having previously accepted, we delete the Google Analytics cookies and reload the page, so the tracking stops there and then rather than at your next visit.",
     ],
   },
   {
@@ -68,7 +71,7 @@ const sections = [
     heading: "Changes to this policy",
     body: [
       "We may update this cookie policy from time to time. The current version will always be available on this page.",
-      "This policy was last reviewed in May 2026.",
+      "This policy was last reviewed in September 2026.",
     ],
   },
 ];
@@ -86,11 +89,11 @@ export default function CookiesPage() {
               className="flex items-baseline justify-between mb-12 md:mb-16 pb-4"
               style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
             >
-              <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-m-bone/55">
+              <span className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/55">
                 Cookie Policy
               </span>
-              <span className="hidden sm:block font-mono text-[10px] uppercase tracking-[0.28em] text-m-bone/30">
-                Last reviewed May 2026
+              <span className="font-semibold hidden sm:block text-[12px] tracking-[0.01em] text-m-bone/60">
+                Last reviewed September 2026
               </span>
             </div>
           </Reveal>
@@ -115,12 +118,12 @@ export default function CookiesPage() {
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
           <Reveal>
-            <span className="inline-flex items-center gap-2 mb-10 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+            <span className="font-semibold inline-flex items-center gap-2 mb-10 text-[12px] tracking-[0.01em] text-m-bone/55">
               Cookies we use
             </span>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mb-20 md:mb-28">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-20 md:mb-28">
             {cookieTypes.map((c, i) => (
               <Reveal key={c.name} delay={i * 80}>
                 <div
@@ -132,7 +135,7 @@ export default function CookiesPage() {
                       {c.name}
                     </h2>
                     <span
-                      className={`shrink-0 mt-0.5 text-[9px] font-mono uppercase tracking-[0.2em] px-2 py-1 ${
+                      className={`font-semibold shrink-0 mt-0.5 text-[12px] tracking-[0.01em] px-2 py-1 ${
                         c.canDisable
                           ? "text-m-bone/55 bg-white/[0.04]"
                           : "text-m-coral bg-m-coral/10"
@@ -145,7 +148,7 @@ export default function CookiesPage() {
                   <p className="text-[14px] leading-[1.7] text-m-bone/65 flex-1 mb-4">
                     {c.description}
                   </p>
-                  <p className="text-[11px] font-mono text-m-bone/35 mt-auto">
+                  <p className="text-[11px] font-mono text-m-bone/60 mt-auto">
                     {c.examples}
                   </p>
                 </div>
@@ -167,7 +170,7 @@ export default function CookiesPage() {
                           : "none",
                     }}
                   >
-                    <span className="inline-flex items-center gap-2 mb-5 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+                    <span className="font-semibold inline-flex items-center gap-2 mb-5 text-[12px] tracking-[0.01em] text-m-bone/55">
                       {s.heading}
                     </span>
                     <div className="flex flex-col gap-4">
@@ -191,7 +194,7 @@ export default function CookiesPage() {
                 className="p-6 md:p-8 bg-m-ink-2"
                 style={{ border: "1px solid rgba(255,255,255,0.08)" }}
               >
-                <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/45 mb-4">
+                <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60 mb-4">
                   Browser guides
                 </p>
                 <div className="flex flex-col gap-2">
@@ -199,14 +202,14 @@ export default function CookiesPage() {
                     { label: "Google Chrome", href: "https://support.google.com/chrome/answer/95647" },
                     { label: "Mozilla Firefox", href: "https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" },
                     { label: "Apple Safari", href: "https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" },
-                    { label: "Microsoft Edge", href: "https://support.microsoft.com/en-us/windows/manage-cookies-in-microsoft-edge" },
+                    { label: "Microsoft Edge", href: "https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" },
                   ].map((b) => (
                     <a
                       key={b.label}
                       href={b.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[13px] font-mono tracking-[0.16em] text-m-bone/65 hover:text-white transition-colors duration-300"
+                      className="text-[13px] tracking-[0.01em] text-m-bone/65 hover:text-white transition-colors duration-300"
                     >
                       {b.label} →
                     </a>
@@ -216,12 +219,12 @@ export default function CookiesPage() {
                   className="mt-6 pt-5"
                   style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
                 >
-                  <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/45 mb-3">
+                  <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60 mb-3">
                     Questions
                   </p>
                   <a
                     href="mailto:info@crs-ins.co.uk"
-                    className="block text-[13px] font-mono tracking-[0.18em] text-m-bone/65 hover:text-white transition-colors duration-300"
+                    className="block text-[13px] tracking-[0.01em] text-m-bone/65 hover:text-white transition-colors duration-300"
                   >
                     info@crs-ins.co.uk →
                   </a>

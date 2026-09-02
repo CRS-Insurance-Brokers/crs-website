@@ -45,7 +45,7 @@ export default function HowWeArePaidPage() {
                 className="pb-10 mb-10"
                 style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
               >
-                <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+                <span className="font-semibold inline-flex items-center gap-2 mb-6 text-[12px] tracking-[0.01em] text-m-bone/55">
                   Our remuneration
                 </span>
                 <p className="text-[15px] md:text-[16px] leading-[1.75] text-m-bone/70">
@@ -58,7 +58,7 @@ export default function HowWeArePaidPage() {
 
               {/* Premium finance */}
               <div>
-                <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+                <span className="font-semibold inline-flex items-center gap-2 mb-6 text-[12px] tracking-[0.01em] text-m-bone/55">
                   Premium finance
                 </span>
                 <p className="text-[15px] md:text-[16px] leading-[1.75] text-m-bone/70">
@@ -83,7 +83,7 @@ export default function HowWeArePaidPage() {
                 className="p-6 md:p-8 bg-m-ink-2"
                 style={{ border: "1px solid rgba(255,255,255,0.08)" }}
               >
-                <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/45 mb-4">
+                <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60 mb-4">
                   Your right to information
                 </p>
                 <p className="text-[14px] leading-[1.7] text-m-bone/65">
@@ -94,7 +94,7 @@ export default function HowWeArePaidPage() {
                 <div className="mt-6 pt-6" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
                   <a
                     href="tel:01455244630"
-                    className="text-[13px] font-mono uppercase tracking-[0.22em] text-m-bone/65 hover:text-white transition-colors duration-300"
+                    className="font-semibold text-[13px] tracking-[0.01em] text-m-bone/65 hover:text-white transition-colors duration-300"
                   >
                     01455 244630 →
                   </a>

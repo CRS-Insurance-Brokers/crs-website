@@ -50,10 +50,10 @@ function MemberCard({ m }: { m: Member }) {
 
         {/* Bottom block */}
         <div className="absolute left-5 right-5 bottom-5">
-          <h3 className="font-display text-[34px] leading-[0.95] tracking-[-0.02em] text-white">
+          <h2 className="font-display text-[34px] leading-[0.95] tracking-[-0.02em] text-white">
             {m.name}
-          </h3>
-          <p className="mt-1.5 text-[10.5px] font-mono uppercase tracking-[0.26em] text-m-bone/65">
+          </h2>
+          <p className="font-semibold mt-1.5 text-[12px] tracking-[0.01em] text-m-bone/65">
             {m.role}
           </p>
         </div>
@@ -61,10 +61,10 @@ function MemberCard({ m }: { m: Member }) {
 
       <div className="px-6 py-5 flex flex-col gap-4">
         <div
-          className="flex flex-col gap-1 pb-3 text-[10px] font-mono uppercase tracking-[0.26em]"
+          className="font-semibold flex flex-col gap-1 pb-3 text-[12px] tracking-[0.01em]"
           style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
         >
-          <span className="text-m-bone/40">Specialism</span>
+          <span className="text-m-bone/60">Specialism</span>
           <span className="text-m-bone/70">{m.speciality}</span>
         </div>
         <div className="flex items-center gap-2 pt-1">
@@ -129,7 +129,7 @@ export function Team() {
             style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
           >
             <div className="lg:col-span-7">
-              <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+              <span className="font-semibold inline-flex items-center gap-2 mb-6 text-[12px] tracking-[0.01em] text-m-bone/55">
                 The team
               </span>
               <h1 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] tracking-[-0.02em] text-white">
@@ -142,7 +142,7 @@ export function Team() {
 
         {/* Leadership — CEO + MD across the top */}
         <Reveal>
-          <span className="block mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/45">
+          <span className="font-semibold block mb-6 text-[12px] tracking-[0.01em] text-m-bone/60">
             Leadership
           </span>
         </Reveal>
@@ -160,7 +160,7 @@ export function Team() {
 
         {/* The management team */}
         <Reveal>
-          <span className="block mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/45">
+          <span className="font-semibold block mb-6 text-[12px] tracking-[0.01em] text-m-bone/60">
             The Management Team
           </span>
         </Reveal>

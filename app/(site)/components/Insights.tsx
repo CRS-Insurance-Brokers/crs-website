@@ -17,7 +17,7 @@ export function Insights() {
             style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
           >
             <div>
-              <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+              <span className="font-semibold inline-flex items-center gap-2 mb-6 text-[12px] tracking-[0.01em] text-m-bone/55">
                 Supplementary Cover
               </span>
               <h1 className="font-display font-bold text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] tracking-[-0.015em] text-white">
@@ -25,9 +25,9 @@ export function Insights() {
               </h1>
             </div>
             <p className="text-[14px] leading-[1.65] text-m-bone/55 max-w-sm md:text-right">
-              Your core policy covers the fundamentals. These are the
-              supplementary products we layer on top — the ones most brokers
-              leave out, and the ones that make the difference when it matters.
+              Your core policy covers the fundamentals. These are the products
+              that sit alongside it. Not all of them will be worth it for your
+              business, so ask us which are.
             </p>
           </div>
         </Reveal>
@@ -61,7 +61,7 @@ export function Insights() {
 
                 <div className="p-7 flex flex-col gap-5 flex-1">
                   {/* Tag + index */}
-                  <div className="flex items-center justify-between text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/40 tnum">
+                  <div className="font-semibold flex items-center justify-between text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
                     <span>
                       Guide <span className="text-white">{String(i + 1).padStart(2, "0")}</span> · {g.tag}
                     </span>
@@ -72,9 +72,9 @@ export function Insights() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-display font-bold text-[26px] md:text-[28px] leading-[1.1] tracking-[-0.01em] text-white">
+                  <h2 className="font-display font-bold text-[26px] md:text-[28px] leading-[1.1] tracking-[-0.01em] text-white">
                     {g.title}
-                  </h3>
+                  </h2>
 
                   {/* Description */}
                   <p className="text-[13.5px] text-m-bone/55 leading-[1.65] flex-1">
@@ -86,7 +86,7 @@ export function Insights() {
                     className="mt-auto pt-5 flex items-center justify-between"
                     style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
                   >
-                    <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-m-bone/55 group-hover:text-white transition-colors duration-300">
+                    <span className="font-semibold text-[13px] tracking-[0.01em] text-m-bone/55 group-hover:text-white transition-colors duration-300">
                       {g.pdf ? "View guide" : "Talk to us"}
                     </span>
                     <span
@@ -113,6 +113,17 @@ export function Insights() {
             </Reveal>
           ))}
         </div>
+
+        {/* ICOBS 2.2.2R — these cards describe cover, so they need to say what
+            they are not. Applies to all of them, hence one line under the grid. */}
+        <p
+          className="mt-12 pt-8 max-w-2xl text-[13px] leading-[1.7] text-m-bone/60"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+        >
+          What any of these actually cover depends on the wording, limits and
+          exclusions of the policy you end up with. Nothing on this page is a
+          summary of a specific policy.
+        </p>
       </div>
     </section>
   );

@@ -102,7 +102,7 @@ export function HoldToCall({
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
           <path d="M11.5 9.7v1.4a1 1 0 0 1-1.1 1 9.6 9.6 0 0 1-4.2-1.5 9.4 9.4 0 0 1-2.9-2.9A9.6 9.6 0 0 1 1.8 3.5a1 1 0 0 1 1-1.1h1.4a1 1 0 0 1 1 .9c.06.5.18 1 .35 1.4a1 1 0 0 1-.23 1.05L4.7 6.4a7.7 7.7 0 0 0 2.9 2.9l.6-.6a1 1 0 0 1 1.05-.23c.45.17.9.29 1.4.34a1 1 0 0 1 .9 1z" />
         </svg>
-        <span className="text-[10px] font-mono uppercase tracking-[0.24em] tnum">
+        <span className="font-semibold text-[12px] tracking-[0.01em] tnum">
           {done ? "Dialling…" : holding ? "Keep holding" : "Hold to call"}
         </span>
       </span>

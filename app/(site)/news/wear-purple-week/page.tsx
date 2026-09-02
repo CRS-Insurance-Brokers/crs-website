@@ -23,7 +23,7 @@ export default function WearPurpleWeekPage() {
           <Reveal>
             <a
               href="/news"
-              className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/40 hover:text-m-bone/70 transition-colors duration-300 mb-10"
+              className="font-semibold inline-flex items-center gap-2 text-[12px] tracking-[0.01em] text-m-bone/60 hover:text-m-bone/70 transition-colors duration-300 mb-10"
             >
               ← News
             </a>
@@ -31,10 +31,10 @@ export default function WearPurpleWeekPage() {
 
           <Reveal delay={60}>
             <div className="flex flex-wrap gap-5 items-center mb-7">
-              <span className="text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-coral/80">
+              <span className="font-semibold text-[12px] tracking-[0.01em] text-m-coral/80">
                 Charity
               </span>
-              <span className="text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/35 tnum">
+              <span className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
                 15–19 Jun 2026
               </span>
             </div>
@@ -70,7 +70,7 @@ export default function WearPurpleWeekPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
 
             <Reveal className="lg:col-span-5">
-              <span className="text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/35 block mb-8">
+              <span className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60 block mb-8">
                 The Wolf Run
               </span>
               <h2 className="font-display font-bold text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.1] tracking-[-0.015em] text-white mb-7">
@@ -118,7 +118,7 @@ export default function WearPurpleWeekPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
 
             <Reveal delay={160} className="lg:col-span-6">
-              <span className="text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/35 block mb-8">
+              <span className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60 block mb-8">
                 The Great CRS Bake Off
               </span>
               <h2 className="font-display font-bold text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.1] tracking-[-0.015em] text-white mb-7">
@@ -172,7 +172,7 @@ export default function WearPurpleWeekPage() {
               <div className="flex flex-wrap gap-4 items-center">
                 <a
                   href="/about/charity"
-                  className="group inline-flex items-center gap-2.5 px-6 py-3.5 bg-m-coral text-m-ink text-[11px] font-mono uppercase tracking-[0.24em] hover:bg-m-cream transition-colors duration-300"
+                  className="font-semibold group inline-flex items-center gap-2.5 px-6 py-3.5 bg-m-coral text-m-ink text-[13px] tracking-[0.01em] hover:bg-m-cream transition-colors duration-300"
                   style={{ transitionTimingFunction: "cubic-bezier(0.23, 1, 0.32, 1)" }}
                 >
                   Learn more
@@ -180,7 +180,7 @@ export default function WearPurpleWeekPage() {
                 </a>
                 <a
                   href="tel:03456051956"
-                  className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.24em] text-m-bone/55 hover:text-m-bone transition-colors duration-300 tnum"
+                  className="font-semibold inline-flex items-center gap-2 text-[13px] tracking-[0.01em] text-m-bone/55 hover:text-m-bone transition-colors duration-300 tnum"
                 >
                   0345 605 1956
                 </a>
@@ -203,7 +203,7 @@ export default function WearPurpleWeekPage() {
                     className="flex items-center justify-between py-3.5"
                     style={{ borderBottom: i < arr.length - 1 ? "1px solid rgba(255,255,255,0.07)" : undefined }}
                   >
-                    <span className="text-[13px] text-m-bone/45">{row.label}</span>
+                    <span className="text-[13px] text-m-bone/60">{row.label}</span>
                     <span className="font-mono text-[13px] text-white tnum">{row.value}</span>
                   </div>
                 ))}

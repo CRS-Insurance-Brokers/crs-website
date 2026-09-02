@@ -6,7 +6,7 @@ import { Reveal } from "../components/Reveal";
 export const metadata: Metadata = {
   title: "Rewards · Earn up to £1,000 per referral",
   description:
-    "Refer a business to CRS Insurance Brokers and earn 10% of our total earnings, up to £1,000 per referral. Terms apply.",
+    "Refer a business to CRS Insurance Brokers and earn 10% of the commission and fees we earn, up to £1,000 per referral. Terms apply.",
   alternates: { canonical: "/rewards" },
 };
 
@@ -24,8 +24,19 @@ const steps = [
   {
     num: "03",
     heading: "You get paid",
-    body: "Once the account is settled, we will transfer 10% of our total earnings to you — up to £1,000 per referral.",
+    body: "Once the account is settled, we will transfer 10% of the commission and any broker fee to you — up to £1,000 per referral.",
   },
+];
+
+const terms = [
+  "We pay 10% of the commission and any broker fee we earn on the first policy we place, capped at £1,000. Commission we receive from a premium finance provider is not part of the calculation.",
+  "Payment is made once the account has been settled in full.",
+  "If the policy is cancelled within twelve months of inception, we may reclaim the payment or set it against a later referral.",
+  "The payment covers the first policy only. Renewals and any further policies do not generate another one.",
+  "An introduction stays live for twelve months. If we have not placed cover by then, it lapses.",
+  "We tell the business you introduce that we pay a fee for the introduction.",
+  "It is the responsibility of the recipient to declare any monetary amount received to HMRC and their employer.",
+  "Referred business must be entirely independent to your own business.",
 ];
 
 export default function RewardsPage() {
@@ -51,7 +62,7 @@ export default function RewardsPage() {
               <p className="mt-10 max-w-[44ch] text-[15.5px] leading-[1.65] text-m-bone/70">
                 Refer a business to us. If they take out a policy and the
                 account is settled, we pay you{" "}
-                <span className="text-white">10% of our total earnings</span>{" "}
+                <span className="text-white">10% of the commission and any broker fee</span>{" "}
                 — up to £1,000.
               </p>
             </Reveal>
@@ -61,7 +72,7 @@ export default function RewardsPage() {
                 className="p-6 md:p-8 bg-m-ink-2"
                 style={{ border: "1px solid rgba(255,255,255,0.08)" }}
               >
-                <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/45 mb-4">
+                <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60 mb-4">
                   Make a referral
                 </p>
                 <p className="text-[14px] leading-[1.65] text-m-bone/65 mb-6">
@@ -70,13 +81,13 @@ export default function RewardsPage() {
                 </p>
                 <a
                   href="tel:01455244630"
-                  className="block text-[13px] font-mono uppercase tracking-[0.22em] text-m-bone/65 hover:text-white transition-colors duration-300 mb-2"
+                  className="font-semibold block text-[13px] tracking-[0.01em] text-m-bone/65 hover:text-white transition-colors duration-300 mb-2"
                 >
                   01455 244630 →
                 </a>
                 <a
                   href="mailto:info@crs-ins.co.uk"
-                  className="block text-[13px] font-mono tracking-[0.22em] text-m-bone/65 hover:text-white transition-colors duration-300"
+                  className="block text-[13px] tracking-[0.01em] text-m-bone/65 hover:text-white transition-colors duration-300"
                 >
                   info@crs-ins.co.uk →
                 </a>
@@ -93,7 +104,7 @@ export default function RewardsPage() {
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
           <Reveal>
-            <span className="inline-flex items-center gap-2 mb-12 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+            <span className="font-semibold inline-flex items-center gap-2 mb-12 text-[12px] tracking-[0.01em] text-m-bone/55">
               How it works
             </span>
           </Reveal>
@@ -108,9 +119,9 @@ export default function RewardsPage() {
                   <span className="font-display text-[3.5rem] leading-none tracking-[-0.02em] text-m-coral tnum">
                     {s.num}
                   </span>
-                  <h3 className="mt-4 font-display text-[1.5rem] leading-[1.1] tracking-[-0.015em] text-white">
+                  <h2 className="mt-4 font-display text-[1.5rem] leading-[1.1] tracking-[-0.015em] text-white">
                     {s.heading}
-                  </h3>
+                  </h2>
                   <p className="mt-4 text-[14px] leading-[1.7] text-m-bone/65">
                     {s.body}
                   </p>
@@ -129,24 +140,16 @@ export default function RewardsPage() {
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
           <Reveal>
             <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+              <span className="font-semibold inline-flex items-center gap-2 mb-6 text-[12px] tracking-[0.01em] text-m-bone/55">
                 Terms &amp; conditions
               </span>
-              <ul className="flex flex-col gap-3 text-[13px] leading-[1.65] text-m-bone/50">
-                <li className="flex gap-3">
-                  <span className="text-m-bone/25 shrink-0">—</span>
-                  It is the responsibility of the recipient to declare any
-                  monetary amount received to HMRC and their employer.
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-m-bone/25 shrink-0">—</span>
-                  Referrals will be paid upon full settlement of accounts.
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-m-bone/25 shrink-0">—</span>
-                  Referred business must be entirely independent to your own
-                  business.
-                </li>
+              <ul className="flex flex-col gap-3 text-[13px] leading-[1.65] text-m-bone/65">
+                {terms.map((t) => (
+                  <li key={t} className="flex gap-3">
+                    <span className="text-m-bone/25 shrink-0">—</span>
+                    {t}
+                  </li>
+                ))}
               </ul>
             </div>
           </Reveal>

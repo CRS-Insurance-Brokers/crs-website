@@ -22,7 +22,7 @@ export default function UKBrokerAwardsPage() {
           <Reveal>
             <a
               href="/news"
-              className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/40 hover:text-m-bone/70 transition-colors duration-300 mb-10"
+              className="font-semibold inline-flex items-center gap-2 text-[12px] tracking-[0.01em] text-m-bone/60 hover:text-m-bone/70 transition-colors duration-300 mb-10"
             >
               ← News
             </a>
@@ -30,10 +30,10 @@ export default function UKBrokerAwardsPage() {
 
           <Reveal delay={60}>
             <div className="flex flex-wrap gap-5 items-center mb-7">
-              <span className="text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-coral/80">
+              <span className="font-semibold text-[12px] tracking-[0.01em] text-m-coral/80">
                 Awards
               </span>
-              <span className="text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/35 tnum">
+              <span className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
                 17 Jul 2026
               </span>
             </div>

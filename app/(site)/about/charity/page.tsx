@@ -83,7 +83,7 @@ export default function CharityPage() {
                   href="https://lighthousecharity.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2.5 px-6 py-3.5 bg-m-coral text-m-ink text-[11px] font-mono uppercase tracking-[0.24em] hover:bg-m-cream transition-colors duration-300"
+                  className="font-semibold group inline-flex items-center gap-2.5 px-6 py-3.5 bg-m-coral text-m-ink text-[13px] tracking-[0.01em] hover:bg-m-cream transition-colors duration-300"
                   style={{ transitionTimingFunction: "cubic-bezier(0.23, 1, 0.32, 1)" }}
                 >
                   Visit Lighthouse
@@ -93,7 +93,7 @@ export default function CharityPage() {
                   href="https://lighthousecharity.org/donate/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.24em] text-m-bone/55 hover:text-m-bone transition-colors duration-300"
+                  className="font-semibold inline-flex items-center gap-2 text-[13px] tracking-[0.01em] text-m-bone/55 hover:text-m-bone transition-colors duration-300"
                 >
                   Donate
                   <ArrowUpRight className="w-3 h-3" strokeWidth={1.25} />
@@ -116,7 +116,7 @@ export default function CharityPage() {
                   <p className="font-display text-[clamp(1.6rem,3vw,2.25rem)] leading-none tracking-[-0.02em] text-white tnum">
                     0345 605 1956
                   </p>
-                  <p className="mt-2 text-[10.5px] font-mono uppercase tracking-[0.20em] text-m-bone/30">
+                  <p className="font-semibold mt-2 text-[12px] tracking-[0.01em] text-m-bone/60">
                     ROI · 1800 939 122
                   </p>
                 </div>
@@ -141,7 +141,7 @@ export default function CharityPage() {
                     "Support through illness, injury or time away from work",
                     "Practical help when money gets tight — debt, emergency aid, legal guidance",
                   ].map((item) => (
-                    <div key={item} className="flex items-start gap-2 text-[11.5px] text-m-bone/45 leading-snug">
+                    <div key={item} className="flex items-start gap-2 text-[11.5px] text-m-bone/60 leading-snug">
                       <span className="w-1 h-1 rounded-full bg-m-bone/25 mt-1.5 shrink-0" />
                       {item}
                     </div>
@@ -160,10 +160,10 @@ export default function CharityPage() {
                   <span className="text-[13px] font-display text-m-bone/50 block mb-0.5">Free App</span>
                   <span className="text-[13px] text-m-bone/65">Construction Industry Helpline · iOS &amp; Android</span>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-m-bone/30 group-hover:text-m-coral transition-colors duration-200 shrink-0" strokeWidth={1.25} />
+                <ArrowUpRight className="w-4 h-4 text-m-bone/60 group-hover:text-m-coral transition-colors duration-200 shrink-0" strokeWidth={1.25} />
               </a>
 
-              <p className="text-[10px] font-mono uppercase tracking-[0.20em] text-m-bone/25 px-1">
+              <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/55 px-1">
                 Registered charity · UK 1149488 · ROI 20200334
               </p>
 

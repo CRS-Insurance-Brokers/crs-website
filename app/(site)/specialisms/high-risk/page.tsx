@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title:
       "High Risk Insurance — Demolition, asbestos, hot works · CRS Insurance Brokers",
     description:
-      "Specialist cover for the trades others won't touch. NFDC and DSA-affiliated cover for demolition, asbestos, hot works and work at height.",
+      "Specialist cover for the hardest trades to place. NFDC and DSA-affiliated cover for demolition, asbestos, hot works and work at height.",
     type: "website",
     siteName: "CRS Insurance Brokers",
     locale: "en_GB",
@@ -108,9 +108,9 @@ export default function HighRiskPage() {
                 >
                   Specialist cover
                   <br />
-                  <span className="italic">for the trades</span>
+                  <span className="italic">for the hardest</span>
                   <br />
-                  <span className="text-m-bone-2/85">others won&rsquo;t touch.</span>
+                  <span className="text-m-bone-2/85">trades to place.</span>
                 </h1>
               </Reveal>
 
@@ -185,7 +185,7 @@ export default function HighRiskPage() {
           <Reveal>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
               <div className="lg:col-span-6">
-                <span className="inline-flex items-center gap-2 mb-8 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+                <span className="font-semibold inline-flex items-center gap-2 mb-8 text-[12px] tracking-[0.01em] text-m-bone/55">
                   Why specialist
                 </span>
                 <h2 className="font-display text-[clamp(2.5rem,5.5vw,4.75rem)] leading-[0.95] tracking-[-0.02em] text-white">
@@ -207,8 +207,8 @@ export default function HighRiskPage() {
                   These are the details that move a declination to an acceptance —
                   and a standard rate to a competitive one. We know the questions
                   because we&rsquo;ve had the conversations. That&rsquo;s why our
-                  clients get cover other brokers{" "}
-                  <span className="text-white">can&rsquo;t place.</span>
+                  clients get terms a portal submission{" "}
+                  <span className="text-white">never would.</span>
                 </p>
               </div>
             </div>
@@ -228,7 +228,7 @@ export default function HighRiskPage() {
               style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
             >
               <div className="lg:col-span-7">
-                <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+                <span className="font-semibold inline-flex items-center gap-2 mb-6 text-[12px] tracking-[0.01em] text-m-bone/55">
                   Sector FAQs
                 </span>
                 <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-[-0.02em] text-white">
@@ -261,7 +261,7 @@ export default function HighRiskPage() {
       >
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
           <Reveal>
-            <span className="inline-flex items-center gap-2 mb-8 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+            <span className="font-semibold inline-flex items-center gap-2 mb-8 text-[12px] tracking-[0.01em] text-m-bone/55">
               <span className="w-1.5 h-1.5 rounded-full bg-m-coral pulse-dot" />
               Contact
             </span>
@@ -275,13 +275,13 @@ export default function HighRiskPage() {
                 style={{ border: "1px solid rgba(255,255,255,0.10)" }}
               >
                 <div>
-                  <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/55 mb-3">
+                  <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/55 mb-3">
                     Contact
                   </p>
                   <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none tracking-[-0.02em] text-white tnum">
                     01455 244630
                   </p>
-                  <p className="mt-3 text-[12px] font-mono uppercase tracking-[0.22em] text-m-bone/40">
+                  <p className="font-semibold mt-3 text-[13px] tracking-[0.01em] text-m-bone/60">
                     Mon–Fri 09:00–17:00
                   </p>
                 </div>
@@ -299,13 +299,13 @@ export default function HighRiskPage() {
                 style={{ border: "1px solid rgba(255,255,255,0.10)" }}
               >
                 <div>
-                  <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/55 mb-3">
+                  <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/55 mb-3">
                     Email us
                   </p>
                   <p className="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-none tracking-[-0.02em] text-white">
                     info@crs-ins.co.uk
                   </p>
-                  <p className="mt-3 text-[12px] font-mono uppercase tracking-[0.22em] text-m-bone/40">
+                  <p className="font-semibold mt-3 text-[13px] tracking-[0.01em] text-m-bone/60">
                     We respond as quickly as possible
                   </p>
                 </div>

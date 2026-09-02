@@ -14,10 +14,12 @@
  * lives in app/site/marketing.css under [data-marketing] selectors.
  */
 @theme {
-  --color-m-ink: #14102E;
-  --color-m-ink-2: #1C173C;
-  --color-m-ink-3: #221B48;
-  --color-m-ink-4: #2A2354;
+  /* Ink scale now terminates exactly on the brand navy (m-primary / logo
+     colour) at its lightest step, instead of an unrelated purple-black. */
+  --color-m-ink: #14122F;
+  --color-m-ink-2: #1A1740;
+  --color-m-ink-3: #201D51;
+  --color-m-ink-4: #262262;
 
   --color-m-primary: #262262;
   --color-m-primary-2: #322D7B;

@@ -17,10 +17,10 @@ export function Testimonials() {
             className="flex items-baseline justify-between pb-8 mb-0"
             style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
           >
-            <span className="text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+            <span className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/55">
               Client feedback
             </span>
-            <span className="hidden sm:block text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/30 tnum">
+            <span className="font-semibold hidden sm:block text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
               Client feedback · Feb–Apr 2026
             </span>
           </div>
@@ -39,7 +39,7 @@ export function Testimonials() {
               >
                 {/* Index */}
                 <div className="hidden md:block md:col-span-1">
-                  <span className="font-mono text-[11px] tnum text-m-bone/25 group-hover:text-m-coral/60 transition-colors duration-500">
+                  <span className="font-mono text-[11px] tnum text-m-bone/55 group-hover:text-m-coral/60 transition-colors duration-500">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
@@ -53,12 +53,12 @@ export function Testimonials() {
 
                 {/* Attribution */}
                 <div className="md:col-span-4 flex flex-col gap-1.5 md:items-end">
-                  <span className="text-[12px] font-mono uppercase tracking-[0.18em] text-m-bone/70 group-hover:text-white transition-colors duration-500"
+                  <span className="font-semibold text-[13px] tracking-[0.01em] text-m-bone/70 group-hover:text-white transition-colors duration-500"
                     style={{ transitionTimingFunction: "cubic-bezier(0.23,1,0.32,1)" }}
                   >
                     {t.trade}
                   </span>
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-m-bone/30">
+                  <span className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60">
                     {t.sector} · {t.year}
                   </span>
                 </div>

@@ -19,7 +19,7 @@ export function FooterCTA() {
 
       <div className="relative max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
         <Reveal>
-          <span className="inline-flex items-center gap-2 mb-8 text-[10px] font-mono uppercase tracking-[0.32em] text-m-ink/55">
+          <span className="font-semibold inline-flex items-center gap-2 mb-8 text-[12px] tracking-[0.01em] text-m-ink">
             <span className="w-1.5 h-1.5 rounded-full bg-m-coral pulse-dot" />
             Contact
           </span>
@@ -44,7 +44,7 @@ export function FooterCTA() {
                   className="flex items-start justify-between gap-6 mb-8 pb-6"
                   style={{ borderBottom: "1px solid rgba(255,255,255,0.10)" }}
                 >
-                  <span className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/55 tnum">
+                  <span className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/55 tnum">
                     Call us · Mon&ndash;Fri 09:00&ndash;17:00
                   </span>
                   <span
@@ -58,7 +58,7 @@ export function FooterCTA() {
                   01455 244630
                 </p>
                 <div
-                  className="mt-8 pt-6 flex items-center justify-between text-[11px] font-mono uppercase tracking-[0.22em] text-m-bone/55"
+                  className="font-semibold mt-8 pt-6 flex items-center justify-between text-[13px] tracking-[0.01em] text-m-bone/55"
                   style={{ borderTop: "1px solid rgba(255,255,255,0.10)" }}
                 >
                   <span>Lutterworth · LE17 4PP</span>
@@ -74,7 +74,7 @@ export function FooterCTA() {
                 className="group block bg-m-cream-2/40 px-6 py-7 md:px-7 md:py-8"
                 style={{ border: "1px solid rgba(10,10,10,0.10)" }}
               >
-                <span className="text-[10px] font-mono uppercase tracking-[0.32em] text-m-ink/55">
+                <span className="font-semibold text-[12px] tracking-[0.01em] text-m-ink">
                   Or write
                 </span>
                 <p className="mt-3 font-display text-[28px] md:text-[32px] leading-[1.05] tracking-[-0.01em] text-m-ink">
@@ -84,7 +84,7 @@ export function FooterCTA() {
                   className="mt-5 pt-4 flex items-center justify-between"
                   style={{ borderTop: "1px solid rgba(10,10,10,0.10)" }}
                 >
-                  <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-m-ink/55">
+                  <span className="font-semibold text-[13px] tracking-[0.01em] text-m-ink">
                     We respond as quickly as possible
                   </span>
                   <span
@@ -101,7 +101,7 @@ export function FooterCTA() {
                 className="group block bg-m-coral text-m-ink px-6 py-7 md:px-7 md:py-8"
                 style={{ border: "1px solid rgba(10,10,10,0.20)" }}
               >
-                <span className="text-[10px] font-mono uppercase tracking-[0.32em] text-m-ink/65">
+                <span className="font-semibold text-[12px] tracking-[0.01em] text-m-ink">
                   Report a claim · Option 4
                 </span>
                 <p className="mt-3 font-display text-[28px] md:text-[32px] leading-[1.05] tracking-[-0.01em] text-m-ink">
@@ -111,7 +111,7 @@ export function FooterCTA() {
                   className="mt-5 pt-4 flex items-center justify-between"
                   style={{ borderTop: "1px solid rgba(10,10,10,0.18)" }}
                 >
-                  <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-m-ink/65">
+                  <span className="font-semibold text-[13px] tracking-[0.01em] text-m-ink">
                     Tap to call · Claims team
                   </span>
                   <span

@@ -91,7 +91,7 @@ export function Hero() {
             <Reveal delay={300}>
               <p className="mt-10 md:mt-12 max-w-[42ch] text-[15.5px] leading-[1.65] text-m-bone/70">
                 Demolition, construction, contractors and manufacturing.
-                We place cover others can&rsquo;t,{" "}
+                We place the risks a standard panel declines,{" "}
                 <span className="text-white">and answer the phone when it matters.</span>
               </p>
             </Reveal>
@@ -126,7 +126,7 @@ export function Hero() {
             </Reveal>
 
             <Reveal delay={600}>
-              <p className="mt-6 max-w-[44ch] text-[11px] font-mono uppercase tracking-[0.22em] text-m-bone/35 tnum leading-relaxed">
+              <p className="font-semibold mt-6 max-w-[44ch] text-[13px] tracking-[0.01em] text-m-bone/60 tnum leading-relaxed">
                 {heroFootnote.data}
               </p>
             </Reveal>

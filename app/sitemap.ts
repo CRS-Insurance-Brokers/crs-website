@@ -32,8 +32,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/news`, lastModified: "2026-08-18", changeFrequency: "weekly", priority: 0.7 },
 
     // Legal
-    { url: `${SITE}/privacy`, lastModified: "2026-06-15", changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE}/terms`,   lastModified: "2026-06-15", changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE}/cookies`, lastModified: "2026-06-15", changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/complaints`,    lastModified: "2026-09-02", changeFrequency: "yearly", priority: 0.4 },
+    { url: `${SITE}/accessibility`, lastModified: "2026-09-02", changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/privacy`,       lastModified: "2026-09-02", changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/terms`,         lastModified: "2026-09-02", changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/cookies`,       lastModified: "2026-09-02", changeFrequency: "yearly", priority: 0.3 },
   ];
 }

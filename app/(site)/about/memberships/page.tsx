@@ -40,7 +40,7 @@ const memberships = [
     logo: null as string | null,
     name: "Financial Conduct Authority",
     body: "CRS Insurance Brokers is a trading name of CIB Group UK Ltd, authorised and regulated by the Financial Conduct Authority. FRN 960073. You can verify our registration on the FCA register.",
-    href: "https://register.fca.org.uk/s/search?predefined=ALL&q=960073",
+    href: "https://register.fca.org.uk/s/search?q=960073&type=firms",
   },
 ];
 
@@ -105,7 +105,7 @@ export default function MembershipsPage() {
                         <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={1.25} />
                       </span>
                     </div>
-                    <p className="text-[10.5px] font-mono uppercase tracking-[0.24em] text-m-bone/50 mb-5">
+                    <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/50 mb-5">
                       {m.name}
                     </p>
                     <p className="text-[14px] leading-[1.7] text-m-bone/65">

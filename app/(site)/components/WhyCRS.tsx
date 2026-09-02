@@ -38,7 +38,7 @@ export function WhyCRS() {
             style={{ borderBottom: "1px solid rgba(10,10,10,0.12)" }}
           >
             <div className="lg:col-span-7">
-              <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-ink/55">
+              <span className="font-semibold inline-flex items-center gap-2 mb-6 text-[12px] tracking-[0.01em] text-m-ink">
                 Our promise to you
               </span>
               <h2 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] tracking-[-0.02em] text-m-ink">
@@ -47,7 +47,7 @@ export function WhyCRS() {
               </h2>
             </div>
             <div className="lg:col-span-5 lg:pt-6">
-              <p className="text-[15px] md:text-[16px] leading-[1.65] text-m-ink/65 max-w-md">
+              <p className="text-[15px] md:text-[16px] leading-[1.65] text-m-ink max-w-md">
                 Independence, service excellence, commitment. Every broker says it.
                 We back ours with named handlers, direct underwriter relationships,
                 and a track record that speaks for itself.
@@ -90,7 +90,7 @@ export function WhyCRS() {
                     <h3 className="font-display leading-[0.95] tracking-[-0.02em] text-m-ink" style={{ fontSize: "clamp(1.25rem, 3vw, 3.25rem)" }}>
                       {p.title}
                     </h3>
-                    <p className="mt-2 text-[11.5px] font-mono uppercase tracking-[0.22em] text-m-ink/55">
+                    <p className="font-semibold mt-2 text-[13px] tracking-[0.01em] text-m-ink">
                       {p.sub}
                     </p>
                   </div>

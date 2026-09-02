@@ -165,7 +165,7 @@ export default function ConstructionPage() {
           <Reveal>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
               <div className="lg:col-span-6">
-                <span className="inline-flex items-center gap-2 mb-8 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+                <span className="font-semibold inline-flex items-center gap-2 mb-8 text-[12px] tracking-[0.01em] text-m-bone/55">
                   Why specialist
                 </span>
                 <h2 className="font-display text-[clamp(2.5rem,5.5vw,4.75rem)] leading-[0.95] tracking-[-0.02em] text-white">
@@ -211,7 +211,7 @@ export default function ConstructionPage() {
               style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
             >
               <div className="lg:col-span-7">
-                <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+                <span className="font-semibold inline-flex items-center gap-2 mb-6 text-[12px] tracking-[0.01em] text-m-bone/55">
                   Sector FAQs
                 </span>
                 <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-[-0.02em] text-white">
@@ -244,7 +244,7 @@ export default function ConstructionPage() {
       >
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
           <Reveal>
-            <span className="inline-flex items-center gap-2 mb-8 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+            <span className="font-semibold inline-flex items-center gap-2 mb-8 text-[12px] tracking-[0.01em] text-m-bone/55">
               <span className="w-1.5 h-1.5 rounded-full bg-m-coral pulse-dot" />
               Contact
             </span>
@@ -258,13 +258,13 @@ export default function ConstructionPage() {
                 style={{ border: "1px solid rgba(255,255,255,0.10)" }}
               >
                 <div>
-                  <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/55 mb-3">
+                  <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/55 mb-3">
                     Call us
                   </p>
                   <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none tracking-[-0.02em] text-white tnum">
                     01455 244630
                   </p>
-                  <p className="mt-3 text-[12px] font-mono uppercase tracking-[0.22em] text-m-bone/40">
+                  <p className="font-semibold mt-3 text-[13px] tracking-[0.01em] text-m-bone/60">
                     Mon–Fri 09:00–17:00
                   </p>
                 </div>
@@ -282,13 +282,13 @@ export default function ConstructionPage() {
                 style={{ border: "1px solid rgba(255,255,255,0.10)" }}
               >
                 <div>
-                  <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/55 mb-3">
+                  <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/55 mb-3">
                     Email us
                   </p>
                   <p className="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-none tracking-[-0.02em] text-white">
                     info@crs-ins.co.uk
                   </p>
-                  <p className="mt-3 text-[12px] font-mono uppercase tracking-[0.22em] text-m-bone/40">
+                  <p className="font-semibold mt-3 text-[13px] tracking-[0.01em] text-m-bone/60">
                     We respond as quickly as possible
                   </p>
                 </div>

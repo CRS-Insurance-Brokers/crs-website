@@ -1,20 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Geist_Mono } from "next/font/google";
+import { Source_Sans_3 } from "next/font/google";
 import { OrganizationSchema } from "./components/SchemaJsonLd";
 import { ConsentBanner } from "./components/ConsentBanner";
 import "./marketing.css";
 
-const inter = Inter({
+/*
+ * Source Sans 3 is the face CRS already uses on its documents and reports, so
+ * the site and the paperwork now read as one brand. It replaces Inter, which
+ * is the default typeface on a very large number of generated sites.
+ *
+ * Geist Mono has gone with it. Nothing on a broker's website needs a code
+ * typeface, and it was only ever carrying the letterspaced uppercase labels.
+ * The --font-inter variable name is kept so the CSS does not have to change
+ * in fifty places.
+ */
+const sourceSans = Source_Sans_3({
   weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -49,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CRS Insurance Brokers — Specialist cover for high-risk trades",
     description:
-      "Demolition, construction, contractors and manufacturing. We place cover others can't, and answer the phone when it matters. Lutterworth, UK.",
+      "Demolition, construction, contractors and manufacturing. We place the risks a standard panel declines, and answer the phone when it matters. Lutterworth, UK.",
     siteName: "CRS Insurance Brokers",
     locale: "en_GB",
     type: "website",
@@ -58,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CRS Insurance Brokers — Specialist cover for high-risk trades",
     description:
-      "Demolition, construction, contractors and manufacturing. We place cover others can't.",
+      "Demolition, construction, contractors and manufacturing. We place the risks a standard panel declines.",
   },
   verification: {
     google: "488VqjQ5-wQmJ0sRioLm5K_SmKnmf9HH5gqx5NGo4bk",
@@ -90,7 +94,7 @@ export default function MarketingLayout({
   return (
     <div
       data-marketing
-      className={`${inter.variable} ${geistMono.variable} min-h-[100dvh]`}
+      className={`${sourceSans.variable} min-h-[100dvh]`}
     >
       {/* Without JS the IntersectionObserver never fires and .reveal content
           stays at opacity 0 — force everything visible. */}

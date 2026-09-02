@@ -12,12 +12,12 @@ export function TrustStrip() {
   return (
     <section className="relative py-14 md:py-20 border-y border-white/8">
       <Reveal>
-        <p className="text-center text-[10px] font-mono uppercase tracking-[0.28em] text-m-bone/40 mb-8">
+        <p className="font-semibold text-center text-[12px] tracking-[0.01em] text-m-bone/60 mb-8">
           <span className="text-m-bone/65">Accredited, regulated,</span> and on the trade bodies that matter
         </p>
       </Reveal>
 
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden marquee-viewport">
         <div
           className="absolute left-0 top-0 bottom-0 w-24 md:w-40 z-10 pointer-events-none"
           style={{ background: "linear-gradient(90deg, var(--color-ink), transparent)" }}
@@ -49,7 +49,7 @@ export function TrustStrip() {
                 loading="lazy"
                 decoding="async"
               />
-              <span className="hidden md:inline text-[10px] font-mono uppercase tracking-[0.22em] text-m-bone/35 max-w-[140px] whitespace-normal leading-snug">
+              <span className="font-semibold hidden md:inline text-[12px] tracking-[0.01em] text-m-bone/60 max-w-[140px] whitespace-normal leading-snug">
                 {a.long}
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-m-bone/20 shrink-0" />

@@ -17,7 +17,7 @@ const cards: Card[] = [
     title: "High Risk",
     tagline: "Demolition · Asbestos · Hot works",
     body:
-      "Hot works permits, asbestos surveys pre-strip, party wall implications, work at height, environmental impairment, explosives. Where generalist brokers stop pricing, we start.",
+      "Hot works permits, asbestos surveys pre-strip, party wall implications, work at height, environmental impairment, explosives. The detail an underwriter wants before they will price it.",
     covers: ["Demolition", "Asbestos removal", "Work at height", "Hot works", "Environmental"],
     image: "/images/high-risk-demolition.jpg",
     href: "/specialisms/high-risk",
@@ -70,7 +70,7 @@ export function SpecialismsBento() {
             style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
           >
             <div>
-              <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+              <span className="font-semibold inline-flex items-center gap-2 mb-6 text-[12px] tracking-[0.01em] text-m-bone/55">
                 Specialisms
               </span>
               <h1 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] tracking-[-0.02em] text-white">
@@ -128,17 +128,19 @@ export function SpecialismsBento() {
                         "linear-gradient(180deg, rgba(20,16,46,0) 30%, rgba(20,16,46,0.85) 100%)",
                     }}
                   />
-                  <div className="absolute top-3 left-3 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/75 tnum">
+                  <div className="font-semibold absolute top-3 left-3 text-[12px] tracking-[0.01em] text-m-bone/75 tnum">
                     Specimen <span className="text-white">{c.num}</span> / 04
                   </div>
                 </div>
 
                 <div className="p-6 md:p-8 flex flex-col gap-5">
                   <div>
-                    <h3 className="font-display text-[36px] md:text-[42px] leading-[0.95] tracking-[-0.02em] text-white">
+                    {/* h2, not h3 — these sit directly under the page h1, and a
+                        skipped level breaks how a screen reader lists the page. */}
+                    <h2 className="font-display text-[36px] md:text-[42px] leading-[0.95] tracking-[-0.02em] text-white">
                       {c.title}
-                    </h3>
-                    <p className="mt-2 text-[10.5px] font-mono uppercase tracking-[0.26em] text-m-bone/55">
+                    </h2>
+                    <p className="font-semibold mt-2 text-[12px] tracking-[0.01em] text-m-bone/55">
                       {c.tagline}
                     </p>
                   </div>
@@ -147,7 +149,7 @@ export function SpecialismsBento() {
                     {c.body}
                   </p>
 
-                  <div className="flex flex-wrap gap-x-3 gap-y-1.5 text-[10.5px] font-mono uppercase tracking-[0.18em] text-m-bone/55">
+                  <div className="font-semibold flex flex-wrap gap-x-3 gap-y-1.5 text-[12px] tracking-[0.01em] text-m-bone/55">
                     {c.covers.map((cv, idx) => (
                       <span key={cv} className="flex items-center gap-3">
                         <span>{cv}</span>
@@ -163,7 +165,7 @@ export function SpecialismsBento() {
                     style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
                   >
                     <span
-                      className="text-[11.5px] font-mono uppercase tracking-[0.22em] text-m-bone/55 group-hover:text-white transition-colors duration-300"
+                      className="font-semibold text-[13px] tracking-[0.01em] text-m-bone/55 group-hover:text-white transition-colors duration-300"
                       style={{ transitionTimingFunction: "cubic-bezier(0.23, 1, 0.32, 1)" }}
                     >
                       See {c.title.toLowerCase()} →

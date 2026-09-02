@@ -52,7 +52,7 @@ export function Claims() {
             style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
           >
             <div className="lg:col-span-7">
-              <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+              <span className="font-semibold inline-flex items-center gap-2 mb-6 text-[12px] tracking-[0.01em] text-m-bone/55">
                 Claims
               </span>
               <h2 className="font-display text-[clamp(2.25rem,4.8vw,4rem)] leading-[1.1] tracking-[-0.015em] text-white">
@@ -127,7 +127,7 @@ export function Claims() {
                       <Icon className="w-5 h-5" strokeWidth={1.1} />
                     </span>
                     <span
-                      className={`text-[10px] font-mono uppercase tracking-[0.28em] tnum ${
+                      className={`font-semibold text-[12px] tracking-[0.01em] tnum ${
                         p.accent ? "text-m-ink" : "text-m-bone/55"
                       }`}
                     >
@@ -147,7 +147,7 @@ export function Claims() {
                     </h3>
                     <p
                       className={`text-[14px] leading-[1.65] ${
-                        p.accent ? "text-m-ink/75" : "text-m-bone/60"
+                        p.accent ? "text-m-ink" : "text-m-bone/60"
                       }`}
                     >
                       {p.body}
@@ -163,7 +163,7 @@ export function Claims() {
                     }}
                   >
                     <span
-                      className={`text-[12px] font-mono uppercase tracking-[0.22em] transition-colors duration-300 ${
+                      className={`font-semibold text-[13px] tracking-[0.01em] transition-colors duration-300 ${
                         p.accent ? "text-m-ink" : "text-m-bone/65 group-hover:text-white"
                       }`}
                       style={{ transitionTimingFunction: "cubic-bezier(0.23, 1, 0.32, 1)" }}

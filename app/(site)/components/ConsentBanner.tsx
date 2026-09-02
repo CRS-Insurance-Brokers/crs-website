@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { OPEN_COOKIE_SETTINGS } from "./CookieSettingsButton";
 
 /*
  * Cookie consent banner + Google Analytics loader.
@@ -28,6 +29,21 @@ function readConsent(): string | null {
 
 function writeConsent(value: "granted" | "denied") {
   document.cookie = `${CONSENT_COOKIE}=${value}; max-age=31536000; path=/; SameSite=Lax; Secure`;
+}
+
+/* Withdrawing consent has to remove what was already set, not just record the
+ * change. GA4 writes _ga and _ga_<measurement-id>. */
+function clearAnalyticsCookies() {
+  const host = window.location.hostname;
+  const scopes = [host, `.${host}`, `.${host.split(".").slice(-2).join(".")}`];
+  for (const pair of document.cookie.split("; ")) {
+    const name = pair.split("=")[0]?.trim();
+    if (!name || !name.startsWith("_ga")) continue;
+    document.cookie = `${name}=; max-age=0; path=/`;
+    for (const scope of scopes) {
+      document.cookie = `${name}=; max-age=0; path=/; domain=${scope}`;
+    }
+  }
 }
 
 function loadAnalytics() {
@@ -58,14 +74,29 @@ export function ConsentBanner() {
     } else if (consent === null) {
       setVisible(true);
     }
+    // "Cookie settings" in the footer reopens this so a choice can be changed.
+    const open = () => setVisible(true);
+    window.addEventListener(OPEN_COOKIE_SETTINGS, open);
+    return () => window.removeEventListener(OPEN_COOKIE_SETTINGS, open);
   }, []);
 
   if (!visible) return null;
 
   const choose = (value: "granted" | "denied") => {
+    const wasGranted = readConsent() === "granted";
     writeConsent(value);
     setVisible(false);
-    if (value === "granted") loadAnalytics();
+    if (value === "granted") {
+      loadAnalytics();
+      return;
+    }
+    if (wasGranted) {
+      // gtag.js is already in the document and cannot be unloaded. Drop its
+      // cookies and reload so the withdrawal takes effect instead of only
+      // being recorded.
+      clearAnalyticsCookies();
+      window.location.reload();
+    }
   };
 
   return (
@@ -86,18 +117,21 @@ export function ConsentBanner() {
           </a>
         </p>
         <div className="flex items-stretch gap-3 shrink-0">
+          {/* Identical treatment on both, coral included. The ICO expects
+              refusing to be no harder, and no less prominent, than accepting. */}
           <button
             type="button"
             onClick={() => choose("denied")}
-            className="px-5 py-3 text-[12px] font-medium uppercase tracking-[0.14em] text-m-bone/65 hover:text-white transition-colors duration-200"
-            style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+            className="px-5 py-3 text-[12px] font-semibold tracking-[0.02em] text-white hover:bg-m-coral hover:text-m-ink hover:border-m-coral transition-colors duration-200"
+            style={{ border: "1px solid rgba(255,255,255,0.45)" }}
           >
             Decline
           </button>
           <button
             type="button"
             onClick={() => choose("granted")}
-            className="px-5 py-3 bg-white text-m-ink text-[12px] font-semibold uppercase tracking-[0.14em] hover:bg-m-coral transition-colors duration-200"
+            className="px-5 py-3 text-[12px] font-semibold tracking-[0.02em] text-white hover:bg-m-coral hover:text-m-ink hover:border-m-coral transition-colors duration-200"
+            style={{ border: "1px solid rgba(255,255,255,0.45)" }}
           >
             Accept
           </button>

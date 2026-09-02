@@ -58,7 +58,7 @@ export function NewsStrip() {
             style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
           >
             <div>
-              <span className="inline-flex items-center gap-2 mb-6 text-[10px] font-mono uppercase tracking-[0.32em] text-m-bone/55">
+              <span className="font-semibold inline-flex items-center gap-2 mb-6 text-[12px] tracking-[0.01em] text-m-bone/55">
                 Latest News
               </span>
               <h1 className="font-display font-bold text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] tracking-[-0.015em] text-white">
@@ -69,7 +69,7 @@ export function NewsStrip() {
               href="https://www.linkedin.com/company/crs-insurance-brokers"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 text-[12px] font-mono uppercase tracking-[0.22em] text-m-bone/65 hover:text-white transition-colors duration-300"
+              className="font-semibold group inline-flex items-center gap-3 text-[13px] tracking-[0.01em] text-m-bone/65 hover:text-white transition-colors duration-300"
               style={{ transitionTimingFunction: "cubic-bezier(0.23,1,0.32,1)" }}
             >
               Follow us on LinkedIn →
@@ -98,13 +98,13 @@ export function NewsStrip() {
                 />
               </div>
               <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
                   <span className="text-m-coral/80">Community</span>
                   <span>14 Aug 2026</span>
                 </div>
-                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
                   CRS sponsors Thompson Utd Veterans&rsquo; new kit
-                </h3>
+                </h2>
                 <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
                   CRS is sponsoring Thompson Utd Veterans&rsquo; new home kit for the 26-27 season.
                 </p>
@@ -131,13 +131,13 @@ export function NewsStrip() {
                 />
               </div>
               <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
                   <span className="text-m-coral/80">Team News</span>
                   <span>10 Aug 2026</span>
                 </div>
-                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
                   Welcome to the team, Josh
-                </h3>
+                </h2>
                 <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
                   Josh Antill joins CRS as a Sales Executive. Welcome aboard, Josh.
                 </p>
@@ -164,13 +164,13 @@ export function NewsStrip() {
                 />
               </div>
               <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
                   <span className="text-m-coral/80">Team News</span>
                   <span>31 Jul 2026</span>
                 </div>
-                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
                   Milestones for our apprentices
-                </h3>
+                </h2>
                 <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
                   Ethan, Libby and Evie are making progress with Skills Edge Training: distinctions on their assignments, and exam passes on the way to qualifying.
                 </p>
@@ -197,13 +197,13 @@ export function NewsStrip() {
                 />
               </div>
               <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
                   <span className="text-m-coral/80">Team News</span>
                   <span>20 Jul 2026</span>
                 </div>
-                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
                   Jake Pemberton promoted to Head of Technology
-                </h3>
+                </h2>
                 <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
                   Congratulations to Jake on his promotion, now leading technology strategy at CRS.
                 </p>
@@ -233,13 +233,13 @@ export function NewsStrip() {
                 </div>
               </div>
               <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
                   <span className="text-m-coral/80">Awards</span>
                   <span>17 Jul 2026</span>
                 </div>
-                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white group-hover:text-m-bone/90 transition-colors duration-300">
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white group-hover:text-m-bone/90 transition-colors duration-300">
                   Finalists at the UK Broker Awards 2026
-                </h3>
+                </h2>
                 <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
                   CRS is a finalist in two categories at the UK Broker Awards 2026, for Commercial Lines Broker of the Year and Customer Service. A shortlisting that belongs to the team.
                 </p>
@@ -288,13 +288,13 @@ export function NewsStrip() {
                 </div>
               </div>
               <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
                   <span className="text-m-coral/80">Community</span>
                   <span>9 Jul 2026</span>
                 </div>
-                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
                   CRS sponsors the Cobblers Golf Day
-                </h3>
+                </h2>
                 <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
                   CRS sponsored the Cobblers Golf Day, out on the course with clients, friends and familiar faces. Thanks to Northampton Town Football Club and the Northampton Town FC Community Trust for a well-run day.
                 </p>
@@ -321,13 +321,13 @@ export function NewsStrip() {
                 />
               </div>
               <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
                   <span className="text-m-coral/80">Team News</span>
                   <span>6 Jul 2026</span>
                 </div>
-                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
                   Welcome to the team, Eva
-                </h3>
+                </h2>
                 <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
                   Eva Matthews joins CRS as a Client Services Executive, starting her apprenticeship with Skills Edge Training. Great to have her on board.
                 </p>
@@ -355,13 +355,13 @@ export function NewsStrip() {
                 />
               </div>
               <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
                   <span className="text-m-coral/80">Charity</span>
                   <span>16 Jun 2026</span>
                 </div>
-                <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white group-hover:text-m-bone/90 transition-colors duration-300">
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white group-hover:text-m-bone/90 transition-colors duration-300">
                   CRS backs Wear Purple Week.
-                </h3>
+                </h2>
                 <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
                   Wolf run, office bake-off, and a team that showed up in purple. How CRS supported The Lighthouse Charity this June.
                 </p>
@@ -390,14 +390,14 @@ export function NewsStrip() {
                 </div>
 
                 <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
-                  <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 tnum">
+                  <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
                     <span className="text-m-coral/80">{post.tag}</span>
                     <span>{post.date}</span>
                   </div>
 
-                  <h3 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
                     {post.headline}
-                  </h3>
+                  </h2>
 
                   <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
                     {post.body}

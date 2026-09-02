@@ -140,7 +140,7 @@ export function Nav() {
                   onMouseEnter={() => l.dropdown && handleEnter(l.label)}
                   aria-expanded={l.dropdown ? openDropdown === l.label : undefined}
                   aria-haspopup={l.dropdown ? "menu" : undefined}
-                  className="relative flex items-center gap-1.5 whitespace-nowrap px-3 xl:px-5 py-2 text-[12px] font-medium uppercase tracking-[0.16em] text-m-bone/65 hover:text-white transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)]"
+                  className="relative flex items-center gap-1.5 whitespace-nowrap px-3 xl:px-5 py-2 text-[13px] font-medium tracking-[0.01em] text-m-bone/65 hover:text-white transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)]"
                 >
                   {l.label}
 
@@ -190,7 +190,7 @@ export function Nav() {
                       <a
                         key={sub.href}
                         href={sub.href}
-                        className="block px-5 py-2.5 text-[11px] font-mono uppercase tracking-[0.2em] text-m-bone/55 hover:text-white hover:bg-white/[0.05] transition-colors duration-150"
+                        className="font-semibold block px-5 py-2.5 text-[13px] tracking-[0.01em] text-m-bone/55 hover:text-white hover:bg-white/[0.05] transition-colors duration-150"
                         style={{
                           borderBottom: i < l.dropdown!.length - 1
                             ? "1px solid rgba(255,255,255,0.05)"
@@ -209,7 +209,7 @@ export function Nav() {
           {/* Report a claim CTA */}
           <a
             href="tel:01455244630"
-            className="hidden lg:flex group items-center gap-3 pl-4 xl:pl-6 pr-2 text-[12px] font-medium uppercase tracking-[0.16em] text-white whitespace-nowrap"
+            className="hidden lg:flex group items-center gap-3 pl-4 xl:pl-6 pr-2 text-[13px] font-medium tracking-[0.01em] text-white whitespace-nowrap"
             style={{ borderLeft: "1px solid rgba(255,255,255,0.08)" }}
           >
             <span>Report a claim</span>
@@ -297,7 +297,7 @@ export function Nav() {
                           key={sub.href}
                           href={sub.href}
                           onClick={() => setOpen(false)}
-                          className="flex items-center min-h-[44px] text-[11px] font-mono uppercase tracking-[0.14em] text-m-bone/55 hover:text-m-coral active:text-m-coral transition-colors duration-200"
+                          className="font-semibold flex items-center min-h-[44px] text-[13px] tracking-[0.01em] text-m-bone/55 hover:text-m-coral active:text-m-coral transition-colors duration-200"
                         >
                           {sub.label}
                         </a>
@@ -324,7 +324,7 @@ export function Nav() {
           >
             {/* Stacked, not side by side: at 375px the number and the button
                 each wrapped onto two lines when they shared a row. */}
-            <p className="text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/45 mb-1">
+            <p className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60 mb-1">
               Speak to a person
             </p>
             <a
@@ -338,7 +338,7 @@ export function Nav() {
               onClick={() => setOpen(false)}
               className="group mt-3 flex items-center justify-center gap-2 w-full min-h-[48px] bg-m-coral text-m-ink"
             >
-              <span className="text-[11.5px] font-medium uppercase tracking-[0.16em] whitespace-nowrap">
+              <span className="text-[13px] font-medium tracking-[0.01em] whitespace-nowrap">
                 Report a claim
               </span>
               <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={1.4} />

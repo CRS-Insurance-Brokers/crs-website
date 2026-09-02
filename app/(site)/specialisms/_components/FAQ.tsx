@@ -32,7 +32,7 @@ export function FAQList({ items }: { items: FAQItem[] }) {
               className="group w-full text-left py-6 md:py-7 flex items-start justify-between gap-6 transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)]"
             >
               <span className="flex items-baseline gap-5 md:gap-7 min-w-0">
-                <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-m-bone/40 tnum shrink-0 mt-1.5">
+                <span className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60 tnum shrink-0 mt-1.5">
                   Q.{String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="font-display text-[22px] md:text-[26px] leading-[1.2] tracking-[-0.01em] text-white">

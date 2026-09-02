@@ -24,7 +24,7 @@ const tiles = [
   {
     label: "Beyond the Basics",
     headline: "Beyond the basics.",
-    body: "The supplementary cover most brokers never mention.",
+    body: "The supplementary cover that gets overlooked at renewal.",
     href: "/beyond-the-basics",
   },
   {
@@ -60,7 +60,7 @@ export function NavTiles() {
               className="group relative flex flex-col justify-between min-h-[320px] lg:min-h-[380px] bg-m-cream p-8 md:p-10 lg:p-12 transition-opacity duration-300 hover:opacity-90"
             >
               <div className="flex items-start justify-between gap-4">
-                <span className="text-[10px] font-mono uppercase tracking-[0.32em] text-m-ink/40">
+                <span className="font-semibold text-[12px] tracking-[0.01em] text-m-ink">
                   {featured.label}
                 </span>
                 <span
@@ -79,14 +79,14 @@ export function NavTiles() {
                 >
                   {featured.headline}
                 </h2>
-                <p className="text-[14px] leading-[1.65] text-m-ink/55 mb-8 max-w-[42ch]">
+                <p className="text-[14px] leading-[1.65] text-m-ink mb-8 max-w-[42ch]">
                   {featured.body}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {featured.tags?.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-[10px] font-mono uppercase tracking-[0.22em] text-m-ink/50"
+                      className="font-semibold px-3 py-1 text-[12px] tracking-[0.01em] text-m-ink"
                       style={{ border: "1px solid rgba(10,10,10,0.15)" }}
                     >
                       {tag}
@@ -104,7 +104,7 @@ export function NavTiles() {
               className="group relative flex flex-col min-h-[320px] lg:min-h-[380px] bg-m-coral p-8 md:p-10 transition-opacity duration-300 hover:opacity-90"
             >
               <div className="flex items-start justify-between gap-4">
-                <span className="text-[10px] font-mono uppercase tracking-[0.32em] text-m-ink/45">
+                <span className="font-semibold text-[12px] tracking-[0.01em] text-m-ink">
                   {medium.label}
                 </span>
                 <span
@@ -123,7 +123,7 @@ export function NavTiles() {
                 >
                   {medium.headline}
                 </h2>
-                <p className="text-[13.5px] leading-[1.65] text-m-ink/60">
+                <p className="text-[13.5px] leading-[1.65] text-m-ink">
                   {medium.body}
                 </p>
               </div>
@@ -151,7 +151,7 @@ export function NavTiles() {
                 />
 
                 <div className="flex items-start justify-between gap-2">
-                  <span className="text-[9.5px] font-mono uppercase tracking-[0.28em] text-m-bone/40">
+                  <span className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60">
                     {tile.label}
                   </span>
                   <span
