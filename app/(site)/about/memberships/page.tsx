@@ -35,7 +35,9 @@ const memberships = [
   },
   {
     abbr: "FCA",
-    logo: "/logos/fca.png",
+    // The FCA does not licence its logo to regulated firms — status is
+    // disclosed in words only, so this card renders a text wordmark.
+    logo: null as string | null,
     name: "Financial Conduct Authority",
     body: "CRS Insurance Brokers is a trading name of CIB Group UK Ltd, authorised and regulated by the Financial Conduct Authority. FRN 960073. You can verify our registration on the FCA register.",
     href: "https://register.fca.org.uk/s/search?predefined=ALL&q=960073",
@@ -81,15 +83,21 @@ export default function MembershipsPage() {
                 >
                   <div>
                     <div className="flex items-start justify-between mb-8">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={m.logo}
-                        alt={m.abbr}
-                        className="h-10 w-auto"
-                        style={{ filter: "brightness(0) invert(1)", opacity: 0.75 }}
-                        loading="lazy"
-                        decoding="async"
-                      />
+                      {m.logo ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={m.logo}
+                          alt={m.abbr}
+                          className="h-10 w-auto"
+                          style={{ filter: "brightness(0) invert(1)", opacity: 0.75 }}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      ) : (
+                        <span className="h-10 flex items-center font-display font-bold text-[26px] leading-none tracking-[-0.01em] text-m-bone/75">
+                          {m.abbr}
+                        </span>
+                      )}
                       <span
                         className="w-10 h-10 bg-white/[0.04] text-m-bone flex items-center justify-center shrink-0 group-hover:bg-m-coral group-hover:text-m-ink transition-all duration-300"
                         style={{ border: "1px solid rgba(255,255,255,0.08)" }}

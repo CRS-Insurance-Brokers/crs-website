@@ -4,7 +4,6 @@ const accreditations = [
   { name: "NFDC", logo: "/logos/nfdc.png",  long: "National Federation of Demolition Contractors", href: "https://demolition-nfdc.com/service-providers/type/financial-services/#filters" },
   { name: "DSA",  logo: "/logos/dsa.webp",   long: "Drilling & Sawing Association",                 href: "https://www.drillandsaw.org.uk/member/crs/" },
   { name: "BIBA", logo: "/logos/biba.svg",  long: "British Insurance Brokers' Association",         href: "https://www.biba.org.uk/find-insurance/broker-directory/cib-group-uk-ltd/" },
-  { name: "FCA",  logo: "/logos/fca.png",   long: "Financial Conduct Authority — FRN 960073",       href: "https://register.fca.org.uk/s/search?predefined=ALL&q=960073" },
 ];
 
 export function TrustStrip() {

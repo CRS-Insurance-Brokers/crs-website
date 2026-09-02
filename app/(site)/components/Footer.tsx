@@ -94,7 +94,6 @@ export function Footer() {
               {[
                 { src: "/logos/nfdc.png",  alt: "NFDC member",    href: "https://demolition-nfdc.com/service-providers/type/financial-services/#filters" },
                 { src: "/logos/dsa.webp",   alt: "DSA member",     href: "https://www.drillandsaw.org.uk/member/crs/" },
-                { src: "/logos/fca.png",   alt: "FCA regulated",  href: "https://register.fca.org.uk/s/search?predefined=ALL&q=960073" },
               ].map((b) => (
                 <a
                   key={b.alt}
@@ -164,7 +163,14 @@ export function Footer() {
             CRS Insurance Brokers is a trading name of CIB Group UK Ltd, registered
             in England &amp; Wales (company no. <span className="text-m-bone/65">13360654</span>).
             Authorised and regulated by the Financial Conduct Authority,{" "}
-            <span className="text-m-bone/65">FRN 960073</span>. Registered office:
+            <a
+              href="https://register.fca.org.uk/s/search?predefined=ALL&q=960073"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-m-bone/65 underline underline-offset-2 hover:text-m-bone transition-colors duration-300"
+            >
+              FRN 960073
+            </a>. Registered office:
             The Copper Room, Deva City Office Park, Trinity Way, Salford, M3 7BG.
             All calls are recorded for training and regulatory purposes.
           </p>
