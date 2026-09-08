@@ -78,8 +78,75 @@ export function NewsStrip() {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-          {/* Thompson Utd sponsorship card — newest */}
+          {/* Chloe Sharman welcome card — newest */}
           <Reveal>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/Chloe.jpg"
+                  alt="Chloe Sharman, Renewals Executive at CRS Insurance Brokers"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: "center 25%" }}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
+                  <span className="text-m-coral/80">Team News</span>
+                  <span>1 Sep 2026</span>
+                </div>
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  Welcome to the team, Chloe
+                </h2>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  Chloe Sharman joins CRS as a Renewals Executive. She served in the Army before moving back into insurance. Welcome, Chloe.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          {/* Lutterworth charity golf day card */}
+          <Reveal delay={60}>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/lutterworth-golf.jpg"
+                  alt="Three of the CRS team at the British Heart Foundation charity golf day, Lutterworth Golf Club"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
+                  <span className="text-m-coral/80">Community</span>
+                  <span>23 Aug 2026</span>
+                </div>
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  A charity golf day at Lutterworth Golf Club
+                </h2>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  Josh Van Allen, Lee Thornett and Jake Thornett played in the British Heart Foundation charity day at Lutterworth Golf Club, where CRS sponsored the closest-to-the-pin hole. &pound;6,000 was raised on the day.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          {/* Thompson Utd sponsorship card */}
+          <Reveal delay={120}>
             <div
               className="relative flex flex-col h-full bg-m-ink-2"
               style={{ border: "1px solid rgba(255,255,255,0.08)" }}
@@ -112,7 +179,7 @@ export function NewsStrip() {
             </div>
           </Reveal>
           {/* Josh Antill welcome card */}
-          <Reveal delay={60}>
+          <Reveal delay={180}>
             <div
               className="relative flex flex-col h-full bg-m-ink-2"
               style={{ border: "1px solid rgba(255,255,255,0.08)" }}
@@ -145,7 +212,7 @@ export function NewsStrip() {
             </div>
           </Reveal>
           {/* Apprentice milestones card */}
-          <Reveal delay={120}>
+          <Reveal>
             <div
               className="relative flex flex-col h-full bg-m-ink-2"
               style={{ border: "1px solid rgba(255,255,255,0.08)" }}
@@ -178,7 +245,7 @@ export function NewsStrip() {
             </div>
           </Reveal>
           {/* Jake Pemberton promotion card */}
-          <Reveal delay={180}>
+          <Reveal>
             <div
               className="relative flex flex-col h-full bg-m-ink-2"
               style={{ border: "1px solid rgba(255,255,255,0.08)" }}
@@ -210,7 +277,7 @@ export function NewsStrip() {
               </div>
             </div>
           </Reveal>
-          {/* UK Broker Awards card — newest, links to full post */}
+          {/* UK Broker Awards card — links to full post */}
           <Reveal>
             <a
               href="/news/uk-broker-awards-2026"
