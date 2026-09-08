@@ -29,7 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/rewards`,   lastModified: "2026-06-15", changeFrequency: "monthly", priority: 0.6 },
 
     // News
-    { url: `${SITE}/news`, lastModified: "2026-08-18", changeFrequency: "weekly", priority: 0.7 },
+    { url: `${SITE}/news`,                       lastModified: "2026-09-08", changeFrequency: "weekly", priority: 0.7 },
+    { url: `${SITE}/news/uk-broker-awards-2026`, lastModified: "2026-09-02", changeFrequency: "yearly", priority: 0.6 },
+    { url: `${SITE}/news/wear-purple-week`,      lastModified: "2026-09-02", changeFrequency: "yearly", priority: 0.6 },
 
     // Legal
     { url: `${SITE}/complaints`,    lastModified: "2026-09-02", changeFrequency: "yearly", priority: 0.4 },
