@@ -24,8 +24,8 @@ const sections = [
     body: [
       "We may collect the following categories of personal data when you enquire about or take out insurance through us:",
       "— Contact details: name, address, email address, telephone number.\n— Business information: company name, company registration number, trade type, number of employees, turnover.\n— Insurance history: previous claims, existing policies, periods of uninsured activity.\n— Financial information: details required to arrange premium finance (where applicable).\n— Communications: records of calls (which are recorded), emails, and other correspondence with us.",
-      "We do not collect special category data, such as health information, unless it is necessary to arrange a particular type of cover. Where we do, we rely on the insurance condition in Schedule 1 of the Data Protection Act 2018 rather than on your consent, because consent that could be withdrawn part-way through a policy would leave the cover unworkable. We will tell you when this applies.",
-      "Information about criminal convictions is handled under the same Act and only where an insurer needs it to assess the risk.",
+      "Some of what we handle is more sensitive. Health information comes up when a type of cover depends on it, and in most injury claims. It may be about our client's employees or about other people, such as someone hurt on a client's premises or in an accident involving a client's vehicle. Information about criminal offences, including alleged ones, comes up when an insurer asks about convictions, and in claims involving theft, damage or a road accident.",
+      "We use this information only to arrange cover or to report, manage and settle a claim. We rely on the insurance condition in the Data Protection Act 2018 (Schedule 1, paragraphs 20 and 37) rather than on consent, because consent that could be withdrawn part-way through would leave a policy or a claim unworkable. Where a claim is disputed or may go to court, we also rely on the condition for establishing or defending legal claims.",
       "You do not have to give us your information, but we cannot obtain quotations or place cover without it. A policy can also be voided if what we pass to an insurer turns out to be incomplete or inaccurate.",
     ],
   },
@@ -35,6 +35,7 @@ const sections = [
       "We use your personal data to:",
       "— Arrange and administer insurance policies on your behalf.\n— Communicate with insurers, underwriters, and other parties necessary to place your cover.\n— Process and manage claims.\n— Comply with our legal and regulatory obligations, including FCA requirements.\n— Send you renewal reminders and information about your policy.\n— Improve our services.",
       "Our lawful basis for processing is primarily the performance of a contract, or steps taken at your request before entering into one. Where we have a legal obligation to process data we rely on that. For marketing to business clients and prospects we rely on legitimate interests, being our interest in offering insurance services to businesses likely to need them. Tell us to stop and we will.",
+      "Where we hold information about people who are not our clients, such as a client's employees, other drivers, injured people and witnesses, we rely on legitimate interests: our client's interest, and ours, in having claims reported, handled and settled properly.",
     ],
   },
   {
@@ -46,9 +47,24 @@ const sections = [
     ],
   },
   {
+    heading: "Reporting a claim through the CRS Claims app",
+    body: [
+      "Our clients can give their staff the CRS Claims app so they can report a claim to us from their phone. The rest of this notice also applies.",
+      "What the app collects:\n— About you, when you set up the app: your name, mobile number, the company you work for if you give it, and the business you report for. Your employer gave us your business details when they set up the app for their staff.\n— In each report: what happened in your own words, when and where it happened, your location if you tap “Use my current location”, photos and documents you add, an estimated cost, a policy number and any reference numbers you give us.\n— About other people: the name, role and phone number of anyone you tell us was involved, such as another driver or a witness. Photos and descriptions can also include other people, vehicles and number plates.\n— To keep the app secure: a sign-in identifier for your phone, and, when a new phone is set up, the information Cloudflare needs to check that a person rather than an automated program is setting it up (such as your IP address and browser details).",
+      "A report about an injury may include information about someone's health, and a report about a theft or an accident may include information about an alleged offence. We use that information only to report, manage and settle the claim, as described in “What data we collect”.",
+      "The app does not collect your email address, record sound itself, track your location in the background, or use advertising or analytics tools.",
+      "We use the information to receive your report, contact you about it, notify the insurer and handle the claim on our client's behalf. We also use the time each report reaches us to check how quickly we respond.",
+      "If you name other people in a report, please let them know that you have passed their details to CRS for the claim. We use their details only for that claim. If we contact them, we will point them to this notice.",
+      "The report goes to our claims team by email and is filed in our claims system. We share it with the insurer and with anyone they appoint to handle the claim, such as a loss adjuster, as described in “Sharing your data”. The companies that run the app for us are:\n— Supabase, which stores reports and photos for the app, in London.\n— Microsoft, which provides our email.\n— Cloudflare, which runs the check when a new phone is set up and when our staff sign in.\n— Apple and Google, which distribute the app and receive crash reports. They do not receive the content of your reports, except that if you use your keyboard's microphone to dictate, your phone's own dictation service handles what you say.",
+      "Some of these companies may access information from outside the UK. Where they do, we rely on the protections described in “Sending data outside the UK”.",
+      "The app keeps a copy of each report for 90 days after it has reached our claims team, then deletes the description, photos, location and other people's details automatically. We keep a short record that a report was made and when, for as long as we keep the claim file. The report we filed in our claims system is kept with your other claim records, as described in “Data retention”.",
+      "On your phone, a report and its photos are removed as soon as they have been sent. You can remove the app's link to your business at any time from the “This phone” screen.",
+    ],
+  },
+  {
     heading: "Sending data outside the UK",
     body: [
-      "Some of the insurers and reinsurers we approach sit outside the UK. Risks placed at Lloyd's are frequently shared with overseas markets, and a claim on such a policy will involve parties abroad. Google, who provide the analytics on this website, also process data outside the UK.",
+      "Some of the insurers and reinsurers we approach sit outside the UK. Risks placed at Lloyd's are frequently shared with overseas markets, and a claim on such a policy will involve parties abroad. Google, who provide the analytics on this website, also process data outside the UK, as may the service providers who support our systems.",
       "Where personal data leaves the UK we rely either on the adequacy regulations made by the UK government, or on the International Data Transfer Agreement, so that it remains protected to the same standard as it would be here.",
     ],
   },
@@ -79,7 +95,7 @@ const sections = [
     heading: "Changes to this policy",
     body: [
       "We may update this privacy policy from time to time. The current version will always be available on this page. Where changes are material, we will notify affected individuals directly.",
-      "This policy was last reviewed in September 2026.",
+      "This policy was last reviewed in October 2026.",
     ],
   },
 ];
@@ -101,7 +117,7 @@ export default function PrivacyPage() {
                 Privacy Policy
               </span>
               <span className="font-semibold hidden sm:block text-[12px] tracking-[0.01em] text-m-bone/60">
-                Last reviewed September 2026
+                Last reviewed October 2026
               </span>
             </div>
           </Reveal>
