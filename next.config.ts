@@ -11,8 +11,11 @@ const csp = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: https://www.google-analytics.com",
-  "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
+  // GA4 sends UK/EU hits to region1.google-analytics.com, so the wildcard is
+  // needed — www. alone silently blocked every hit from launch to Oct 2026.
+  // Matches Google's "Analytics without Ads features" CSP list.
+  "img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com",
+  "connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
   "font-src 'self'",
   "frame-src 'none'",
   "frame-ancestors 'none'",
