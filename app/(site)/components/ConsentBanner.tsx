@@ -57,8 +57,12 @@ function loadAnalytics() {
   type WindowWithDataLayer = Window & { dataLayer?: unknown[] };
   const w = window as WindowWithDataLayer;
   w.dataLayer = w.dataLayer || [];
-  function gtag(...args: unknown[]) {
-    w.dataLayer!.push(args);
+  // gtag.js only acts on the `arguments` object — a plain array (rest
+  // params) is silently ignored, so no hit is ever sent.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  function gtag(..._args: unknown[]) {
+    // eslint-disable-next-line prefer-rest-params
+    w.dataLayer!.push(arguments);
   }
   gtag("js", new Date());
   gtag("config", GA_ID);
