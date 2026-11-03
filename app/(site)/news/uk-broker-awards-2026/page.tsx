@@ -6,7 +6,7 @@ import { Reveal } from "../../components/Reveal";
 export const metadata: Metadata = {
   title: "Finalists at the UK Broker Awards 2026",
   description:
-    "CRS Insurance Brokers has been shortlisted as a finalist in two categories at the UK Broker Awards 2026: Commercial Lines Insurance Broker of the Year and the Insurance Broker Customer Service Award.",
+    "CRS Insurance Brokers was shortlisted as a finalist in two categories at the UK Broker Awards 2026: Commercial Lines Insurance Broker of the Year and the Insurance Broker Customer Service Award.",
   alternates: { canonical: "/news/uk-broker-awards-2026" },
 };
 
@@ -106,6 +106,56 @@ export default function UKBrokerAwardsPage() {
         </div>
       </section>
 
+      {/* On the night — added after the ceremony, 9 Oct 2026 */}
+      <section
+        className="relative py-16 md:py-24"
+        style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+      >
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 lg:pr-[72px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
+
+            <Reveal className="lg:col-span-6">
+              <div className="flex flex-wrap gap-5 items-center mb-7">
+                <span className="font-semibold text-[12px] tracking-[0.01em] text-m-coral/80">
+                  On the night
+                </span>
+                <span className="font-semibold text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
+                  9 Oct 2026
+                </span>
+              </div>
+              <div className="space-y-5 text-[15.5px] md:text-[16px] leading-[1.75] text-m-bone/60">
+                <p>
+                  The winners were announced at the Insurance Age UK Broker Awards on 8 October.
+                  We didn&rsquo;t take either award, and congratulations go to the brokers who did.
+                </p>
+                <p>
+                  Table 18 did come home with something: the prize for the best table selfie.
+                  Being in the room as a finalist twice over, among that field, is still a result
+                  we&rsquo;re proud of.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={140} className="lg:col-span-6">
+              <div
+                className="overflow-hidden"
+                style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/uk-broker-awards-night.jpg"
+                  alt="The CRS team at the Insurance Age UK Broker Awards 2026"
+                  className="w-full"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </Reveal>
+
+          </div>
+        </div>
+      </section>
+
       {/* Closing — the team */}
       <section
         className="relative py-16 md:py-24"
@@ -123,8 +173,8 @@ export default function UKBrokerAwardsPage() {
             <Reveal delay={120}>
               <p className="text-[15.5px] md:text-[16px] leading-[1.75] text-m-bone/60">
                 Thank you to our clients for trusting us with your business, and to everyone at
-                CRS for earning this. Whatever happens on the night, being recognised among the
-                best brokers in the country is something we&rsquo;re proud of.
+                CRS for earning this. Being recognised among the best brokers in the country is
+                something we&rsquo;re proud of.
               </p>
             </Reveal>
           </div>

@@ -78,7 +78,142 @@ export function NewsStrip() {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-          {/* Chloe Sharman welcome card — newest */}
+          {/* Andy Burns welcome card — newest */}
+          <Reveal>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/Andy.jpg"
+                  alt="Andy Burns, Sales Executive at CRS Insurance Brokers"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: "center 25%" }}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
+                  <span className="text-m-coral/80">Team News</span>
+                  <span>2 Nov 2026</span>
+                </div>
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  Welcome to the team, Andy
+                </h2>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  Andy Burns joins CRS as a Sales Executive. He has worked in retail broking and as an underwriter, and knows Commercial Combined well. Welcome aboard, Andy.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          {/* Jake Wright Cert CII card */}
+          <Reveal delay={60}>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/jake-wright-cert-cii.jpg"
+                  alt="Jake Wright of CRS Insurance Brokers"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: "center 25%" }}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
+                  <span className="text-m-coral/80">Team News</span>
+                  <span>21 Oct 2026</span>
+                </div>
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  Cert CII for Jake Wright
+                </h2>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  Jake Wright has passed his Cert CII, sitting his last two exams within two weeks of each other. Nobody at CRS has qualified faster. Well done, Jake.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          {/* UK Broker Awards night card */}
+          <Reveal delay={120}>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/uk-broker-awards-night.jpg"
+                  alt="The CRS team at the Insurance Age UK Broker Awards 2026"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
+                  <span className="text-m-coral/80">Awards</span>
+                  <span>9 Oct 2026</span>
+                </div>
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  Two-time finalists at the UK Broker Awards
+                </h2>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  CRS was shortlisted for Commercial Lines Broker of the Year and for Customer Service. We didn&rsquo;t win either, though Table 18 did take the prize for best table selfie.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          {/* Thompsons United U8s/U14s card — held back until the club confirms
+              parents have agreed to the photo being used on our website.
+          <Reveal delay={180}>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                <img
+                  src="/news/thompsons-united-juniors.jpg"
+                  alt="Thompsons United Under 8s in their CRS-sponsored kit"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
+                  <span className="text-m-coral/80">Community</span>
+                  <span>14 Sep 2026</span>
+                </div>
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  Another season with Thompsons United&rsquo;s juniors
+                </h2>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  CRS is sponsoring the Thompsons United Under 8s and Under 14s again this season. Both sides have opened with wins in the league and the cup.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          */}
+          {/* Chloe Sharman welcome card */}
           <Reveal>
             <div
               className="relative flex flex-col h-full bg-m-ink-2"
@@ -277,7 +412,7 @@ export function NewsStrip() {
               </div>
             </div>
           </Reveal>
-          {/* UK Broker Awards card — links to full post */}
+          {/* UK Broker Awards finalist card — links to full post */}
           <Reveal>
             <a
               href="/news/uk-broker-awards-2026"
