@@ -78,8 +78,41 @@ export function NewsStrip() {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-          {/* Andy Burns welcome card — newest */}
+          {/* CRS 100m Sprint card — newest. Still taken from the LinkedIn video, 5 Nov 2026 */}
           <Reveal>
+            <div
+              className="relative flex flex-col h-full bg-m-ink-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                className="relative aspect-[16/9] overflow-hidden"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/news/100m-sprint.jpg"
+                  alt="Josh Van Allen with his winner's medal from the CRS 100m sprint"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-7 md:p-8 flex flex-col gap-5 flex-1">
+                <div className="font-semibold flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[12px] tracking-[0.01em] text-m-bone/60 tnum">
+                  <span className="text-m-coral/80">Team News</span>
+                  <span>5 Nov 2026</span>
+                </div>
+                <h2 className="font-display text-[21px] md:text-[23px] leading-[1.12] tracking-[-0.015em] text-white">
+                  Josh keeps his 100m crown
+                </h2>
+                <p className="text-[13.5px] leading-[1.7] text-m-bone/55 flex-1">
+                  Josh Van Allen won the annual CRS 100m sprint again, in 12.46 seconds. William Allan came second and Jake Wright third. A few of the team were taking the stairs slowly the next day.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          {/* Andy Burns welcome card */}
+          <Reveal delay={60}>
             <div
               className="relative flex flex-col h-full bg-m-ink-2"
               style={{ border: "1px solid rgba(255,255,255,0.08)" }}
