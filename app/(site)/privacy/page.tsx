@@ -25,7 +25,7 @@ const sections = [
       "We may collect the following categories of personal data when you enquire about or take out insurance through us:",
       "— Contact details: name, address, email address, telephone number.\n— Business information: company name, company registration number, trade type, number of employees, turnover.\n— Insurance history: previous claims, existing policies, periods of uninsured activity.\n— Financial information: details required to arrange premium finance (where applicable).\n— Communications: records of calls (which are recorded), emails, and other correspondence with us.",
       "Some of what we handle is more sensitive. Health information comes up when a type of cover depends on it, and in most injury claims. It may be about our client's employees or about other people, such as someone hurt on a client's premises or in an accident involving a client's vehicle. Information about criminal offences, including alleged ones, comes up when an insurer asks about convictions, and in claims involving theft, damage or a road accident.",
-      "We use this information only to arrange cover or to report, manage and settle a claim. We rely on the insurance condition in the Data Protection Act 2018 (Schedule 1, paragraphs 20 and 37) rather than on consent, because consent that could be withdrawn part-way through would leave a policy or a claim unworkable. Where a claim is disputed or may go to court, we also rely on the condition for establishing or defending legal claims.",
+      "We use this information only to arrange cover or to report, manage and settle a claim. We rely on the insurance condition in the Data Protection Act 2018 (Schedule 1, paragraphs 20 and 37) rather than on consent, because consent that could be withdrawn part-way through would leave a policy or a claim unworkable. Where a claim is disputed or may go to court, we also rely on the condition for establishing or defending legal claims. Our policy document setting out how we protect this information is available on request.",
       "You do not have to give us your information, but we cannot obtain quotations or place cover without it. A policy can also be voided if what we pass to an insurer turns out to be incomplete or inaccurate.",
     ],
   },
@@ -78,7 +78,8 @@ const sections = [
   {
     heading: "Data retention",
     body: [
-      "We retain your personal data for as long as we have a business relationship with you, and thereafter for a minimum of seven years in accordance with FCA record-keeping requirements and relevant limitation periods under UK law.",
+      "We keep policy, claim and client records for 15 years after a policy ends or a claim is settled, because that is the longest time in which a claim about our advice can be brought. Records about liability insurance, and any report of an incident that could lead to an injury or illness, are kept for 40 years, because those claims can arise many years later.",
+      "We may keep a record for longer where there is a specific reason, such as a likely claim or complaint. Records we keep for these reasons are used only to deal with a claim, complaint or legal or regulatory request, and never for marketing.",
       "Where data is no longer required, it is securely deleted or anonymised.",
     ],
   },
