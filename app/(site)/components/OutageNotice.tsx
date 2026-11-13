@@ -67,11 +67,11 @@ export function OutageNotice() {
           id="outage-title"
           className="text-[28px] md:text-[40px] font-bold leading-tight pr-8"
         >
-          Email delays
+          We can&rsquo;t receive emails right now
         </h2>
         <p className="mt-5 text-[18px] md:text-[22px] leading-relaxed">
-          Microsoft&rsquo;s email service is having problems, so emails to us
-          may be delayed. If it&rsquo;s urgent, please call us on{" "}
+          Microsoft&rsquo;s email service is down, so any email you send us
+          won&rsquo;t reach us. Please call us instead on{" "}
           <a href="tel:01455244630" className="font-semibold underline whitespace-nowrap">
             01455 244630
           </a>
