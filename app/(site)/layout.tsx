@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import { OrganizationSchema } from "./components/SchemaJsonLd";
 import { ConsentBanner } from "./components/ConsentBanner";
+import { OutageNotice } from "./components/OutageNotice";
 import "./marketing.css";
 
 /*
@@ -111,6 +112,7 @@ export default function MarketingLayout({
       <div className="marketing-grain" aria-hidden />
       {children}
       <ConsentBanner />
+      <OutageNotice />
     </div>
   );
 }
