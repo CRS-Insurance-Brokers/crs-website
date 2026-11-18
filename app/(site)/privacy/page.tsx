@@ -79,6 +79,7 @@ const sections = [
     heading: "Data retention",
     body: [
       "We keep policy, claim and client records for 15 years after a policy ends or a claim is settled, because that is the longest time in which a claim about our advice can be brought. Records about liability insurance, and any report of an incident that could lead to an injury or illness, are kept for 40 years, because those claims can arise many years later.",
+      "If we have been in touch with your business but you have not become a client, we keep your company's details. We keep the names and contact details of the people we spoke to while we are in contact with them, and for 7 years after we stop, unless they ask us to stop sooner.",
       "We may keep a record for longer where there is a specific reason, such as a likely claim or complaint. Records we keep for these reasons are used only to deal with a claim, complaint or legal or regulatory request, and never for marketing.",
       "Where data is no longer required, it is securely deleted or anonymised.",
     ],
